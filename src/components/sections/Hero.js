@@ -1,26 +1,21 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import maxAvatar from "../../assets/max_avatar.svg";
+import "animate.css";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    backgroundColor: theme.palette.primary.main,
-    padding: "6rem",
+    backgroundColor: theme.palette.mainBlue.main,
+    padding: "12rem 12rem 12rem 12rem",
     height: "100vh",
   },
   container: {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-  },
-  avatar: {
-    width: theme.spacing(20),
-    height: theme.spacing(20),
-    margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main,
   },
   text: {
     color: theme.palette.common.white,
@@ -34,12 +29,22 @@ const useStyles = makeStyles((theme) => ({
 
 const Hero = () => {
   const classes = useStyles();
+  const theme = useTheme();
 
   return (
     <section className={classes.root}>
       <Container className={classes.container}>
         <Grid container spacing={4}>
-          <Grid item xs={12} sm={6} style={{ textAlign: "center" }}>
+          <Grid
+            item
+            xs={12}
+            sm={6}
+            style={{
+              textAlign: "center",
+              animation: "fadeIn",
+              animationDuration: "2s",
+            }}
+          >
             <Typography className={classes.text} component="h1" variant="h4">
               <div className={classes.title}>Maximilian Oberholtzer</div>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac
@@ -51,9 +56,13 @@ const Hero = () => {
               alt=""
               src={maxAvatar}
               style={{
+                animation: "fadeIn",
+                animationDuration: "2s",
                 width: "300px",
-                borderRadius: "50%",
-                border: "2px solid white",
+                minWidth: "300px",
+                borderRadius: "30px",
+                //border: `4px solid ${theme.palette.secondBlue.main}`,
+                backgroundColor: theme.palette.secondBlue.main,
               }}
             />
           </Grid>

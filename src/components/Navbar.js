@@ -3,8 +3,8 @@ import { makeStyles, useTheme } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
-import IconButton from "@material-ui/core/IconButton";
-import MenuIcon from "@material-ui/icons/Menu";
+import { Button } from "@mui/material";
+import "animate.css";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   appBar: {
-    boxShadow: "none",
+    boxShadow: "none !important",
     [theme.breakpoints.up("sm")]: {
       backgroundColor: theme.palette.background.default,
       boxShadow: theme.shadows[3],
@@ -45,20 +45,28 @@ const Navbar = () => {
       <AppBar
         position="fixed"
         className={classes.appBar}
-        style={{ backgroundColor: theme.palette.blue.main }}
+        style={{
+          backgroundColor: theme.palette.mainBlue.main,
+          padding: "1rem 3rem 1rem 3rem",
+        }}
       >
         <Toolbar>
-          <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="menu"
-          >
-            <MenuIcon />
-          </IconButton>
           <Typography variant="h6" className={classes.title}>
-            Navbar
+            Logo
           </Typography>
+          <div class="animate__animated animate__fadeInDown">
+            <Button color="inherit">About</Button>
+          </div>
+
+          <div class="animate__animated animate__fadeInDown">
+            <Button color="inherit">Experience</Button>
+          </div>
+          <div class="animate__animated animate__fadeInDown">
+            <Button color="inherit">Hobbies</Button>
+          </div>
+          <div class="animate__animated animate__fadeInDown">
+            <Button color="inherit">Resume</Button>
+          </div>
         </Toolbar>
       </AppBar>
     </div>

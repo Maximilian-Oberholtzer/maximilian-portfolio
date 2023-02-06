@@ -1,6 +1,7 @@
-import React, { useEffect } from "react";
+import { React, useState, useEffect } from "react";
 import "./Loader.css";
 import { motion } from "framer-motion";
+import "animate.css";
 
 const pathVariants = {
   hidden: {
@@ -18,9 +19,16 @@ const pathVariants = {
 };
 
 const Loader = () => {
+  const [hasLoaded, setHasLoaded] = useState(false);
+  useEffect(() => {
+    setTimeout(() => {
+      setHasLoaded(true);
+    }, 3000);
+  }, []);
+
   return (
     <div
-      className="line-drawing-demo"
+      className={hasLoaded ? "animate__animated animate__fadeOut" : ""}
       style={{
         display: "flex",
         justifyContent: "center",
