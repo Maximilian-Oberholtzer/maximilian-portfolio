@@ -1,5 +1,6 @@
 import "./App.css";
 import { React, useEffect, useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "@material-ui/core/styles";
 import Loader from "./components/Loader";
 import Navbar from "./components/Navbar";
@@ -20,15 +21,17 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <div>
-        {isLoading ? (
-          <Loader></Loader>
-        ) : (
-          <>
-            <Navbar /> <Hero />
-          </>
-        )}
-      </div>
+      <Router>
+        <div>
+          {isLoading ? (
+            <Loader></Loader>
+          ) : (
+            <>
+              <Navbar /> <Hero />
+            </>
+          )}
+        </div>
+      </Router>
     </ThemeProvider>
   );
 }

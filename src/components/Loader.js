@@ -48,7 +48,7 @@ const Loader = () => {
           //transform="translate(0.000000,247.000000) scale(0.100000,-0.100000)"
           //transform="matrix(7.4999998,0,0,-7.4999998,0,2470)"
           fill="none"
-          stroke="black"
+          stroke="white"
           strokeWidth="1"
           variants={pathVariants}
         />

@@ -20,6 +20,7 @@ const useStyles = makeStyles((theme) => ({
   text: {
     color: theme.palette.common.white,
     marginTop: theme.spacing(4),
+    fontSize: "46px",
   },
   title: {
     fontWeight: "bold",
@@ -47,8 +48,8 @@ const Hero = () => {
           >
             <Typography className={classes.text} component="h1" variant="h4">
               <div className={classes.title}>Maximilian Oberholtzer</div>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac
-              felis in lacus blandit facilisis.
+              Full stack software engineer that enjoys creative coding and UI/UX
+              designs
             </Typography>
           </Grid>
           <Grid item xs={12} sm={6} style={{ textAlign: "center" }}>

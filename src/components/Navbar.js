@@ -55,17 +55,32 @@ const Navbar = () => {
             Logo
           </Typography>
           <div class="animate__animated animate__fadeInDown">
-            <Button color="inherit">About</Button>
+            <Button color="inherit">
+              <Typography>About</Typography>
+            </Button>
           </div>
 
           <div class="animate__animated animate__fadeInDown">
-            <Button color="inherit">Experience</Button>
+            <Button color="inherit">
+              <Typography>Experience</Typography>
+            </Button>
           </div>
           <div class="animate__animated animate__fadeInDown">
-            <Button color="inherit">Hobbies</Button>
+            <Button color="inherit">
+              <Typography>Hobbies</Typography>
+            </Button>
           </div>
           <div class="animate__animated animate__fadeInDown">
-            <Button color="inherit">Resume</Button>
+            <Button
+              color="inherit"
+              style={{
+                border: `2px solid ${theme.palette.darkBlue.main}`,
+                borderRadius: "8px",
+                backgroundColor: theme.palette.secondBlue.main,
+              }}
+            >
+              <Typography> Resume</Typography>
+            </Button>
           </div>
         </Toolbar>
       </AppBar>
