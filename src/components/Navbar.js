@@ -1,29 +1,16 @@
 import React, { useState, useEffect } from "react";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { useTheme } from "@material-ui/core/styles";
+import useStyles from "./Styles";
+import ResumePdf from "../assets/Maximilian Oberholtzer Resume 2023.pdf";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import { Button } from "@mui/material";
 import "animate.css";
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
-  title: {
-    flexGrow: 1,
-  },
-  appBar: {
-    boxShadow: "none !important",
-    [theme.breakpoints.up("sm")]: {
-      backgroundColor: theme.palette.background.default,
-      boxShadow: theme.shadows[3],
-    },
-  },
-}));
+const resumeClick = () => {
+  window.open(ResumePdf, "_blank");
+};
 
 const Navbar = () => {
   const classes = useStyles();
@@ -42,14 +29,7 @@ const Navbar = () => {
 
   return (
     <div className={classes.root}>
-      <AppBar
-        position="fixed"
-        className={classes.appBar}
-        style={{
-          backgroundColor: theme.palette.mainBlue.main,
-          padding: "1rem 3rem 1rem 3rem",
-        }}
-      >
+      <AppBar position="fixed" className={classes.appBar}>
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
             Logo
@@ -71,13 +51,15 @@ const Navbar = () => {
             </Button>
           </div>
           <div class="animate__animated animate__fadeInDown">
+            <Button color="inherit">
+              <Typography>Projects</Typography>
+            </Button>
+          </div>
+          <div class="animate__animated animate__fadeInDown">
             <Button
+              className={classes.resumeButton}
               color="inherit"
-              style={{
-                border: `2px solid ${theme.palette.darkBlue.main}`,
-                borderRadius: "8px",
-                backgroundColor: theme.palette.secondBlue.main,
-              }}
+              onClick={resumeClick}
             >
               <Typography> Resume</Typography>
             </Button>

@@ -1,5 +1,4 @@
 import { React, useState, useEffect } from "react";
-import "./Loader.css";
 import { motion } from "framer-motion";
 import "animate.css";
 
