@@ -12,7 +12,7 @@ const Hero = () => {
   const theme = useTheme();
 
   return (
-    <section className={classes.root}>
+    <section className={classes.heroRoot}>
       <Container className={classes.container}>
         <Grid container spacing={6} className={classes.heroGrid}>
           <Grid item className={classes.heroText}>
@@ -32,7 +32,7 @@ const Hero = () => {
               designs
             </Typography>
           </Grid>
-          <Grid item style={{}}>
+          <Grid item>
             <img alt="" src={maxAvatar} className={classes.heroImage} />
           </Grid>
         </Grid>
