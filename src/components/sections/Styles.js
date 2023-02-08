@@ -1,4 +1,4 @@
-import { makeStyles } from "@material-ui/core";
+import { makeStyles } from "@mui/styles";
 
 const useStyles = makeStyles((theme) => ({
   ///////////////
@@ -7,27 +7,30 @@ const useStyles = makeStyles((theme) => ({
   heroRoot: {
     display: "flex",
     backgroundColor: theme.palette.mainBlue.main,
-    padding: "12rem 12rem 12rem 12rem",
     minHeight: "100vh",
     [theme.breakpoints.down("md")]: {
-      padding: "10rem 0rem 2rem 0rem",
+      padding: "6rem 0rem 2rem 0rem",
+      minHeight: "80vh",
     },
     [theme.breakpoints.down("sm")]: {
-      padding: "4rem 0rem 2rem 0rem",
+      padding: "2rem 0rem 2rem 0rem",
     },
   },
   container: {
     display: "flex !important",
     flexDirection: "column",
     alignItems: "center",
+    alignSelf: "center",
+    maxWidth: "80vw !important",
   },
   heroGrid: {
     alignItems: "center",
     justifyContent: "center",
     padding: "2rem 2rem 2rem 2rem",
-    flexGrow: "1",
+    flexGrow: "0",
+    maxWidth: "100%",
     [theme.breakpoints.down("sm")]: {
-      margin: "1rem !important",
+      margin: "0rem !important",
     },
   },
   heroText: {
@@ -39,20 +42,26 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {
       width: "80%",
       margin: "2rem 4rem 2rem 4rem ",
-      //padding: "0",
+      paddingLeft: "0 !important",
     },
     margin: "2rem 4rem 2rem 4rem ",
   },
   heroTitle: {
     fontWeight: "bold",
-    color: theme.palette.common.white,
+    color: theme.palette.white.main,
     marginBottom: theme.spacing(0),
-    fontSize: "clamp(36px, 6vw, 80px)",
+    fontSize: "clamp(45px, 4.5vw, 64px) !important",
   },
   heroSubText: {
     marginTop: theme.spacing(3),
     fontWeight: "bold",
-    fontSize: "clamp(18px, 3vw, 30px)",
+    color: theme.palette.darkBlue.main,
+    fontSize: "clamp(20px, 2vw, 30px) !important",
+  },
+  heroImageContainer: {
+    [theme.breakpoints.down("sm")]: {
+      paddingLeft: "0 !important",
+    },
   },
   heroImage: {
     animation: "fadeIn",

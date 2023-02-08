@@ -1,9 +1,8 @@
 import React from "react";
-import { useTheme } from "@material-ui/core/styles";
+import { useTheme, Container } from "@mui/material";
 import useStyles from "./Styles";
-import Container from "@material-ui/core/Container";
-import Grid from "@material-ui/core/Grid";
-import Typography from "@material-ui/core/Typography";
+import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
 import maxAvatar from "../../assets/max_avatar.svg";
 import "animate.css";
 
@@ -32,7 +31,7 @@ const Hero = () => {
               designs
             </Typography>
           </Grid>
-          <Grid item>
+          <Grid item className={classes.heroImageContainer}>
             <img alt="" src={maxAvatar} className={classes.heroImage} />
           </Grid>
         </Grid>

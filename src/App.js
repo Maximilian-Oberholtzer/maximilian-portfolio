@@ -1,11 +1,10 @@
 import "./App.css";
 import { React, useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { ThemeProvider } from "@material-ui/core/styles";
+import { ThemeProvider } from "@mui/material";
 import Loader from "./components/Loader";
 import Navbar from "./components/Navbar";
 import Hero from "./components/sections/Hero";
-import { CssBaseline } from "@material-ui/core";
 import Theme from "./Theme";
 
 function App() {
@@ -20,7 +19,6 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <CssBaseline />
       <Router>
         <div>
           {isLoading ? (
