@@ -5,10 +5,21 @@ const useStyles = makeStyles((theme) => ({
   //Navbar Styles//
   /////////////////
   root: {
-    flexGrow: 1,
+    width: "100vw",
   },
   title: {
     flexGrow: 1,
+  },
+  appBarContainer: {
+    flexDirection: "column",
+    alignItems: "center",
+    alignSelf: "center",
+    placeSelf: "center",
+    justifyContent: "center",
+    width: "70vw !important",
+    [theme.breakpoints.down("sm")]: {
+      maxWidth: "90vw !important",
+    },
   },
   appBar: {
     boxShadow: "none !important",

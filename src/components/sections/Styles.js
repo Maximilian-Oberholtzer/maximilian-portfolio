@@ -8,30 +8,22 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     backgroundColor: theme.palette.mainBlue.main,
     minHeight: "100vh",
-    [theme.breakpoints.down("md")]: {
-      padding: "6rem 0rem 2rem 0rem",
-      minHeight: "80vh",
-    },
-    [theme.breakpoints.down("sm")]: {
-      padding: "2rem 0rem 2rem 0rem",
-    },
+    [theme.breakpoints.down("md")]: {},
+    [theme.breakpoints.down("sm")]: {},
   },
-  container: {
+  heroContainer: {
     display: "flex !important",
     flexDirection: "column",
     alignItems: "center",
     alignSelf: "center",
-    maxWidth: "80vw !important",
+    boxSizing: "unset !important",
   },
   heroGrid: {
     alignItems: "center",
     justifyContent: "center",
-    padding: "2rem 2rem 2rem 2rem",
     flexGrow: "0",
-    maxWidth: "100%",
-    [theme.breakpoints.down("sm")]: {
-      margin: "0rem !important",
-    },
+    margin: "0rem !important",
+    width: "auto",
   },
   heroText: {
     textAlign: "center",
@@ -39,10 +31,10 @@ const useStyles = makeStyles((theme) => ({
     animationDuration: "2s",
     minWidth: "0",
     width: "50%",
+    paddingLeft: "0 !important",
     [theme.breakpoints.down("sm")]: {
       width: "80%",
       margin: "2rem 4rem 2rem 4rem ",
-      paddingLeft: "0 !important",
     },
     margin: "2rem 4rem 2rem 4rem ",
   },
@@ -50,32 +42,30 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: "bold",
     color: theme.palette.white.main,
     marginBottom: theme.spacing(0),
-    fontSize: "clamp(45px, 4.5vw, 64px) !important",
+    fontSize: "clamp(32px, 4vw, 59px) !important",
   },
   heroSubText: {
     marginTop: theme.spacing(3),
     fontWeight: "bold",
     color: theme.palette.darkBlue.main,
-    fontSize: "clamp(20px, 2vw, 30px) !important",
+    fontSize: "clamp(20px, 2vw, 28px) !important",
   },
   heroImageContainer: {
-    [theme.breakpoints.down("sm")]: {
-      paddingLeft: "0 !important",
-    },
+    paddingLeft: "0 !important",
   },
   heroImage: {
     animation: "fadeIn",
     animationDuration: "2s",
     width: "300px",
-    minWidth: "300px",
     borderRadius: "30px",
     backgroundColor: theme.palette.secondBlue.main,
     textAlign: "center",
     margin: "2rem 4rem 2rem 4rem ",
+    [theme.breakpoints.down("md")]: {
+      width: "230px",
+    },
     [theme.breakpoints.down("sm")]: {
-      width: "30vw",
-      minWidth: "30vh",
-      margin: "-0.5rem",
+      width: "180px",
     },
   },
 }));

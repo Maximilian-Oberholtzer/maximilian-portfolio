@@ -7,7 +7,6 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { Drawer, Box, List } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import { Button, useMediaQuery } from "@mui/material";
-import "animate.css";
 
 const resumeClick = () => {
   window.open(ResumePdf, "_blank");
@@ -138,16 +137,16 @@ const Navbar = () => {
   );
 
   return (
-    <div className={classes.root}>
-      <AppBar position="fixed" className={classes.appBar}>
+    <AppBar position="fixed" className={classes.appBar}>
+      <div className={classes.appBarContainer}>
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
             Logo
           </Typography>
           {collapse ? drawer : navbar}
         </Toolbar>
-      </AppBar>
-    </div>
+      </div>
+    </AppBar>
   );
 };
 

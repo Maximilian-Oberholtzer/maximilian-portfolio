@@ -2,11 +2,9 @@ import { createTheme } from "@mui/material";
 
 const theme = createTheme({
   components: {
-    // Name of the component
     MuiButtonBase: {
       defaultProps: {
-        // The props to change the default for.
-        disableRipple: true, // No more ripple, on the whole application 💣!
+        disableRipple: true,
       },
     },
     MuiButton: {
@@ -23,8 +21,8 @@ const theme = createTheme({
   breakpoints: {
     values: {
       xs: 0,
-      sm: 816,
-      md: 1064,
+      sm: 960,
+      md: 1048,
       lg: 1200,
       xl: 1536,
     },
