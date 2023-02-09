@@ -1,4 +1,5 @@
 import { React, useState, useEffect } from "react";
+import { useTheme } from "@mui/styles";
 import { motion } from "framer-motion";
 import "animate.css";
 
@@ -19,6 +20,8 @@ const pathVariants = {
 
 const Loader = () => {
   const [hasLoaded, setHasLoaded] = useState(false);
+  const theme = useTheme();
+
   useEffect(() => {
     setTimeout(() => {
       setHasLoaded(true);
@@ -33,6 +36,7 @@ const Loader = () => {
         justifyContent: "center",
         alignItems: "center",
         height: "100vh",
+        backgroundColor: theme.palette.mainBlue.main,
       }}
     >
       <motion.svg

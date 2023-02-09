@@ -1,15 +1,19 @@
 import { Container } from "@mui/material";
-import { React, useEffect, useState } from "react";
+import { React } from "react";
+import { useTheme } from "@mui/styles";
 import useStyles from "./Styles";
 import Hero from "./sections/Hero";
 
 const Main = () => {
   const classes = useStyles();
+  const theme = useTheme();
 
   return (
-    <Container className={classes.mainContainer}>
-      <Hero />
-    </Container>
+    <div style={{ backgroundColor: theme.palette.mainBlue.main }}>
+      <Container className={classes.mainContainer}>
+        <Hero />
+      </Container>
+    </div>
   );
 };
 

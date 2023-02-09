@@ -1,9 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useTheme } from "@mui/material";
+import { ThemeContext } from "../ThemeContext";
 import useStyles from "./Styles";
 import ResumePdf from "../assets/Maximilian Oberholtzer Resume 2023.pdf";
 import { AppBar, Toolbar } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import WbSunnyIcon from "@mui/icons-material/WbSunny";
+import DarkModeIcon from "@mui/icons-material/DarkMode";
 import { Drawer, Box, List } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import { Button, useMediaQuery } from "@mui/material";
@@ -13,12 +16,13 @@ const resumeClick = () => {
 };
 
 const Navbar = () => {
+  const { theme, setTheme } = useContext(ThemeContext);
   const classes = useStyles();
   const [hasAnimated, setHasAnimated] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const theme = useTheme();
-  const collapse = useMediaQuery(theme.breakpoints.down("sm"));
+  const MuiTheme = useTheme();
+  const collapse = useMediaQuery(MuiTheme.breakpoints.down("sm"));
 
   useEffect(() => {
     setTimeout(() => {
@@ -87,6 +91,13 @@ const Navbar = () => {
               <Typography>Projects</Typography>
             </Button>
           </List>
+          <List>
+            <Button
+              onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+            >
+              {theme === "light" ? <WbSunnyIcon /> : <DarkModeIcon />}
+            </Button>
+          </List>
         </Box>
       </Drawer>
     </>
@@ -94,6 +105,14 @@ const Navbar = () => {
 
   const navbar = (
     <>
+      <div
+        className={!hasAnimated ? "animate__animated animate__fadeInDown" : ""}
+      >
+        <Button onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
+          {theme === "light" ? <WbSunnyIcon /> : <DarkModeIcon />}
+        </Button>
+      </div>
+
       <div
         className={!hasAnimated ? "animate__animated animate__fadeInDown" : ""}
       >
