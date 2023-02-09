@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
   },
   heroGrid: {
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "space-around",
     margin: "0rem !important",
     width: "auto",
   },

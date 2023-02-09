@@ -38,7 +38,6 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.white.main + " !important",
   },
   resumeButton: {
-    border: `2px solid ${theme.palette.darkBlue.main} !important`,
     borderRadius: "8px !important",
     backgroundColor: theme.palette.secondBlue.main + " !important",
     color: theme.palette.white.main + " !important",
