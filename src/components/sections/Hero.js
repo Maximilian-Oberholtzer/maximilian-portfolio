@@ -15,7 +15,6 @@ const ScrollerIcon = styled("div")({
   },
   width: "50px",
   height: "90px",
-  border: "2px solid white",
   borderRadius: "60px",
   position: "relative",
   "&::before": {
@@ -26,7 +25,6 @@ const ScrollerIcon = styled("div")({
     top: "10px",
     left: "50%",
     transform: "translateX(-50%)",
-    backgroundColor: "white",
     borderRadius: "50%",
     opacity: "1",
     animation: "wheel 2s infinite",
@@ -66,7 +64,7 @@ const Hero = () => {
           className="animate__animated animate__fadeInUp"
           style={{ marginTop: "2rem" }}
         >
-          <ScrollerIcon />
+          <ScrollerIcon className={classes.scrollerIcon} />
         </div>
       </Container>
     </section>

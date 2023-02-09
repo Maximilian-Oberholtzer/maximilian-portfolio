@@ -8,9 +8,12 @@ import { lightTheme, darkTheme } from "./Theme";
 import Navbar from "./components/Navbar";
 
 function App() {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState(() => {
+    return window.localStorage.getItem("theme") || "light";
+  });
   const muiTheme = theme === "light" ? lightTheme : darkTheme;
   const [isLoading, setIsloading] = useState(true);
+
   //Loader animation before rest of the page gets rendered
   useEffect(() => {
     setTimeout(() => {

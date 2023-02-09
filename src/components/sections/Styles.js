@@ -49,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
   },
   heroSubText: {
     marginTop: theme.spacing(3),
-    color: theme.palette.darkBlue.main,
+    color: theme.palette.darkBlue.main + " !important",
     fontSize: "clamp(20px, 2vw, 26px) !important",
   },
   heroImageContainer: {
@@ -68,6 +68,12 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.down("sm")]: {
       width: "180px",
+    },
+  },
+  scrollerIcon: {
+    border: "2px solid " + theme.palette.white.main + " !important",
+    "&::before": {
+      backgroundColor: theme.palette.white.main + " !important",
     },
   },
 }));

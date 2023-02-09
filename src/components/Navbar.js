@@ -38,6 +38,11 @@ const Navbar = () => {
     // };
   }, []);
 
+  //save the user's selected color theme choice
+  useEffect(() => {
+    window.localStorage.setItem("theme", theme);
+  }, [theme]);
+
   const toggleDrawer = (isOpen) => (event) => {
     if (
       event.type === "keydown" &&
@@ -72,27 +77,40 @@ const Navbar = () => {
             </Button>
           </List>
           <List>
-            <Button onClick={toggleDrawer(false)}>
+            <Button
+              className={classes.appBarButton}
+              onClick={toggleDrawer(false)}
+            >
               <Typography>About</Typography>
             </Button>
           </List>
           <List>
-            <Button onClick={toggleDrawer(false)}>
+            <Button
+              className={classes.appBarButton}
+              onClick={toggleDrawer(false)}
+            >
               <Typography>Experience</Typography>
             </Button>
           </List>
           <List>
-            <Button onClick={toggleDrawer(false)}>
+            <Button
+              className={classes.appBarButton}
+              onClick={toggleDrawer(false)}
+            >
               <Typography>Hobbies</Typography>
             </Button>
           </List>
           <List>
-            <Button onClick={toggleDrawer(false)}>
+            <Button
+              className={classes.appBarButton}
+              onClick={toggleDrawer(false)}
+            >
               <Typography>Projects</Typography>
             </Button>
           </List>
           <List>
             <Button
+              className={classes.appBarButton}
               onClick={() => setTheme(theme === "light" ? "dark" : "light")}
             >
               {theme === "light" ? <WbSunnyIcon /> : <DarkModeIcon />}
@@ -108,7 +126,10 @@ const Navbar = () => {
       <div
         className={!hasAnimated ? "animate__animated animate__fadeInDown" : ""}
       >
-        <Button onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
+        <Button
+          className={classes.appBarButton}
+          onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+        >
           {theme === "light" ? <WbSunnyIcon /> : <DarkModeIcon />}
         </Button>
       </div>
@@ -116,28 +137,28 @@ const Navbar = () => {
       <div
         className={!hasAnimated ? "animate__animated animate__fadeInDown" : ""}
       >
-        <Button>
+        <Button className={classes.appBarButton}>
           <Typography>About</Typography>
         </Button>
       </div>
       <div
         className={!hasAnimated ? "animate__animated animate__fadeInDown" : ""}
       >
-        <Button>
+        <Button className={classes.appBarButton}>
           <Typography>Experience</Typography>
         </Button>
       </div>
       <div
         className={!hasAnimated ? "animate__animated animate__fadeInDown" : ""}
       >
-        <Button>
+        <Button className={classes.appBarButton}>
           <Typography>Hobbies</Typography>
         </Button>
       </div>
       <div
         className={!hasAnimated ? "animate__animated animate__fadeInDown" : ""}
       >
-        <Button>
+        <Button className={classes.appBarButton}>
           <Typography>Projects</Typography>
         </Button>
       </div>

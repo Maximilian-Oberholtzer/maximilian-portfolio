@@ -17,6 +17,7 @@ export const lightTheme = createTheme({
   },
   typography: {
     fontFamily: "'Jost', sans-serif",
+    fontWeightRegular: 600,
   },
   breakpoints: {
     values: {
@@ -29,19 +30,19 @@ export const lightTheme = createTheme({
   },
   palette: {
     darkBlue: {
-      main: "#17252A",
+      main: "#0B132B",
     },
     secondBlue: {
-      main: "#2B7A78",
+      main: "#5BC0BE",
     },
     mainBlue: {
-      main: "#3AAFA9",
+      main: "#6FFFE9",
     },
     darkWhite: {
       main: "#DEF2F1",
     },
     white: {
-      main: "#FEFFFF",
+      main: "#0B132B",
     },
   },
 });
@@ -75,13 +76,13 @@ export const darkTheme = createTheme({
   },
   palette: {
     darkBlue: {
-      main: "#17252A",
+      main: "#6FFFE9",
     },
     secondBlue: {
-      main: "#2B7A78",
+      main: "#3A506B",
     },
     mainBlue: {
-      main: "#000000",
+      main: "#0B132B",
     },
     darkWhite: {
       main: "#DEF2F1",

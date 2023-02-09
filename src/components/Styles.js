@@ -5,13 +5,14 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: "1600px",
   },
   /////////////////
-  //Navbar Styles//
+  //AppBar Styles//
   /////////////////
   root: {
     width: "100vw",
   },
   title: {
     flexGrow: 1,
+    color: theme.palette.white.main + " !important",
   },
   appBarContainer: {
     flexDirection: "column",
@@ -33,10 +34,14 @@ const useStyles = makeStyles((theme) => ({
       padding: "1rem 2rem 1rem 2rem",
     },
   },
+  appBarButton: {
+    color: theme.palette.white.main + " !important",
+  },
   resumeButton: {
     border: `2px solid ${theme.palette.darkBlue.main} !important`,
     borderRadius: "8px !important",
     backgroundColor: theme.palette.secondBlue.main + " !important",
+    color: theme.palette.white.main + " !important",
   },
   //Drawer Styles//
   drawerButton: {
