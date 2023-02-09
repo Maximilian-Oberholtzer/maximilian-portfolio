@@ -9,7 +9,6 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.mainBlue.main,
     minHeight: "100vh",
     [theme.breakpoints.down("md")]: {},
-    [theme.breakpoints.down("sm")]: {},
   },
   heroContainer: {
     display: "flex !important",
@@ -17,11 +16,16 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     alignSelf: "center",
     boxSizing: "unset !important",
+    // [theme.breakpoints.down("sm")]: {
+    //   paddingTop: "88px",
+    // },
+    ["@media (max-height: 690px)"]: {
+      paddingTop: "96px",
+    },
   },
   heroGrid: {
     alignItems: "center",
     justifyContent: "center",
-    flexGrow: "0",
     margin: "0rem !important",
     width: "auto",
   },
@@ -29,7 +33,6 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
     animation: "fadeIn",
     animationDuration: "2s",
-    minWidth: "0",
     width: "50%",
     paddingLeft: "0 !important",
     [theme.breakpoints.down("sm")]: {
@@ -39,16 +42,15 @@ const useStyles = makeStyles((theme) => ({
     margin: "2rem 4rem 2rem 4rem ",
   },
   heroTitle: {
-    fontWeight: "bold",
+    fontWeight: "bold !important",
     color: theme.palette.white.main,
     marginBottom: theme.spacing(0),
-    fontSize: "clamp(32px, 4vw, 59px) !important",
+    fontSize: "clamp(32px, 4vw, 56px) !important",
   },
   heroSubText: {
     marginTop: theme.spacing(3),
-    fontWeight: "bold",
     color: theme.palette.darkBlue.main,
-    fontSize: "clamp(20px, 2vw, 28px) !important",
+    fontSize: "clamp(20px, 2vw, 26px) !important",
   },
   heroImageContainer: {
     paddingLeft: "0 !important",
@@ -56,12 +58,12 @@ const useStyles = makeStyles((theme) => ({
   heroImage: {
     animation: "fadeIn",
     animationDuration: "2s",
-    width: "300px",
+    width: "280px",
     borderRadius: "30px",
     backgroundColor: theme.palette.secondBlue.main,
     textAlign: "center",
     margin: "2rem 4rem 2rem 4rem ",
-    [theme.breakpoints.down("md")]: {
+    [theme.breakpoints.down("lg")]: {
       width: "230px",
     },
     [theme.breakpoints.down("sm")]: {

@@ -1,11 +1,10 @@
-import "./App.css";
 import { React, useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "@mui/material";
 import Loader from "./components/Loader";
-import Navbar from "./components/Navbar";
-import Hero from "./components/sections/Hero";
+import Main from "./components/Main";
 import Theme from "./Theme";
+import Navbar from "./components/Navbar";
 
 function App() {
   const theme = Theme;
@@ -25,7 +24,8 @@ function App() {
             <Loader></Loader>
           ) : (
             <>
-              <Navbar /> <Hero />
+              <Navbar />
+              <Main />
             </>
           )}
         </div>

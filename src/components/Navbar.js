@@ -63,31 +63,27 @@ const Navbar = () => {
       >
         <Box role="presentation" onKeyDown={toggleDrawer(false)}>
           <List>
-            <Button
-              className={classes.resumeButton}
-              color="inherit"
-              onClick={resumeClick}
-            >
+            <Button className={classes.resumeButton} onClick={resumeClick}>
               <Typography>Resume</Typography>
             </Button>
           </List>
           <List>
-            <Button onClick={toggleDrawer(false)} color="inherit">
+            <Button onClick={toggleDrawer(false)}>
               <Typography>About</Typography>
             </Button>
           </List>
           <List>
-            <Button onClick={toggleDrawer(false)} color="inherit">
+            <Button onClick={toggleDrawer(false)}>
               <Typography>Experience</Typography>
             </Button>
           </List>
           <List>
-            <Button onClick={toggleDrawer(false)} color="inherit">
+            <Button onClick={toggleDrawer(false)}>
               <Typography>Hobbies</Typography>
             </Button>
           </List>
           <List>
-            <Button onClick={toggleDrawer(false)} color="inherit">
+            <Button onClick={toggleDrawer(false)}>
               <Typography>Projects</Typography>
             </Button>
           </List>

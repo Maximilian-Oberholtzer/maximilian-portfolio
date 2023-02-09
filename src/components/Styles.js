@@ -1,6 +1,9 @@
 import { makeStyles } from "@mui/styles";
 
 const useStyles = makeStyles((theme) => ({
+  mainContainer: {
+    maxWidth: "1600px",
+  },
   /////////////////
   //Navbar Styles//
   /////////////////
@@ -19,6 +22,7 @@ const useStyles = makeStyles((theme) => ({
     width: "70vw !important",
     [theme.breakpoints.down("sm")]: {
       maxWidth: "90vw !important",
+      width: "90vw !important",
     },
   },
   appBar: {
@@ -41,7 +45,8 @@ const useStyles = makeStyles((theme) => ({
   drawer: {
     "& div.MuiPaper-root": {
       backgroundColor: theme.palette.mainBlue.main,
-      width: "60vw",
+      width: "50vw",
+      maxWidth: "20rem",
       textAlign: "center",
       justifyContent: "center",
       padding: "1.5rem 0 0 0",

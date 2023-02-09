@@ -15,7 +15,7 @@ const ScrollerIcon = styled("div")({
   },
   width: "50px",
   height: "90px",
-  border: "3px solid white",
+  border: "2px solid white",
   borderRadius: "60px",
   position: "relative",
   "&::before": {
@@ -41,6 +41,9 @@ const Hero = () => {
     <section className={classes.heroRoot}>
       <Container className={classes.heroContainer}>
         <Grid container spacing={0} className={classes.heroGrid}>
+          <Grid item className={classes.heroImageContainer}>
+            <img alt="" src={maxAvatar} className={classes.heroImage} />
+          </Grid>
           <Grid item className={classes.heroText}>
             <Typography
               className={classes.heroTitle}
@@ -58,11 +61,11 @@ const Hero = () => {
               designs
             </Typography>
           </Grid>
-          <Grid item className={classes.heroImageContainer}>
-            <img alt="" src={maxAvatar} className={classes.heroImage} />
-          </Grid>
         </Grid>
-        <div className="animate__animated animate__fadeInUp">
+        <div
+          className="animate__animated animate__fadeInUp"
+          style={{ marginTop: "2rem" }}
+        >
           <ScrollerIcon />
         </div>
       </Container>

@@ -38,7 +38,7 @@ const Loader = () => {
       <motion.svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 340 340"
-        width="40%"
+        width="30vw"
         initial="hidden"
         animate="visible"
       >
