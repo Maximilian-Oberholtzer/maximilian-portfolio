@@ -45,6 +45,7 @@ const useStyles = makeStyles((theme) => ({
   //Drawer Styles//
   drawerButton: {
     color: theme.palette.white.main,
+    fontSize: "2rem !important",
   },
   drawer: {
     "& div.MuiPaper-root": {
