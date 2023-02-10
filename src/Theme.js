@@ -30,10 +30,10 @@ export const lightTheme = createTheme({
   },
   palette: {
     darkBlue: {
-      main: "#3A506B",
+      main: "#4A678A",
     },
     secondBlue: {
-      main: "#B8FFF4",
+      main: "#5BC0BE",
     },
     mainBlue: {
       main: "#F5FFFD",

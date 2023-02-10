@@ -16,11 +16,8 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     alignSelf: "center",
     boxSizing: "unset !important",
-    // [theme.breakpoints.down("sm")]: {
-    //   paddingTop: "88px",
-    // },
-    ["@media (max-height: 690px)"]: {
-      paddingTop: "96px",
+    ["@media (max-height: 670px)"]: {
+      paddingTop: "102px",
     },
   },
   heroGrid: {
@@ -32,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
   heroText: {
     textAlign: "center",
     animation: "fadeIn",
-    animationDuration: "2s",
+    animationDuration: "4s",
     width: "50%",
     paddingLeft: "0 !important",
     [theme.breakpoints.down("sm")]: {
@@ -57,7 +54,7 @@ const useStyles = makeStyles((theme) => ({
   },
   heroImage: {
     animation: "fadeIn",
-    animationDuration: "2s",
+    animationDuration: "4s",
     width: "280px",
     borderRadius: "30px",
     backgroundColor: theme.palette.secondBlue.main,
@@ -71,7 +68,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   scrollerIcon: {
-    border: "2px solid " + theme.palette.white.main + " !important",
+    border: "3px solid " + theme.palette.white.main + " !important",
     "&::before": {
       backgroundColor: theme.palette.white.main + " !important",
     },

@@ -61,8 +61,11 @@ const Hero = () => {
           </Grid>
         </Grid>
         <div
-          className="animate__animated animate__fadeInUp"
-          style={{ marginTop: "2rem" }}
+          style={{
+            marginTop: "2rem",
+            animation: "fadeIn",
+            animationDuration: "5s",
+          }}
         >
           <ScrollerIcon className={classes.scrollerIcon} />
         </div>
