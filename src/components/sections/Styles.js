@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
   heroText: {
     textAlign: "center",
     animation: "fadeIn",
-    animationDuration: "4s",
+    animationDuration: "3s",
     width: "50%",
     paddingLeft: "0 !important",
     [theme.breakpoints.down("sm")]: {
@@ -54,7 +54,7 @@ const useStyles = makeStyles((theme) => ({
   },
   heroImage: {
     animation: "fadeIn",
-    animationDuration: "4s",
+    animationDuration: "3s",
     width: "280px",
     borderRadius: "30px",
     backgroundColor: theme.palette.secondBlue.main,

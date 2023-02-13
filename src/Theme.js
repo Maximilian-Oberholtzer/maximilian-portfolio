@@ -11,6 +11,9 @@ export const lightTheme = createTheme({
       styleOverrides: {
         root: {
           color: "#FEFFFF",
+          "&:hover": {
+            backgroundColor: "transparent",
+          },
         },
       },
     },
@@ -30,16 +33,16 @@ export const lightTheme = createTheme({
   },
   palette: {
     darkBlue: {
-      main: "#4A678A",
+      main: "#9EB2CB",
     },
     secondBlue: {
-      main: "#5BC0BE",
+      main: "#ACDFDE",
     },
     mainBlue: {
       main: "#F5FFFD",
     },
     darkWhite: {
-      main: "#DEF2F1",
+      main: "#7DCDCB",
     },
     white: {
       main: "#0B132B",
@@ -58,6 +61,9 @@ export const darkTheme = createTheme({
       styleOverrides: {
         root: {
           color: "#FEFFFF",
+          "&:hover": {
+            backgroundColor: "transparent",
+          },
         },
       },
     },
@@ -85,7 +91,7 @@ export const darkTheme = createTheme({
       main: "#0B132B",
     },
     darkWhite: {
-      main: "#DEF2F1",
+      main: "#53739A",
     },
     white: {
       main: "#FEFFFF",

@@ -27,7 +27,7 @@ const Loader = () => {
   useEffect(() => {
     setTimeout(() => {
       setHasLoaded(true);
-    }, 2000);
+    }, 2100);
   }, []);
 
   return (
