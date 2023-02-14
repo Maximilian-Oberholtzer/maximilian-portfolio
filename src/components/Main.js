@@ -4,6 +4,7 @@ import { useTheme } from "@mui/styles";
 import useStyles from "./Styles";
 import Hero from "./sections/Hero";
 import SideAnchorLinks from "./SideAnchorLinks";
+import About from "./sections/About";
 
 const Main = () => {
   const classes = useStyles();
@@ -16,6 +17,7 @@ const Main = () => {
 
       <Container className={classes.mainContainer}>
         <Hero />
+        <About />
       </Container>
     </div>
   );

@@ -6,6 +6,9 @@ const useStyles = makeStyles((theme) => ({
   ///////////////
   heroRoot: {
     display: "flex",
+    flexWrap: "wrap",
+    alignContent: "center",
+    justifyContent: "center",
     backgroundColor: theme.palette.mainBlue.main,
     minHeight: "100vh",
     [theme.breakpoints.down("md")]: {},
@@ -72,6 +75,13 @@ const useStyles = makeStyles((theme) => ({
     "&::before": {
       backgroundColor: theme.palette.white.main + " !important",
     },
+  },
+  ////////////////
+  //About Styles//
+  ////////////////
+  aboutRoot: {
+    minHeight: "100vh",
+    justifyContent: "center",
   },
 }));
 
