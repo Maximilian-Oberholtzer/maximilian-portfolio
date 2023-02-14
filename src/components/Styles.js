@@ -1,6 +1,22 @@
 import { makeStyles } from "@mui/styles";
 
 const useStyles = makeStyles((theme) => ({
+  //override default scrollbar
+  // "@global": {
+  //   "*::-webkit-scrollbar": {
+  //     width: ".8em",
+  //   },
+  //   "*::-webkit-scrollbar-track": {
+  //     "-webkit-box-shadow": "inset 0 0 6px rgba(0,0,0,0.00)",
+  //     backgroundColor: theme.palette.mainBlue.main + " !important",
+  //   },
+  //   "*::-webkit-scrollbar-thumb": {
+  //     backgroundColor: theme.palette.secondBlue.main + " !important",
+  //     border: "3px solid " + theme.palette.mainBlue.main + " !important",
+  //     borderRadius: "2rem",
+  //   },
+  // },
+
   mainContainer: {
     maxWidth: "1600px",
   },
