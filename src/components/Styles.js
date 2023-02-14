@@ -16,7 +16,6 @@ const useStyles = makeStyles((theme) => ({
     left: "40px",
     right: "auto",
     Zndex: "10",
-    lineHeight: "44px",
     animation: "fadeInLeft",
     animationDuration: "1s",
   },
@@ -69,22 +68,24 @@ const useStyles = makeStyles((theme) => ({
   },
   appBar: {
     transition:
-      "all 0.3s cubic-bezier(0.645,0.045,0.355,1), background-color 1ms, box-shadow 1ms !important",
+      "all 0.4s cubic-bezier(0.645,0.045,0.355,1), background-color 0ms !important",
+    transitionDelay: "0.s",
     transform: "translate3d(0,0,0)",
     boxShadow: "none !important",
     backgroundColor: theme.palette.mainBlue.main + " !important",
+    border: "none !important",
     padding: "2rem 5rem 2rem 5rem",
     [theme.breakpoints.down("sm")]: {
       padding: "1rem 2rem 1rem 2rem",
     },
   },
   appBarScrolled: {
-    transition:
-      "all 0.3s cubic-bezier(0.645,0.045,0.355,1), background-color 1ms !important",
+    // transition:
+    //   "all 0.4s cubic-bezier(0.645,0.045,0.355,1), background-color 0ms !important",
+    // transitionDelay: "0.1s",
     transform: "translate3d(0,0,0)",
     backgroundColor: theme.palette.mainBlue.main + " !important",
-    boxShadow:
-      "0px 2px 4px -1px rgb(0 0 0 / 7%), 0px 4px 5px 0px rgb(0 0 0 / 5%), 0px 1px 10px 0px rgb(0 0 0 / 3%)",
+    boxShadow: "none !important",
     padding: "0.5rem 5rem 0.5rem 5rem",
     [theme.breakpoints.down("sm")]: {
       padding: "0.5rem 2rem 0.5rem 2rem",

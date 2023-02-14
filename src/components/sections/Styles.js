@@ -80,8 +80,26 @@ const useStyles = makeStyles((theme) => ({
   //About Styles//
   ////////////////
   aboutRoot: {
-    minHeight: "100vh",
+    minHeight: "50vh",
     justifyContent: "center",
+    display: "flex",
+    flexWrap: "wrap",
+    alignContent: "center",
+  },
+  aboutContainer: {
+    display: "flex !important",
+    flexDirection: "column",
+    alignItems: "center",
+    alignSelf: "center",
+    boxSizing: "unset !important",
+    // ["@media (max-height: 670px)"]: {
+    //   paddingTop: "102px",
+    // },
+  },
+  aboutTitle: {
+    fontWeight: "bold !important",
+    color: theme.palette.white.main,
+    fontSize: "clamp(32px, 4vw, 56px) !important",
   },
 }));
 
