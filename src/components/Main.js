@@ -12,7 +12,7 @@ const Main = () => {
   const showSideAnchor = useMediaQuery(theme.breakpoints.down("lg"));
 
   return (
-    <div style={{ backgroundColor: theme.palette.mainBlue.main }}>
+    <div style={{ backgroundColor: theme.palette.background.main }}>
       {showSideAnchor ? <></> : <SideAnchorLinks />}
 
       <Container className={classes.mainContainer}>

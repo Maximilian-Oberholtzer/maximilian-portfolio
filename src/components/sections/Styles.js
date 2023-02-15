@@ -9,9 +9,8 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: "wrap",
     alignContent: "center",
     justifyContent: "center",
-    backgroundColor: theme.palette.mainBlue.main,
+    backgroundColor: theme.palette.background.main,
     minHeight: "100vh",
-    [theme.breakpoints.down("md")]: {},
   },
   heroContainer: {
     display: "flex !important",
@@ -43,13 +42,13 @@ const useStyles = makeStyles((theme) => ({
   },
   heroTitle: {
     fontWeight: "bold !important",
-    color: theme.palette.white.main,
+    color: theme.palette.textMain.main,
     marginBottom: theme.spacing(0),
     fontSize: "clamp(32px, 4vw, 56px) !important",
   },
   heroSubText: {
     marginTop: theme.spacing(3),
-    color: theme.palette.darkBlue.main + " !important",
+    color: theme.palette.textSecondary.main + " !important",
     fontSize: "clamp(20px, 2vw, 26px) !important",
   },
   heroImageContainer: {
@@ -60,7 +59,7 @@ const useStyles = makeStyles((theme) => ({
     animationDuration: "3s",
     width: "280px",
     borderRadius: "30px",
-    backgroundColor: theme.palette.secondBlue.main,
+    backgroundColor: theme.palette.backgroundSecondary.main,
     textAlign: "center",
     margin: "2rem 4rem 2rem 4rem ",
     [theme.breakpoints.down("lg")]: {
@@ -71,9 +70,9 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   scrollerIcon: {
-    border: "3px solid " + theme.palette.white.main + " !important",
+    border: "3px solid " + theme.palette.textMain.main + " !important",
     "&::before": {
-      backgroundColor: theme.palette.white.main + " !important",
+      backgroundColor: theme.palette.textMain.main + " !important",
     },
   },
   ////////////////
@@ -92,14 +91,17 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     alignSelf: "center",
     boxSizing: "unset !important",
-    // ["@media (max-height: 670px)"]: {
-    //   paddingTop: "102px",
-    // },
+    maxWidth: "1000px !important",
   },
   aboutTitle: {
     fontWeight: "bold !important",
-    color: theme.palette.white.main,
+    color: theme.palette.textMain.main,
     fontSize: "clamp(32px, 4vw, 56px) !important",
+  },
+  aboutSubText: {
+    color: theme.palette.textMain.main,
+    fontSize: "clamp(20px, 2vw, 26px) !important",
+    textAlign: "center",
   },
 }));
 

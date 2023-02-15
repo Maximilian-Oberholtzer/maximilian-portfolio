@@ -10,8 +10,12 @@ const About = () => {
   return (
     <section className={classes.aboutRoot}>
       <Container className={classes.aboutContainer}>
-        <Typography className={classes.aboutTitle} component="h1" variant="h5">
+        <Typography className={classes.aboutTitle} component="h1">
           About Me
+        </Typography>
+        <Typography className={classes.aboutSubText} component="h1">
+          Hey there! My name is Maximilian and I have been building different
+          types of web and mobile applications for 7+ years.
         </Typography>
       </Container>
     </section>
