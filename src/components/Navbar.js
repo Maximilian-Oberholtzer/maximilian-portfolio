@@ -10,6 +10,7 @@ import DarkModeIcon from "@mui/icons-material/DarkMode";
 import { Drawer, Box, List } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import { Button, useMediaQuery, useScrollTrigger, Slide } from "@mui/material";
+import * as Scroll from "react-scroll";
 
 const resumeClick = () => {
   window.open(ResumePdf, "_blank");
@@ -67,6 +68,17 @@ const Navbar = () => {
     setIsOpen(isOpen);
   };
 
+  //scroll to section based on navbar links
+  const scrollToSection = (element) => {
+    setIsOpen(false);
+
+    Scroll.scroller.scrollTo(element, {
+      duration: 1000,
+      delay: 0,
+      smooth: true,
+    });
+  };
+
   const drawer = (
     <>
       <div
@@ -93,7 +105,9 @@ const Navbar = () => {
           <List>
             <Button
               className={classes.appBarButton}
-              onClick={toggleDrawer(false)}
+              onClick={() => {
+                scrollToSection("About");
+              }}
             >
               <Typography>About</Typography>
             </Button>
@@ -101,7 +115,9 @@ const Navbar = () => {
           <List>
             <Button
               className={classes.appBarButton}
-              onClick={toggleDrawer(false)}
+              onClick={() => {
+                scrollToSection("About");
+              }}
             >
               <Typography>Experience</Typography>
             </Button>
@@ -109,7 +125,9 @@ const Navbar = () => {
           <List>
             <Button
               className={classes.appBarButton}
-              onClick={toggleDrawer(false)}
+              onClick={() => {
+                scrollToSection("Hobbies");
+              }}
             >
               <Typography>Hobbies</Typography>
             </Button>
@@ -117,7 +135,9 @@ const Navbar = () => {
           <List>
             <Button
               className={classes.appBarButton}
-              onClick={toggleDrawer(false)}
+              onClick={() => {
+                scrollToSection("Hobbies");
+              }}
             >
               <Typography>Projects</Typography>
             </Button>
@@ -151,28 +171,48 @@ const Navbar = () => {
       <div
         className={!hasAnimated ? "animate__animated animate__fadeInDown" : ""}
       >
-        <Button className={classes.appBarButton}>
+        <Button
+          onClick={() => {
+            scrollToSection("About");
+          }}
+          className={classes.appBarButton}
+        >
           <Typography>About</Typography>
         </Button>
       </div>
       <div
         className={!hasAnimated ? "animate__animated animate__fadeInDown" : ""}
       >
-        <Button className={classes.appBarButton}>
+        <Button
+          onClick={() => {
+            scrollToSection("About");
+          }}
+          className={classes.appBarButton}
+        >
           <Typography>Experience</Typography>
         </Button>
       </div>
       <div
         className={!hasAnimated ? "animate__animated animate__fadeInDown" : ""}
       >
-        <Button className={classes.appBarButton}>
+        <Button
+          onClick={() => {
+            scrollToSection("Hobbies");
+          }}
+          className={classes.appBarButton}
+        >
           <Typography>Hobbies</Typography>
         </Button>
       </div>
       <div
         className={!hasAnimated ? "animate__animated animate__fadeInDown" : ""}
       >
-        <Button className={classes.appBarButton}>
+        <Button
+          onClick={() => {
+            scrollToSection("About");
+          }}
+          className={classes.appBarButton}
+        >
           <Typography>Projects</Typography>
         </Button>
       </div>

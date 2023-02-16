@@ -103,6 +103,47 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "clamp(20px, 2vw, 26px) !important",
     textAlign: "center",
   },
+  //////////////////
+  //Hobbies Styles//
+  //////////////////
+  hobbiesRoot: {
+    minHeight: "50vh",
+    justifyContent: "center",
+    display: "flex",
+    flexWrap: "wrap",
+    alignContent: "center",
+  },
+  hobbiesContainer: {
+    display: "flex !important",
+    flexDirection: "column",
+    alignItems: "center",
+    alignSelf: "center",
+    boxSizing: "unset !important",
+    maxWidth: "1000px !important",
+  },
+  hobbiesTitle: {
+    fontWeight: "bold !important",
+    color: theme.palette.textMain.main,
+    fontSize: "clamp(32px, 4vw, 56px) !important",
+  },
+  hobbiesSubText: {
+    color: theme.palette.textMain.main,
+    fontSize: "clamp(20px, 2vw, 26px) !important",
+    textAlign: "center",
+  },
+  hobbiesGridTitle: {
+    fontSize: "clamp(20px, 2vw, 26px) !important",
+    textAlign: "center",
+  },
+  hobbiesGridItem: {
+    display: "flex",
+    flexDirection: "column !important",
+    justifyContent: "space-between",
+    padding: "4rem !important",
+    height: "20rem",
+    color: theme.palette.textMain.main,
+    borderRadius: "1rem",
+  },
 }));
 
 export default useStyles;
