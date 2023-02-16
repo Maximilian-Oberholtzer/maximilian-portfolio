@@ -24,6 +24,10 @@ const pathVariants = {
 const Hobbies = () => {
   const classes = useStyles();
   const theme = useTheme();
+  const [hobbiesContainer, hobbiesContainerInView] = useInView({
+    threshold: 0,
+    triggerOnce: true,
+  });
   const [ref1, inView1] = useInView({ threshold: 0, triggerOnce: true });
   const [ref2, inView2] = useInView({ threshold: 0, triggerOnce: true });
   const [ref3, inView3] = useInView({ threshold: 0, triggerOnce: true });
@@ -31,20 +35,25 @@ const Hobbies = () => {
   return (
     <Scroll.Element name="Hobbies">
       <section className={classes.hobbiesRoot}>
-        <Container className={classes.hobbiesContainer}>
-          <Typography className={classes.hobbiesTitle} component="h1">
-            Hobbies
-          </Typography>
-          <Typography className={classes.hobbiesSubText} component="h1">
-            Aside from making applications, these are the things I that enjoy to
-            do for fun!
-          </Typography>
+        <Container className={classes.hobbiesContainer} ref={hobbiesContainer}>
+          {hobbiesContainerInView && (
+            <>
+              <Typography className={classes.hobbiesTitle} component="h1">
+                Hobbies
+              </Typography>
+              <Typography className={classes.hobbiesSubText} component="h1">
+                Aside from making applications, these are the things I that
+                enjoy to do for fun!
+              </Typography>
+            </>
+          )}
+
           <Grid
             container
             spacing={1}
-            style={{ padding: "4rem", justifyContent: "center" }}
+            style={{ padding: "2rem 0rem 2rem 0rem", justifyContent: "center" }}
           >
-            <Grid item className={classes.hobbiesGridItem}>
+            <Grid item xs={12} sm={4} className={classes.hobbiesGridItem}>
               {inView1 && (
                 <motion.svg
                   viewBox="0 0 512 512"
@@ -64,8 +73,9 @@ const Hobbies = () => {
               <Typography className={classes.hobbiesGridTitle} ref={ref1}>
                 Tennis
               </Typography>
+              <Typography>Achieved a peak ranking of 12 UTR</Typography>
             </Grid>
-            <Grid item className={classes.hobbiesGridItem}>
+            <Grid item xs={12} sm={4} className={classes.hobbiesGridItem}>
               {inView2 && (
                 <motion.svg
                   viewBox="0 0 512 512"
@@ -85,8 +95,9 @@ const Hobbies = () => {
               <Typography className={classes.hobbiesGridTitle} ref={ref2}>
                 Cubing
               </Typography>
+              <Typography>Fastest 3x3 solve time: 10.51 seconds</Typography>
             </Grid>
-            <Grid item className={classes.hobbiesGridItem}>
+            <Grid item xs={12} sm={4} className={classes.hobbiesGridItem}>
               {inView3 && (
                 <motion.svg
                   viewBox="0 0 300.000000 134.000000"
@@ -107,6 +118,7 @@ const Hobbies = () => {
               )}
               <Typography className={classes.hobbiesGridTitle} ref={ref3}>
                 Rocket League
+                <Typography>Top 100 global Solo Duel player</Typography>
               </Typography>
             </Grid>
           </Grid>
