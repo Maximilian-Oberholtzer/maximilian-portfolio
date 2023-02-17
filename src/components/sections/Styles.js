@@ -1,6 +1,13 @@
 import { makeStyles } from "@mui/styles";
 
 const useStyles = makeStyles((theme) => ({
+  divider: {
+    height: "0.4rem",
+    width: "2rem",
+    borderRadius: "2rem",
+    margin: "1rem",
+    background: theme.palette.textSecondary.main,
+  },
   ///////////////
   //Hero Styles//
   ///////////////
@@ -106,6 +113,7 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: "bold !important",
     color: theme.palette.textMain.main,
     fontSize: "clamp(32px, 4vw, 56px) !important",
+    textAlign: "-webkit-center",
     animation: "fadeInUp",
     animationDuration: "1s",
   },
@@ -114,7 +122,17 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "clamp(20px, 2vw, 26px) !important",
     textAlign: "center",
     animation: "fadeInUp",
-    animationDuration: "1s",
+    animationDuration: "1.25s",
+  },
+  scrollingItem: {
+    background: theme.palette.backgroundSecondary.main,
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    marginRight: "3rem",
+    borderRadius: "1rem",
+    padding: "1rem",
+    minWidth: "8rem",
   },
   //////////////////
   //Hobbies Styles//
@@ -138,6 +156,7 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: "bold !important",
     color: theme.palette.textMain.main,
     fontSize: "clamp(32px, 4vw, 56px) !important",
+    textAlign: "-webkit-center",
     animation: "fadeInUp",
     animationDuration: "1s",
   },
@@ -146,7 +165,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "clamp(20px, 2vw, 26px) !important",
     textAlign: "center",
     animation: "fadeInUp",
-    animationDuration: "1s",
+    animationDuration: "1.25s",
   },
   hobbiesGrid: {
     padding: "2rem 0rem 2rem 0rem",

@@ -56,6 +56,7 @@ const Hobbies = () => {
             <>
               <Typography className={classes.hobbiesTitle} component="h1">
                 Hobbies
+                <div className={classes.divider} />
               </Typography>
               <Typography className={classes.hobbiesSubText} component="h1">
                 Aside from making applications, these are the things I that
