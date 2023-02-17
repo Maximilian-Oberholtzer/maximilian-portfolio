@@ -9,17 +9,22 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: "wrap",
     alignContent: "center",
     justifyContent: "center",
+    flexDirection: "column",
+    alignItems: "center",
     backgroundColor: theme.palette.background.main,
     minHeight: "100vh",
   },
   heroContainer: {
     display: "flex !important",
-    flexDirection: "column",
+    flex: "1",
     alignItems: "center",
     alignSelf: "center",
     boxSizing: "unset !important",
-    ["@media (max-height: 670px)"]: {
+    ["@media (max-height: 730px)"]: {
       paddingTop: "102px",
+    },
+    [theme.breakpoints.up("sm")]: {
+      marginTop: "2rem",
     },
   },
   heroGrid: {
@@ -70,6 +75,8 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   scrollerIcon: {
+    marginBottom: "4rem",
+    marginTop: "1rem",
     border: "3px solid " + theme.palette.textMain.main + " !important",
     "&::before": {
       backgroundColor: theme.palette.textMain.main + " !important",
