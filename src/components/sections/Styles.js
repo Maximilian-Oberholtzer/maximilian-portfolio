@@ -1,6 +1,17 @@
 import { makeStyles } from "@mui/styles";
 
 const useStyles = makeStyles((theme) => ({
+  "@keyframes fadeInUp": {
+    from: {
+      opacity: "0",
+      transform: "translate3d(0, 50%, 0)",
+    },
+
+    to: {
+      opacity: "1",
+      transform: "translate3d(0, 0, 0)",
+    },
+  },
   ///////////////
   //Hero Styles//
   ///////////////
@@ -79,7 +90,7 @@ const useStyles = makeStyles((theme) => ({
   //About Styles//
   ////////////////
   aboutRoot: {
-    minHeight: "50vh",
+    minHeight: "100vh",
     justifyContent: "center",
     display: "flex",
     flexWrap: "wrap",
@@ -97,21 +108,21 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: "bold !important",
     color: theme.palette.textMain.main,
     fontSize: "clamp(32px, 4vw, 56px) !important",
-    animation: "fadeIn",
-    animationDuration: "2s",
+    animation: "fadeInUp",
+    animationDuration: "1s",
   },
   aboutSubText: {
     color: theme.palette.textMain.main,
     fontSize: "clamp(20px, 2vw, 26px) !important",
     textAlign: "center",
-    animation: "fadeIn",
-    animationDuration: "2s",
+    animation: "fadeInUp",
+    animationDuration: "1s",
   },
   //////////////////
   //Hobbies Styles//
   //////////////////
   hobbiesRoot: {
-    minHeight: "50vh",
+    minHeight: "100vh",
     justifyContent: "center",
     display: "flex",
     flexWrap: "wrap",
@@ -129,30 +140,43 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: "bold !important",
     color: theme.palette.textMain.main,
     fontSize: "clamp(32px, 4vw, 56px) !important",
-    animation: "fadeIn",
-    animationDuration: "2s",
+    animation: "fadeInUp",
+    animationDuration: "1s",
   },
   hobbiesSubText: {
     color: theme.palette.textMain.main,
     fontSize: "clamp(20px, 2vw, 26px) !important",
     textAlign: "center",
-    animation: "fadeIn",
-    animationDuration: "2s",
+    animation: "fadeInUp",
+    animationDuration: "1s",
+  },
+  hobbiesGrid: {
+    padding: "2rem 0rem 2rem 0rem",
+    justifyContent: "center",
+    animation: "fadeInUp",
+    animationDuration: "1.25s",
   },
   hobbiesGridTitle: {
-    fontSize: "clamp(20px, 2vw, 26px) !important",
+    fontSize: "clamp(26px, 2vw, 30px) !important",
+    color: theme.palette.textMain.main,
+    textAlign: "center",
+    marginTop: "1rem !important",
+  },
+  hobbiesGridSubtext: {
+    fontSize: "clamp(16px, 1.5vw, 18px) !important",
+    color: theme.palette.textSecondary.main,
     textAlign: "center",
   },
   hobbiesGridItem: {
     display: "flex",
     flexDirection: "column !important",
-    justifyContent: "space-between",
     alignItems: "center",
     padding: "4rem 4rem 4rem 4rem !important",
+    [theme.breakpoints.down("sm")]: {
+      padding: "2rem 4rem 2rem 4rem !important",
+    },
     textAlign: "center",
-    height: "20rem",
     color: theme.palette.textMain.main,
-    borderRadius: "1rem",
     minWidth: "33%",
     flexGrow: "1",
   },

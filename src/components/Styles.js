@@ -102,7 +102,7 @@ const useStyles = makeStyles((theme) => ({
     transform: "translate3d(0,0,0)",
     backgroundColor: theme.palette.background.main + " !important",
     boxShadow:
-      "0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%)",
+      "1px 0px 4px -1px rgb(0 0 0 / 20%), 0px 2px 20px 0px rgb(0 0 0 / 14%), 1px -1px 12px 0px rgb(0 0 0 / 12%)",
     padding: "0.5rem 5rem 0.5rem 5rem",
     [theme.breakpoints.down("sm")]: {
       padding: "0.5rem 2rem 0.5rem 2rem",

@@ -5,21 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* background-color: #3aafa9 !important; */
 }
-
-/* body::-webkit-scrollbar {
-  width: 0.4em;
-  background-color: #2b7a78;
-}
-
-body::-webkit-scrollbar-thumb {
-  background-color: #3aafa9;
-}
-
-body::-webkit-scrollbar-track {
-  background-color: #3aafa9;
-} */
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
