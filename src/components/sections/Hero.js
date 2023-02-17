@@ -10,17 +10,17 @@ const ScrollerIcon = styled("div")({
   "@keyframes wheel": {
     to: {
       opacity: 0,
-      top: "60px",
+      top: "3rem",
     },
   },
-  width: "50px",
-  height: "90px",
-  borderRadius: "60px",
+  width: "2rem",
+  height: "4rem",
+  borderRadius: "2rem",
   position: "relative",
   "&::before": {
     content: "''",
-    width: "12px",
-    height: "12px",
+    width: "0.5rem",
+    height: "0.5rem",
     position: "absolute",
     top: "10px",
     left: "50%",
@@ -60,16 +60,16 @@ const Hero = () => {
             </Typography>
           </Grid>
         </Grid>
-        <div
-          style={{
-            marginTop: "2rem",
-            animation: "fadeIn",
-            animationDuration: "5s",
-          }}
-        >
-          <ScrollerIcon className={classes.scrollerIcon} />
-        </div>
       </Container>
+      <div
+        style={{
+          marginTop: "2rem",
+          animation: "fadeIn",
+          animationDuration: "5s",
+        }}
+      >
+        <ScrollerIcon className={classes.scrollerIcon} />
+      </div>
     </section>
   );
 };

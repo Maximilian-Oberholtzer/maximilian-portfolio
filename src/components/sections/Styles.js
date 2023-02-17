@@ -6,9 +6,11 @@ const useStyles = makeStyles((theme) => ({
   ///////////////
   heroRoot: {
     display: "flex",
-    backgroundColor: theme.palette.mainBlue.main,
+    flexWrap: "wrap",
+    alignContent: "center",
+    justifyContent: "center",
+    backgroundColor: theme.palette.background.main,
     minHeight: "100vh",
-    [theme.breakpoints.down("md")]: {},
   },
   heroContainer: {
     display: "flex !important",
@@ -29,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
   heroText: {
     textAlign: "center",
     animation: "fadeIn",
-    animationDuration: "4s",
+    animationDuration: "2s",
     width: "50%",
     paddingLeft: "0 !important",
     [theme.breakpoints.down("sm")]: {
@@ -40,13 +42,13 @@ const useStyles = makeStyles((theme) => ({
   },
   heroTitle: {
     fontWeight: "bold !important",
-    color: theme.palette.white.main,
+    color: theme.palette.textMain.main,
     marginBottom: theme.spacing(0),
     fontSize: "clamp(32px, 4vw, 56px) !important",
   },
   heroSubText: {
     marginTop: theme.spacing(3),
-    color: theme.palette.darkBlue.main + " !important",
+    color: theme.palette.textSecondary.main + " !important",
     fontSize: "clamp(20px, 2vw, 26px) !important",
   },
   heroImageContainer: {
@@ -54,10 +56,10 @@ const useStyles = makeStyles((theme) => ({
   },
   heroImage: {
     animation: "fadeIn",
-    animationDuration: "4s",
+    animationDuration: "2s",
     width: "280px",
     borderRadius: "30px",
-    backgroundColor: theme.palette.secondBlue.main,
+    backgroundColor: theme.palette.backgroundSecondary.main,
     textAlign: "center",
     margin: "2rem 4rem 2rem 4rem ",
     [theme.breakpoints.down("lg")]: {
@@ -68,10 +70,104 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   scrollerIcon: {
-    border: "3px solid " + theme.palette.white.main + " !important",
+    border: "3px solid " + theme.palette.textMain.main + " !important",
     "&::before": {
-      backgroundColor: theme.palette.white.main + " !important",
+      backgroundColor: theme.palette.textMain.main + " !important",
     },
+  },
+  ////////////////
+  //About Styles//
+  ////////////////
+  aboutRoot: {
+    minHeight: "100vh",
+    justifyContent: "center",
+    display: "flex",
+    flexWrap: "wrap",
+    alignContent: "center",
+  },
+  aboutContainer: {
+    display: "flex !important",
+    flexDirection: "column",
+    alignItems: "center",
+    alignSelf: "center",
+    boxSizing: "unset !important",
+    maxWidth: "1000px !important",
+  },
+  aboutTitle: {
+    fontWeight: "bold !important",
+    color: theme.palette.textMain.main,
+    fontSize: "clamp(32px, 4vw, 56px) !important",
+    animation: "fadeInUp",
+    animationDuration: "1s",
+  },
+  aboutSubText: {
+    color: theme.palette.textMain.main,
+    fontSize: "clamp(20px, 2vw, 26px) !important",
+    textAlign: "center",
+    animation: "fadeInUp",
+    animationDuration: "1s",
+  },
+  //////////////////
+  //Hobbies Styles//
+  //////////////////
+  hobbiesRoot: {
+    minHeight: "100vh",
+    justifyContent: "center",
+    display: "flex",
+    flexWrap: "wrap",
+    alignContent: "center",
+  },
+  hobbiesContainer: {
+    display: "flex !important",
+    flexDirection: "column",
+    alignItems: "center",
+    alignSelf: "center",
+    boxSizing: "unset !important",
+    maxWidth: "1000px !important",
+  },
+  hobbiesTitle: {
+    fontWeight: "bold !important",
+    color: theme.palette.textMain.main,
+    fontSize: "clamp(32px, 4vw, 56px) !important",
+    animation: "fadeInUp",
+    animationDuration: "1s",
+  },
+  hobbiesSubText: {
+    color: theme.palette.textMain.main,
+    fontSize: "clamp(20px, 2vw, 26px) !important",
+    textAlign: "center",
+    animation: "fadeInUp",
+    animationDuration: "1s",
+  },
+  hobbiesGrid: {
+    padding: "2rem 0rem 2rem 0rem",
+    justifyContent: "center",
+    animation: "fadeInUp",
+    animationDuration: "1.25s",
+  },
+  hobbiesGridTitle: {
+    fontSize: "clamp(26px, 2vw, 30px) !important",
+    color: theme.palette.textMain.main,
+    textAlign: "center",
+    marginTop: "1rem !important",
+  },
+  hobbiesGridSubtext: {
+    fontSize: "clamp(16px, 1.5vw, 18px) !important",
+    color: theme.palette.textSecondary.main,
+    textAlign: "center",
+  },
+  hobbiesGridItem: {
+    display: "flex",
+    flexDirection: "column !important",
+    alignItems: "center",
+    padding: "4rem 4rem 4rem 4rem !important",
+    [theme.breakpoints.down("sm")]: {
+      padding: "2rem 4rem 2rem 4rem !important",
+    },
+    textAlign: "center",
+    color: theme.palette.textMain.main,
+    minWidth: "33%",
+    flexGrow: "1",
   },
 }));
 

@@ -4,6 +4,8 @@ import { useTheme } from "@mui/styles";
 import useStyles from "./Styles";
 import Hero from "./sections/Hero";
 import SideAnchorLinks from "./SideAnchorLinks";
+import About from "./sections/About";
+import Hobbies from "./sections/Hobbies";
 
 const Main = () => {
   const classes = useStyles();
@@ -11,11 +13,13 @@ const Main = () => {
   const showSideAnchor = useMediaQuery(theme.breakpoints.down("lg"));
 
   return (
-    <div style={{ backgroundColor: theme.palette.mainBlue.main }}>
+    <div style={{ backgroundColor: theme.palette.background.main }}>
       {showSideAnchor ? <></> : <SideAnchorLinks />}
 
       <Container className={classes.mainContainer}>
         <Hero />
+        <About />
+        <Hobbies />
       </Container>
     </div>
   );

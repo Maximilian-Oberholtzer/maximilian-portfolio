@@ -11,6 +11,9 @@ export const lightTheme = createTheme({
       styleOverrides: {
         root: {
           color: "#FEFFFF",
+          "&:hover": {
+            backgroundColor: "transparent",
+          },
         },
       },
     },
@@ -29,20 +32,20 @@ export const lightTheme = createTheme({
     },
   },
   palette: {
-    darkBlue: {
-      main: "#4A678A",
+    background: {
+      main: "#FFFFFF",
     },
-    secondBlue: {
+    backgroundSecondary: {
       main: "#5BC0BE",
     },
-    mainBlue: {
-      main: "#F5FFFD",
+    buttonHover: {
+      main: "#3E9F9D",
     },
-    darkWhite: {
-      main: "#DEF2F1",
-    },
-    white: {
+    textMain: {
       main: "#0B132B",
+    },
+    textSecondary: {
+      main: "#53739A",
     },
   },
 });
@@ -58,6 +61,9 @@ export const darkTheme = createTheme({
       styleOverrides: {
         root: {
           color: "#FEFFFF",
+          "&:hover": {
+            backgroundColor: "transparent",
+          },
         },
       },
     },
@@ -75,20 +81,20 @@ export const darkTheme = createTheme({
     },
   },
   palette: {
-    darkBlue: {
-      main: "#6FFFE9",
-    },
-    secondBlue: {
-      main: "#3A506B",
-    },
-    mainBlue: {
+    background: {
       main: "#0B132B",
     },
-    darkWhite: {
-      main: "#DEF2F1",
+    backgroundSecondary: {
+      main: "#3A506B",
     },
-    white: {
+    buttonHover: {
+      main: "#53739A",
+    },
+    textMain: {
       main: "#FEFFFF",
+    },
+    textSecondary: {
+      main: "#6FFFE9",
     },
   },
 });
