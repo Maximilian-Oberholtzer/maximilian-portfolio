@@ -27,17 +27,31 @@ const About = () => {
     "Kubernetes",
     "Git",
     "Express",
+
+    "Javascript",
+    "Swift",
+    "NodeJS",
+    "AWS",
+    "Material-UI",
+    "MetaMask",
+    "Java",
+    "PostgresSQL",
+    "Solidity",
+    "ReactJS",
+    "Kubernetes",
+    "Git",
+    "Express",
   ];
 
   useEffect(() => {
     const intervalId = setInterval(() => {
       console.log(leftPosition);
-      if (leftPosition > -800) {
+      if (leftPosition > -890) {
         setLeftPosition((prevPosition) => prevPosition - 1);
       } else {
-        setLeftPosition(0);
+        setLeftPosition(200);
       }
-    }, 10);
+    }, 8);
     return () => clearInterval(intervalId);
   }, [leftPosition]);
 
@@ -63,7 +77,6 @@ const About = () => {
                   display: "flex",
                   marginTop: "3rem",
                   position: "relative",
-                  width: "50vw",
                   left: `${leftPosition}px`,
                 }}
               >

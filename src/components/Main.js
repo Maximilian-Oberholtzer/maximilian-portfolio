@@ -16,7 +16,7 @@ const Main = () => {
     <div
       style={{
         backgroundColor: theme.palette.background.main,
-        overflowY: "hidden",
+        overflow: "hidden",
       }}
     >
       {showSideAnchor ? <></> : <SideAnchorLinks />}
