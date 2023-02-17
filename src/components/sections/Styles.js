@@ -75,6 +75,8 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   scrollerIcon: {
+    animation: "fadeInUp",
+    animationDuration: "1s",
     marginBottom: "4rem",
     marginTop: "1rem",
     border: "3px solid " + theme.palette.textMain.main + " !important",

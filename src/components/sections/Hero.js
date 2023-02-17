@@ -10,17 +10,17 @@ const ScrollerIcon = styled("div")({
   "@keyframes wheel": {
     to: {
       opacity: 0,
-      top: "3rem",
+      top: "2.4rem",
     },
   },
-  width: "2rem",
-  height: "4rem",
+  width: "1.5rem",
+  height: "3rem",
   borderRadius: "2rem",
   position: "relative",
   "&::before": {
     content: "''",
-    width: "0.5rem",
-    height: "0.5rem",
+    width: "0.3rem",
+    height: "0.3rem",
     position: "absolute",
     top: "10px",
     left: "50%",
