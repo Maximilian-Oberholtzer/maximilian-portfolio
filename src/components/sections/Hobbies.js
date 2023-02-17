@@ -44,10 +44,6 @@ const Hobbies = () => {
     threshold: 0,
     triggerOnce: true,
   });
-  const [hobbiesGrid, hobbiesGridInView] = useInView({
-    threshold: 0,
-    triggerOnce: true,
-  });
   const [tennis, inViewTennis] = useInView({ threshold: 0, triggerOnce: true });
   const [cube, inViewCube] = useInView({ threshold: 0, triggerOnce: true });
   const [rl, inViewRl] = useInView({ threshold: 0, triggerOnce: true });
@@ -61,11 +57,7 @@ const Hobbies = () => {
               <Typography className={classes.hobbiesTitle} component="h1">
                 Hobbies
               </Typography>
-              <Typography
-                ref={hobbiesGrid}
-                className={classes.hobbiesSubText}
-                component="h1"
-              >
+              <Typography className={classes.hobbiesSubText} component="h1">
                 Aside from making applications, these are the things I that
                 enjoy to do for fun! Under each of them I have included my
                 favorite achievements.
@@ -73,15 +65,15 @@ const Hobbies = () => {
             </>
           )}
 
-          {hobbiesGridInView && (
-            <Grid
-              ref={tennis}
-              container
-              spacing={1}
-              className={classes.hobbiesGrid}
-            >
-              <Grid item xs={12} sm={4} className={classes.hobbiesGridItem}>
-                {inViewTennis && (
+          <Grid
+            ref={tennis}
+            container
+            spacing={1}
+            className={classes.hobbiesGrid}
+          >
+            <Grid item xs={12} sm={4} className={classes.hobbiesGridItem}>
+              {inViewTennis && (
+                <div style={{ animation: "fadeInUp", animationDuration: "2s" }}>
                   <motion.svg
                     viewBox="0 0 512 512"
                     width="8rem"
@@ -96,16 +88,18 @@ const Hobbies = () => {
                       strokeWidth="7"
                     ></motion.path>
                   </motion.svg>
-                )}
-                <Typography className={classes.hobbiesGridTitle}>
-                  Tennis
-                </Typography>
-                <Typography className={classes.hobbiesGridSubtext}>
-                  Peak ranking of 12 UTR in singles
-                </Typography>
-              </Grid>
-              <Grid item xs={12} sm={4} className={classes.hobbiesGridItem}>
-                {inViewCube && (
+                  <Typography className={classes.hobbiesGridTitle}>
+                    Tennis
+                  </Typography>
+                  <Typography ref={cube} className={classes.hobbiesGridSubtext}>
+                    Peak ranking of 12 UTR in singles
+                  </Typography>
+                </div>
+              )}
+            </Grid>
+            <Grid item xs={12} sm={4} className={classes.hobbiesGridItem}>
+              {inViewCube && (
+                <div style={{ animation: "fadeInUp", animationDuration: "2s" }}>
                   <motion.svg
                     viewBox="0 0 512 512"
                     width="8rem"
@@ -119,17 +113,19 @@ const Hobbies = () => {
                       stroke={theme.palette.textMain.main}
                       strokeWidth="7"
                     ></motion.path>
-                  </motion.svg>
-                )}
-                <Typography className={classes.hobbiesGridTitle} ref={cube}>
-                  Speed Cubing
-                </Typography>
-                <Typography className={classes.hobbiesGridSubtext}>
-                  My fastest 3x3 solve time is currently 10.51 seconds
-                </Typography>
-              </Grid>
-              <Grid item xs={12} sm={4} className={classes.hobbiesGridItem}>
-                {inViewRl && (
+                  </motion.svg>{" "}
+                  <Typography className={classes.hobbiesGridTitle}>
+                    Speed Cubing
+                  </Typography>
+                  <Typography ref={rl} className={classes.hobbiesGridSubtext}>
+                    My fastest 3x3 solve time is currently 10.51 seconds
+                  </Typography>
+                </div>
+              )}
+            </Grid>
+            <Grid item xs={12} sm={4} className={classes.hobbiesGridItem}>
+              {inViewRl && (
+                <div style={{ animation: "fadeInUp", animationDuration: "2s" }}>
                   <motion.svg
                     viewBox="0 0 300.000000 179.000000"
                     width="12rem"
@@ -146,16 +142,16 @@ const Hobbies = () => {
                       strokeWidth="18"
                     ></motion.path>
                   </motion.svg>
-                )}
-                <Typography className={classes.hobbiesGridTitle} ref={rl}>
-                  Rocket League
-                </Typography>
-                <Typography className={classes.hobbiesGridSubtext}>
-                  Top 100 global Solo Duel player
-                </Typography>
-              </Grid>
+                  <Typography className={classes.hobbiesGridTitle}>
+                    Rocket League
+                  </Typography>
+                  <Typography className={classes.hobbiesGridSubtext}>
+                    Top 100 global Solo Duel player
+                  </Typography>
+                </div>
+              )}
             </Grid>
-          )}
+          </Grid>
         </Container>
       </section>
     </Scroll.Element>

@@ -45,7 +45,7 @@ export const lightTheme = createTheme({
       main: "#0B132B",
     },
     textSecondary: {
-      main: "#9EB2CB",
+      main: "#53739A",
     },
   },
 });
