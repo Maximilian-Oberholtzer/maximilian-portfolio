@@ -27,6 +27,7 @@ const ScrollerIcon = styled("div")({
     transform: "translateX(-50%)",
     borderRadius: "50%",
     opacity: "1",
+    "-webkit-animation": "wheel 2s infinite",
     animation: "wheel 2s infinite",
   },
 });
