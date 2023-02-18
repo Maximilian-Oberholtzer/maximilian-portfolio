@@ -127,48 +127,56 @@ const useStyles = makeStyles((theme) => ({
   },
   scrollingContainer: {
     position: "relative",
-    overflow: "hidden",
     width: "inherit",
-    background: `linear-gradient(to right, transparent, ${theme.palette.background.main}, ${theme.palette.background.main}, transparent)`,
-    // "&::before": {
-    //   content: "''",
-    //   position: "absolute",
-    //   top: "45px",
-    //   left: "908px",
-    //   display: "block",
-    //   width: "100px",
-    //   height: "75px",
-    //   background: `linear-gradient(90deg,${theme.palette.background.main},hsla(0,0%,100%,0))`,
-    //   backgroundSize: "contain",
-    //   zIndex: "1200",
-    // },
-    // "&::after": {
-    //   content: "''",
-    //   position: "relative",
-    //   top: "-71px",
-    //   left: 0,
-    //   display: "block",
-    //   width: "100px",
-    //   height: "75px",
-    //   background: `linear-gradient(90deg,${theme.palette.background.main},hsla(0,0%,100%,0))`,
-    //   backgroundSize: "contain",
-    //   zIndex: "1200",
-    //},
+    animation: "fadeInUp",
+    animationDuration: "1.25s",
+
+    "&::before": {
+      content: "''",
+      position: "absolute",
+      top: "45px",
+      left: "-4px",
+      display: "block",
+      width: "100px",
+      height: "75px",
+      background: `linear-gradient(90deg,${theme.palette.background.main},hsla(0,0%,100%,0))`,
+      backgroundSize: "contain",
+      zIndex: "1000",
+    },
+    "&::after": {
+      content: "''",
+      position: "relative",
+      top: "-71px",
+      left: "883px",
+      [theme.breakpoints.down("lg")]: {
+        position: "absolute",
+        left: "unset",
+        right: "0",
+        top: "45px",
+      },
+      display: "block",
+      width: "100px",
+      height: "75px",
+      background: `linear-gradient(270deg,${theme.palette.background.main},hsla(0,0%,100%,0))`,
+      backgroundSize: "contain",
+      zIndex: "1000",
+    },
   },
   scrollingBelt: {
     display: "flex",
     marginTop: "3rem",
     overflow: "hidden",
+    width: "98%",
+    marginLeft: "0.1rem",
   },
   "@keyframes moveLeft": {
     "0%": {
       transform: "translateX(0)",
     },
     "100%": {
-      transform: "translateX(-1300%)",
+      transform: "translateX(-1600%)",
     },
   },
-
   scrollingItem: {
     animation: "$moveLeft 22s linear infinite",
     background: theme.palette.backgroundSecondary.main,
@@ -177,6 +185,17 @@ const useStyles = makeStyles((theme) => ({
     padding: "1rem",
     minWidth: "8rem",
     textAlign: "center",
+    [theme.breakpoints.down("md")]: {
+      marginRight: "2rem",
+      padding: "0.75rem 0.2rem 0.75rem 0.2rem",
+    },
+  },
+  scrollingItemText: {
+    fontSize: "1.5rem !important",
+    color: theme.palette.textMain.main,
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "1.2rem !important",
+    },
   },
   //////////////////
   //Hobbies Styles//

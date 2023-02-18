@@ -12,35 +12,24 @@ const About = () => {
     threshold: 0,
     triggerOnce: true,
   });
-  const [leftPosition, setLeftPosition] = useState(0);
   const technologiesArr = [
-    "Javascript",
+    "Java",
     "Swift",
-    "NodeJS",
+    "Node",
     "AWS",
     "Material-UI",
     "MetaMask",
-    "Java",
-    "PostgresSQL",
-    "Solidity",
-    "ReactJS",
-    "Kubernetes",
-    "Git",
-    "Express",
-
+    "Ethereum",
     "Javascript",
-    "Swift",
-    "NodeJS",
-    "AWS",
-    "Material-UI",
-    "MetaMask",
-    "Java",
     "PostgresSQL",
     "Solidity",
-    "ReactJS",
+    "React",
     "Kubernetes",
+    "Angular",
     "Git",
     "Express",
+    "Java",
+    "Swift",
   ];
 
   return (
@@ -64,10 +53,7 @@ const About = () => {
                   {technologiesArr.map((item, index) => (
                     <div key={index} className={classes.scrollingItem}>
                       <Typography
-                        style={{
-                          fontSize: "1.5rem",
-                          color: theme.palette.textMain.main,
-                        }}
+                        className={classes.scrollingItemText}
                         component="h1"
                       >
                         {item}
