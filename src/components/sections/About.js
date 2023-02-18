@@ -43,18 +43,6 @@ const About = () => {
     "Express",
   ];
 
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      console.log(leftPosition);
-      if (leftPosition > -890) {
-        setLeftPosition((prevPosition) => prevPosition - 1);
-      } else {
-        setLeftPosition(200);
-      }
-    }, 8);
-    return () => clearInterval(intervalId);
-  }, [leftPosition]);
-
   return (
     <Scroll.Element name="About">
       <section className={classes.aboutRoot}>
@@ -65,34 +53,28 @@ const About = () => {
                 About Me
                 <div className={classes.divider} />
               </Typography>
-
               <Typography className={classes.aboutSubText} component="h1">
                 Hey there! My name is Maximilian and I have been building
                 different types of web and mobile applications for 7+ years.
                 Below are some of the languages and technologies that I have
                 experience using.
               </Typography>
-              <div
-                style={{
-                  display: "flex",
-                  marginTop: "3rem",
-                  position: "relative",
-                  left: `${leftPosition}px`,
-                }}
-              >
-                {technologiesArr.map((item, index) => (
-                  <div key={index} className={classes.scrollingItem}>
-                    <Typography
-                      style={{
-                        fontSize: "1.5rem",
-                        color: theme.palette.textMain.main,
-                      }}
-                      component="h1"
-                    >
-                      {item}
-                    </Typography>
-                  </div>
-                ))}
+              <div className={classes.scrollingContainer}>
+                <div className={classes.scrollingBelt}>
+                  {technologiesArr.map((item, index) => (
+                    <div key={index} className={classes.scrollingItem}>
+                      <Typography
+                        style={{
+                          fontSize: "1.5rem",
+                          color: theme.palette.textMain.main,
+                        }}
+                        component="h1"
+                      >
+                        {item}
+                      </Typography>
+                    </div>
+                  ))}
+                </div>
               </div>
             </>
           )}
