@@ -116,7 +116,7 @@ const Navbar = () => {
             <Button
               className={classes.appBarButton}
               onClick={() => {
-                scrollToSection("About");
+                scrollToSection("Experience");
               }}
             >
               <Typography>Experience</Typography>
@@ -185,7 +185,7 @@ const Navbar = () => {
       >
         <Button
           onClick={() => {
-            scrollToSection("About");
+            scrollToSection("Experience");
           }}
           className={classes.appBarButton}
         >

@@ -6,6 +6,7 @@ import Hero from "./sections/Hero";
 import SideAnchorLinks from "./SideAnchorLinks";
 import About from "./sections/About";
 import Hobbies from "./sections/Hobbies";
+import Experience from "./sections/Experience";
 
 const Main = () => {
   const classes = useStyles();
@@ -13,12 +14,18 @@ const Main = () => {
   const showSideAnchor = useMediaQuery(theme.breakpoints.down("lg"));
 
   return (
-    <div style={{ backgroundColor: theme.palette.background.main }}>
+    <div
+      style={{
+        backgroundColor: theme.palette.background.main,
+        overflow: "hidden",
+      }}
+    >
       {showSideAnchor ? <></> : <SideAnchorLinks />}
 
       <Container className={classes.mainContainer}>
         <Hero />
         <About />
+        <Experience />
         <Hobbies />
       </Container>
     </div>

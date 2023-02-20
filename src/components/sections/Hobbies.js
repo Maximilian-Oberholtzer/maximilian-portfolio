@@ -56,21 +56,21 @@ const Hobbies = () => {
             <>
               <Typography className={classes.hobbiesTitle} component="h1">
                 Hobbies
+                <div className={classes.divider} />
               </Typography>
-              <Typography className={classes.hobbiesSubText} component="h1">
+              <Typography
+                className={classes.hobbiesSubText}
+                component="h1"
+                ref={tennis}
+              >
                 Aside from making applications, these are the things I that
                 enjoy to do for fun! Under each of them I have included my
-                favorite achievements.
+                favorite achievement.
               </Typography>
             </>
           )}
 
-          <Grid
-            ref={tennis}
-            container
-            spacing={1}
-            className={classes.hobbiesGrid}
-          >
+          <Grid container spacing={1} className={classes.hobbiesGrid}>
             <Grid item xs={12} sm={4} className={classes.hobbiesGridItem}>
               {inViewTennis && (
                 <div style={{ animation: "fadeInUp", animationDuration: "2s" }}>
