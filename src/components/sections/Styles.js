@@ -186,8 +186,8 @@ const useStyles = makeStyles((theme) => ({
     minWidth: "8rem",
     textAlign: "center",
     [theme.breakpoints.down("md")]: {
-      marginRight: "2rem",
-      padding: "0.75rem 0.2rem 0.75rem 0.2rem",
+      marginRight: "2.2rem",
+      padding: "0.9rem 0.6rem 0.75rem 0.9rem",
     },
   },
   scrollingItemText: {
@@ -259,6 +259,91 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.textMain.main,
     minWidth: "33%",
     flexGrow: "1",
+  },
+
+  /////////////////////
+  //Experience Styles//
+  /////////////////////
+  experienceRoot: {
+    minHeight: "100vh",
+    justifyContent: "center",
+    display: "flex",
+    flexWrap: "wrap",
+    alignContent: "center",
+  },
+  experienceContainer: {
+    display: "flex !important",
+    flexDirection: "column",
+    alignItems: "center",
+    alignSelf: "center",
+    boxSizing: "unset !important",
+    maxWidth: "1000px !important",
+  },
+  experienceTitle: {
+    fontWeight: "bold !important",
+    color: theme.palette.textMain.main,
+    fontSize: "clamp(32px, 4vw, 56px) !important",
+    textAlign: "-webkit-center",
+    animation: "fadeInUp",
+    animationDuration: "1s",
+  },
+  experienceSubText: {
+    color: theme.palette.textMain.main,
+    fontSize: "clamp(20px, 2vw, 26px) !important",
+    textAlign: "center",
+    animation: "fadeInUp",
+    animationDuration: "1.25s",
+  },
+  carouselContainer: {
+    marginTop: "3rem",
+    alignItems: "center",
+    width: "75% !important",
+    boxSizing: "unset !important",
+    maxWidth: "1000px !important",
+    textAlign: "center",
+    animation: "fadeInUp",
+    animationDuration: "1.4s",
+    [theme.breakpoints.down("sm")]: {
+      marginBottom: "4rem",
+    },
+  },
+  carouselContainerCard: {
+    borderRadius: "2rem !important",
+    padding: "2rem 2rem",
+    [theme.breakpoints.down("sm")]: {
+      padding: "1.25rem 1.25rem",
+    },
+    maxWidth: "75%",
+    border: "0.15rem solid " + theme.palette.backgroundSecondary.main,
+  },
+  dots: {
+    "& li button:before": {
+      fontSize: "0.75rem",
+      color: theme.palette.textMain.main + " !important",
+      marginTop: "1rem",
+      opacity: 0.4 + " !important",
+    },
+    "& li.slick-active button:focus:before": {
+      opacity: 1 + " !important",
+      color: theme.palette.textMain.main,
+    },
+    "& li.slick-active button:before": {
+      opacity: 1 + " !important",
+    },
+  },
+  carouselTitle: {
+    fontSize: "clamp(28px, 4vw, 44px) !important",
+    color: theme.palette.textSecondary.main,
+    //lineHeight: "1 !important",
+  },
+  carouselSubTitle: {
+    fontSize: "clamp(16px, 2vw, 30px) !important",
+    color: theme.palette.textMain.main,
+  },
+  carouselSubText: {
+    marginTop: "1rem !important",
+    fontSize: "clamp(14px, 1vw, 26px) !important",
+    color: theme.palette.textMain.main,
   },
 }));
 
