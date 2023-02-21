@@ -1,12 +1,86 @@
 import React from "react";
-import { useTheme, Container, styled } from "@mui/material";
-import useStyles from "./Styles";
+import { Container, styled } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import maxAvatar from "../../assets/max_avatar.svg";
 import "animate.css";
 
-const ScrollerIcon = styled("div")({
+//Component styles//
+const StyledHeroRoot = styled("section")(({ theme }) => ({
+  display: "flex",
+  flexWrap: "wrap",
+  alignContent: "center",
+  justifyContent: "center",
+  flexDirection: "column",
+  alignItems: "center",
+  backgroundColor: theme.palette.background.main,
+  minHeight: "100vh",
+}));
+
+const StyledHeroContainer = styled(Container)(({ theme }) => ({
+  display: "flex !important",
+  flex: "1",
+  alignItems: "center",
+  alignSelf: "center",
+  boxSizing: "unset !important",
+  width: "unset",
+  ["@media (max-height: 730px)"]: {
+    paddingTop: "102px",
+  },
+  [theme.breakpoints.up("sm")]: {
+    marginTop: "2rem",
+  },
+}));
+
+const StyledHeroGrid = styled(Grid)(({ theme }) => ({
+  alignItems: "center",
+  justifyContent: "space-around",
+  margin: "0rem !important",
+  width: "auto",
+}));
+
+const StyledHeroImage = styled("img")(({ theme }) => ({
+  animation: "fadeIn",
+  animationDuration: "2s",
+  width: "280px",
+  borderRadius: "30px",
+  backgroundColor: theme.palette.backgroundSecondary.main,
+  textAlign: "center",
+  margin: "2rem 4rem 2rem 4rem ",
+  [theme.breakpoints.down("lg")]: {
+    width: "230px",
+  },
+  [theme.breakpoints.down("sm")]: {
+    width: "180px",
+  },
+}));
+
+const StyledHeroText = styled(Grid)(({ theme }) => ({
+  textAlign: "center",
+  animation: "fadeIn",
+  animationDuration: "2s",
+  width: "50%",
+  paddingLeft: "0 !important",
+  [theme.breakpoints.down("sm")]: {
+    width: "80%",
+    margin: "0",
+  },
+  margin: "2rem 4rem 2rem 4rem ",
+}));
+
+const StyledHeroTitle = styled(Typography)(({ theme }) => ({
+  fontWeight: "bold !important",
+  color: theme.palette.textMain.main,
+  marginBottom: theme.spacing(0),
+  fontSize: "clamp(32px, 4vw, 56px) !important",
+}));
+
+const StyledHeroSubText = styled(Typography)(({ theme }) => ({
+  color: theme.palette.textSecondary.main + " !important",
+  fontSize: "clamp(20px, 2vw, 26px) !important",
+}));
+
+const ScrollerIcon = styled("div")(({ theme }) => ({
   "@keyframes wheel": {
     to: {
       opacity: 0,
@@ -17,6 +91,9 @@ const ScrollerIcon = styled("div")({
   height: "3rem",
   borderRadius: "2rem",
   position: "relative",
+  marginBottom: "4rem",
+  marginTop: "1rem",
+  border: "3px solid " + theme.palette.textMain.main + " !important",
   "&::before": {
     content: "''",
     width: "0.3rem",
@@ -27,51 +104,43 @@ const ScrollerIcon = styled("div")({
     transform: "translateX(-50%)",
     borderRadius: "50%",
     opacity: "1",
+    backgroundColor: theme.palette.textMain.main + " !important",
     WebkitAnimation: "wheel 2s infinite",
     animation: "wheel 1.6s infinite",
   },
-});
+}));
+
+//End component style//
 
 const Hero = () => {
-  const classes = useStyles();
-  const theme = useTheme();
-
   return (
-    <section className={classes.heroRoot}>
-      <Container className={classes.heroContainer}>
-        <Grid container spacing={0} className={classes.heroGrid}>
-          <Grid item className={classes.heroImageContainer}>
-            <img alt="" src={maxAvatar} className={classes.heroImage} />
+    <StyledHeroRoot>
+      <StyledHeroContainer>
+        <StyledHeroGrid container spacing={0}>
+          <Grid item style={{ paddingLeft: "0 !important" }}>
+            <StyledHeroImage alt="" src={maxAvatar} />
           </Grid>
-          <Grid item className={classes.heroText}>
-            <Typography
-              className={classes.heroTitle}
-              component="h1"
-              variant="h2"
-            >
+          <StyledHeroText item>
+            <StyledHeroTitle component="h1" variant="h2">
               Maximilian Oberholtzer
-            </Typography>
-            <Typography
-              className={classes.heroSubText}
-              component="h1"
-              variant="h5"
-            >
+            </StyledHeroTitle>
+            <StyledHeroSubText component="h1" variant="h5">
               Full stack software engineer who enjoys creative coding and UI/UX
               designs
-            </Typography>
-          </Grid>
-        </Grid>
-      </Container>
+            </StyledHeroSubText>
+          </StyledHeroText>
+        </StyledHeroGrid>
+      </StyledHeroContainer>
       <div
         style={{
           marginTop: "2rem",
-          animation: "fadeIn",
-          animationDuration: "5s",
+          animation: "fadeInUp",
+          animationDuration: "1s",
         }}
       >
-        <ScrollerIcon className={classes.scrollerIcon} />
+        <ScrollerIcon />
       </div>
-    </section>
+    </StyledHeroRoot>
   );
 };
 

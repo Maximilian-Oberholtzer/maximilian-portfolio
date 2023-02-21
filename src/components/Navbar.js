@@ -282,7 +282,6 @@ const Navbar = () => {
     </>
   );
 
-  console.log(isScrolled);
   return (
     <Slide appear={false} direction="down" in={!trigger}>
       <StyledAppBar position="fixed" isScrolled={isScrolled}>
