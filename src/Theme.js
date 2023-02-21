@@ -20,7 +20,6 @@ export const lightTheme = createTheme({
   },
   typography: {
     fontFamily: "'Jost', sans-serif",
-    fontWeightRegular: 600,
   },
   breakpoints: {
     values: {
