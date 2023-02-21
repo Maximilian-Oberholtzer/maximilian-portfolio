@@ -7,9 +7,45 @@ import {
   rocketLeagueSvgPath,
   UTRSvgPath,
 } from "./SvgHelper";
-import { Button } from "@mui/material";
-import { useTheme } from "@mui/styles";
-import useStyles from "./Styles";
+import { Button, styled } from "@mui/material";
+import { useTheme } from "@mui/material";
+
+//Component Styles//
+const StyledAnchorButton = styled(Button)(({ theme }) => ({
+  "& svg": {
+    width: "2.2rem",
+    transition: "width 0.1s ease-in-out",
+  },
+  "&:hover": {
+    "& svg": {
+      fill: theme.palette.textSecondary.main + " !important",
+      width: "2.5rem",
+    },
+  },
+}));
+
+const StyledLeftAnchor = styled("div")({
+  width: "40px",
+  position: "fixed",
+  bottom: "16vh",
+  left: "40px",
+  right: "auto",
+  Zndex: "10",
+  animation: "fadeInLeft",
+  animationDuration: "1s",
+});
+
+const StyledRightAnchor = styled("div")({
+  width: "40px",
+  position: "fixed",
+  bottom: "16vh",
+  left: "auto",
+  right: "60px",
+  Zndex: "10",
+  animation: "fadeInRight",
+  animationDuration: "1s",
+});
+//End component styles//
 
 const openEmail = () => {
   window.location = "mailto:max.oberholtzer@yahoo.com";
@@ -21,16 +57,14 @@ const openLink = (link) => {
 
 const SideAnchorLinks = () => {
   const theme = useTheme();
-  const classes = useStyles();
 
   return (
     <>
-      <div className={classes.leftAnchor}>
-        <Button
+      <StyledLeftAnchor>
+        <StyledAnchorButton
           onClick={() => {
             openLink("https://www.linkedin.com/in/max-oberholtzer/");
           }}
-          className={classes.anchorButtonSvg}
         >
           <svg
             fill={theme.palette.textMain.main}
@@ -43,12 +77,11 @@ const SideAnchorLinks = () => {
             <title>LinkedIn</title>
             <path d={linkedInSvgPath} />
           </svg>
-        </Button>
-        <Button
+        </StyledAnchorButton>
+        <StyledAnchorButton
           onClick={() => {
             openLink("https://github.com/Maximilian-Oberholtzer");
           }}
-          className={classes.anchorButtonSvg}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -61,8 +94,8 @@ const SideAnchorLinks = () => {
             <title>Github</title>
             <path fillRule="evenodd" d={githubSvgPath} />
           </svg>
-        </Button>
-        <Button onClick={openEmail} className={classes.anchorButtonSvg}>
+        </StyledAnchorButton>
+        <StyledAnchorButton onClick={openEmail}>
           <svg
             fill={theme.palette.textMain.main}
             height="44px"
@@ -79,14 +112,13 @@ const SideAnchorLinks = () => {
               <path d={emailSvgPath} />
             </g>
           </svg>
-        </Button>
-      </div>
-      <div className={classes.rightAnchor}>
-        <Button
+        </StyledAnchorButton>
+      </StyledLeftAnchor>
+      <StyledRightAnchor>
+        <StyledAnchorButton
           onClick={() => {
             openLink("https://app.universaltennis.com/profiles/51049");
           }}
-          className={classes.anchorButtonSvg}
         >
           <svg
             fill={theme.palette.textMain.main}
@@ -98,14 +130,13 @@ const SideAnchorLinks = () => {
             <title>Universal Tennis Rating</title>
             <UTRSvgPath />
           </svg>
-        </Button>
-        <Button
+        </StyledAnchorButton>
+        <StyledAnchorButton
           onClick={() => {
             openLink(
               "https://rocketleague.tracker.network/rocket-league/profile/steam/76561198262193029/overview"
             );
           }}
-          className={classes.anchorButtonSvg}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -117,12 +148,11 @@ const SideAnchorLinks = () => {
             <title>Rocket League Tracker</title>
             <path d={rocketLeagueSvgPath} />
           </svg>
-        </Button>
-        <Button
+        </StyledAnchorButton>
+        <StyledAnchorButton
           onClick={() => {
             openLink("https://www.worldcubeassociation.org/persons/2022OBER04");
           }}
-          className={classes.anchorButtonSvg}
         >
           <svg
             version="1.0"
@@ -144,8 +174,8 @@ const SideAnchorLinks = () => {
               <CubeSvgPath />
             </g>
           </svg>
-        </Button>
-      </div>
+        </StyledAnchorButton>
+      </StyledRightAnchor>
     </>
   );
 };

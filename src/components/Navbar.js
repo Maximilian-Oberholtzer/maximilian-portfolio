@@ -1,16 +1,83 @@
 import React, { useState, useEffect, useContext } from "react";
-import { useTheme } from "@mui/material";
 import { ThemeContext } from "../ThemeContext";
-import useStyles from "./Styles";
 import ResumePdf from "../assets/Maximilian Oberholtzer Resume 2023.pdf";
-import { AppBar, Toolbar } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import WbSunnyIcon from "@mui/icons-material/WbSunny";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
-import { Drawer, Box, List } from "@mui/material";
 import Typography from "@mui/material/Typography";
-import { Button, useMediaQuery, useScrollTrigger, Slide } from "@mui/material";
+import {
+  Button,
+  Drawer,
+  AppBar,
+  Toolbar,
+  Box,
+  List,
+  useMediaQuery,
+  useTheme,
+  useScrollTrigger,
+  Slide,
+  styled,
+} from "@mui/material";
 import * as Scroll from "react-scroll";
+
+//Component Styles//
+const StyledAppBarContainer = styled("div")(({ theme }) => ({
+  flexDirection: "column",
+  alignItems: "center",
+  alignSelf: "center",
+  placeSelf: "center",
+  justifyContent: "center",
+  width: "70vw !important",
+  [theme.breakpoints.down("sm")]: {
+    maxWidth: "90vw !important",
+    width: "90vw !important",
+  },
+}));
+const StyledAppBar = styled(AppBar)(({ theme, isScrolled }) => ({
+  transition:
+    "all 0.4s cubic-bezier(0.645,0.045,0.355,1), background-color 0ms !important",
+  transitionDelay: "0.1s",
+  boxShadow: isScrolled
+    ? "1px 0px 4px -1px rgb(0 0 0 / 20%), 0px 2px 20px 0px rgb(0 0 0 / 14%), 1px -1px 12px 0px rgb(0 0 0 / 12%) !important"
+    : "none !important",
+  backgroundColor: theme.palette.background.main + " !important",
+  padding: isScrolled ? "0.5rem 5rem 0.5rem 5rem" : "2rem 5rem 2rem 5rem",
+  [theme.breakpoints.down("sm")]: {
+    padding: isScrolled ? "0.5rem 2rem 0.5rem 2rem" : "1rem 2rem 1rem 2rem",
+  },
+}));
+const StyledAppBarButton = styled(Button)(({ theme }) => ({
+  color: theme.palette.textMain.main + " !important",
+  "&:hover": {
+    color: theme.palette.textSecondary.main + " !important",
+  },
+}));
+const StyledResumeButton = styled(Button)(({ theme }) => ({
+  borderRadius: "8px !important",
+  backgroundColor: theme.palette.backgroundSecondary.main + " !important",
+  color: theme.palette.textMain.main + " !important",
+  "&:hover": {
+    backgroundColor: theme.palette.buttonHover.main + " !important",
+  },
+}));
+const StyledDrawerIcon = styled(MenuIcon)(({ theme }) => ({
+  color: theme.palette.textMain.main,
+  fontSize: "2rem !important",
+  zIndex: "3 !important",
+}));
+const StyledDrawer = styled(Drawer)(({ theme }) => ({
+  "& div.MuiPaper-root": {
+    backgroundColor: theme.palette.background.main,
+    width: "50vw",
+    maxWidth: "20rem",
+    textAlign: "center",
+    justifyContent: "center",
+    padding: "1.5rem 0 0 0",
+    color: theme.palette.textMain.main,
+    zIndex: "2 !important",
+  },
+}));
+//End component style//
 
 const resumeClick = () => {
   window.open(ResumePdf, "_blank");
@@ -18,7 +85,6 @@ const resumeClick = () => {
 
 const Navbar = () => {
   const { theme, setTheme } = useContext(ThemeContext);
-  const classes = useStyles();
   const [hasAnimated, setHasAnimated] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -85,12 +151,11 @@ const Navbar = () => {
         className={!hasAnimated ? "animate__animated animate__fadeInDown" : ""}
       >
         <Button onClick={toggleDrawer(true)}>
-          <MenuIcon className={classes.drawerButton} />
+          <StyledDrawerIcon />
         </Button>
       </div>
 
-      <Drawer
-        className={classes.drawer}
+      <StyledDrawer
         anchor={"right"}
         variant="temporary"
         open={isOpen}
@@ -98,60 +163,55 @@ const Navbar = () => {
       >
         <Box role="presentation" onKeyDown={toggleDrawer(false)}>
           <List>
-            <Button className={classes.resumeButton} onClick={resumeClick}>
+            <StyledResumeButton onClick={resumeClick}>
               <Typography>Resume</Typography>
-            </Button>
+            </StyledResumeButton>
           </List>
           <List>
-            <Button
-              className={classes.appBarButton}
+            <StyledAppBarButton
               onClick={() => {
                 scrollToSection("About");
               }}
             >
               <Typography>About</Typography>
-            </Button>
+            </StyledAppBarButton>
           </List>
           <List>
-            <Button
-              className={classes.appBarButton}
+            <StyledAppBarButton
               onClick={() => {
                 scrollToSection("Experience");
               }}
             >
               <Typography>Experience</Typography>
-            </Button>
+            </StyledAppBarButton>
           </List>
           <List>
-            <Button
-              className={classes.appBarButton}
+            <StyledAppBarButton
               onClick={() => {
                 scrollToSection("Hobbies");
               }}
             >
               <Typography>Hobbies</Typography>
-            </Button>
+            </StyledAppBarButton>
           </List>
           <List>
-            <Button
-              className={classes.appBarButton}
+            <StyledAppBarButton
               onClick={() => {
                 scrollToSection("Hobbies");
               }}
             >
               <Typography>Projects</Typography>
-            </Button>
+            </StyledAppBarButton>
           </List>
           <List>
-            <Button
-              className={classes.appBarButton}
+            <StyledAppBarButton
               onClick={() => setTheme(theme === "light" ? "dark" : "light")}
             >
               {theme === "light" ? <WbSunnyIcon /> : <DarkModeIcon />}
-            </Button>
+            </StyledAppBarButton>
           </List>
         </Box>
-      </Drawer>
+      </StyledDrawer>
     </>
   );
 
@@ -160,82 +220,81 @@ const Navbar = () => {
       <div
         className={!hasAnimated ? "animate__animated animate__fadeInDown" : ""}
       >
-        <Button
-          className={classes.appBarButton}
+        <StyledAppBarButton
           onClick={() => setTheme(theme === "light" ? "dark" : "light")}
         >
           {theme === "light" ? <WbSunnyIcon /> : <DarkModeIcon />}
-        </Button>
+        </StyledAppBarButton>
       </div>
 
       <div
         className={!hasAnimated ? "animate__animated animate__fadeInDown" : ""}
       >
-        <Button
+        <StyledAppBarButton
           onClick={() => {
             scrollToSection("About");
           }}
-          className={classes.appBarButton}
         >
           <Typography>About</Typography>
-        </Button>
+        </StyledAppBarButton>
       </div>
       <div
         className={!hasAnimated ? "animate__animated animate__fadeInDown" : ""}
       >
-        <Button
+        <StyledAppBarButton
           onClick={() => {
             scrollToSection("Experience");
           }}
-          className={classes.appBarButton}
         >
           <Typography>Experience</Typography>
-        </Button>
+        </StyledAppBarButton>
       </div>
       <div
         className={!hasAnimated ? "animate__animated animate__fadeInDown" : ""}
       >
-        <Button
+        <StyledAppBarButton
           onClick={() => {
             scrollToSection("Hobbies");
           }}
-          className={classes.appBarButton}
         >
           <Typography>Hobbies</Typography>
-        </Button>
+        </StyledAppBarButton>
       </div>
       <div
         className={!hasAnimated ? "animate__animated animate__fadeInDown" : ""}
       >
-        <Button
+        <StyledAppBarButton
           onClick={() => {
             scrollToSection("About");
           }}
-          className={classes.appBarButton}
         >
           <Typography>Projects</Typography>
-        </Button>
+        </StyledAppBarButton>
       </div>
       <div
         style={{ paddingLeft: "4px" }}
         className={!hasAnimated ? "animate__animated animate__fadeInDown" : ""}
       >
-        <Button className={classes.resumeButton} onClick={resumeClick}>
+        <StyledResumeButton onClick={resumeClick}>
           <Typography> Resume</Typography>
-        </Button>
+        </StyledResumeButton>
       </div>
     </>
   );
 
+  console.log(isScrolled);
   return (
     <Slide appear={false} direction="down" in={!trigger}>
-      <AppBar
-        position="fixed"
-        className={isScrolled ? classes.appBarScrolled : classes.appBar}
-      >
-        <div className={classes.appBarContainer}>
+      <StyledAppBar position="fixed" isScrolled={isScrolled}>
+        <StyledAppBarContainer>
           <Toolbar>
-            <Typography variant="h6" className={classes.title}>
+            <Typography
+              variant="h6"
+              style={{
+                flexGrow: 1,
+                color: MuiTheme.palette.textMain.main + " !important",
+              }}
+            >
               <Button
                 onClick={() => {
                   window.location.reload();
@@ -300,8 +359,8 @@ const Navbar = () => {
             </Typography>
             {collapse ? drawer : navbar}
           </Toolbar>
-        </div>
-      </AppBar>
+        </StyledAppBarContainer>
+      </StyledAppBar>
     </Slide>
   );
 };

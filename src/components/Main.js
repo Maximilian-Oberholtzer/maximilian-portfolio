@@ -1,15 +1,16 @@
-import { Container, useMediaQuery } from "@mui/material";
 import { React } from "react";
-import { useTheme } from "@mui/styles";
-import useStyles from "./Styles";
+import { Container, useMediaQuery, styled, useTheme } from "@mui/material";
 import Hero from "./sections/Hero";
 import SideAnchorLinks from "./SideAnchorLinks";
 import About from "./sections/About";
 import Hobbies from "./sections/Hobbies";
 import Experience from "./sections/Experience";
 
+const StyledMainContainer = styled(Container)({
+  maxWidth: "1600px",
+});
+
 const Main = () => {
-  const classes = useStyles();
   const theme = useTheme();
   const showSideAnchor = useMediaQuery(theme.breakpoints.down("lg"));
 
@@ -22,12 +23,12 @@ const Main = () => {
     >
       {showSideAnchor ? <></> : <SideAnchorLinks />}
 
-      <Container className={classes.mainContainer}>
+      <StyledMainContainer>
         <Hero />
         <About />
         <Experience />
         <Hobbies />
-      </Container>
+      </StyledMainContainer>
     </div>
   );
 };
