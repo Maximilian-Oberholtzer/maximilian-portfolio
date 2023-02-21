@@ -72,8 +72,7 @@ const StyledHeroTitle = styled(Typography)(({ theme }) => ({
   fontWeight: "bold !important",
   color: theme.palette.textMain.main,
   marginBottom: theme.spacing(0),
-  fontSize: "clamp(32px, 4vw, 56px) !important",
-  whiteSpace: "nowrap",
+  fontSize: "clamp(32px, 4vw, 55px) !important",
 }));
 
 const StyledHeroSubText = styled(Typography)(({ theme }) => ({
