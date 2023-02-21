@@ -1,5 +1,7 @@
 import { styled, Container, Typography } from "@mui/material";
 
+const isFirefox = /Firefox/i.test(navigator.userAgent);
+
 //Styles used accross components
 
 export const StyledDivider = styled("div")(({ theme }) => ({
@@ -31,7 +33,7 @@ export const StyledGenericTitle = styled(Typography)(({ theme }) => ({
   fontWeight: "bold !important",
   color: theme.palette.textMain.main,
   fontSize: "clamp(32px, 4vw, 56px) !important",
-  textAlign: "-webkit-center",
+  textAlign: isFirefox ? "-moz-center" : "-webkit-center",
   animation: "fadeInUp",
   animationDuration: "1s",
 }));
