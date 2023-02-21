@@ -55,7 +55,7 @@ const customDotsClass = "custom-dots-class";
 
 const Experience = () => {
   const theme = useTheme();
-  const [isAutoPlay, setAutoPlay] = useState(true);
+  //const [isAutoPlay, setAutoPlay] = useState(true);
 
   const [experienceContainer, experienceContainerInView] = useInView({
     threshold: 0,
@@ -66,9 +66,9 @@ const Experience = () => {
     triggerOnce: true,
   });
 
-  const stopAutoPlay = () => {
-    setAutoPlay(false);
-  };
+  // const stopAutoPlay = () => {
+  //   setAutoPlay(false);
+  // };
 
   const dotStyles = `
     .${customDotsClass} li button:before {
@@ -89,12 +89,12 @@ const Experience = () => {
 
   const settings = {
     dots: true,
-    autoplay: isAutoPlay,
-    autoplaySpeed: 3500,
+    autoplay: false,
+    //autoplaySpeed: 3500,
     dotsClass: `slick-dots ${customDotsClass}`,
     infinite: true,
     arrows: false,
-    speed: 800,
+    speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
   };
@@ -124,9 +124,9 @@ const Experience = () => {
                 {data.map((item) => (
                   <StyledCarouselCard
                     key={item.id}
-                    onClick={() => {
-                      stopAutoPlay();
-                    }}
+                    // onClick={() => {
+                    //   stopAutoPlay();
+                    // }}
                   >
                     <StyledCarouselTitle>{item.company}</StyledCarouselTitle>
                     <StyledCarouselSubTitle>
