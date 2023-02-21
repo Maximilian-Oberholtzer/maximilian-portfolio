@@ -1,11 +1,51 @@
 import React from "react";
-import { useTheme, Container, Typography, Grid } from "@mui/material";
-import useStyles from "./Styles";
+import { useTheme, Typography, Grid, styled } from "@mui/material";
+import {
+  StyledDivider,
+  StyledGenericContainer,
+  StyledGenericRoot,
+  StyledGenericSubText,
+  StyledGenericTitle,
+} from "./Styles";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import * as Scroll from "react-scroll";
 import { TennisSvgPath, RubiksCubePath, RocketLeaguePath } from "../SvgHelper";
 import "animate.css";
+
+//Component styles
+const StyledHobbiesGrid = styled(Grid)({
+  padding: "2rem 0rem 2rem 0rem",
+  justifyContent: "center",
+  animation: "fadeInUp",
+  animationDuration: "1.25s",
+});
+const StyledHobbiesGridTitle = styled(Typography)(({ theme }) => ({
+  fontSize: "clamp(26px, 2vw, 30px) !important",
+  color: theme.palette.textMain.main,
+  textAlign: "center",
+  marginTop: "1rem !important",
+}));
+const StyledHobbiesGridSubText = styled(Typography)(({ theme }) => ({
+  fontSize: "clamp(16px, 1.5vw, 18px) !important",
+  color: theme.palette.textSecondary.main,
+  textAlign: "center",
+}));
+const StyledHobbiesGridItem = styled(Grid)(({ theme }) => ({
+  display: "flex",
+  flexDirection: "column !important",
+  alignItems: "center",
+  padding: "4rem 4rem 4rem 4rem !important",
+  [theme.breakpoints.down("sm")]: {
+    padding: "2rem 4rem 2rem 4rem !important",
+  },
+  textAlign: "center",
+  color: theme.palette.textMain.main,
+  minWidth: "33%",
+  flexGrow: "1",
+}));
+
+//End component styles
 
 const pathVariants = {
   hidden: {
@@ -38,7 +78,6 @@ const pathVariantsRL = {
 };
 
 const Hobbies = () => {
-  const classes = useStyles();
   const theme = useTheme();
   const [hobbiesContainer, hobbiesContainerInView] = useInView({
     threshold: 0,
@@ -50,28 +89,24 @@ const Hobbies = () => {
 
   return (
     <Scroll.Element name="Hobbies">
-      <section className={classes.hobbiesRoot}>
-        <Container className={classes.hobbiesContainer} ref={hobbiesContainer}>
+      <StyledGenericRoot>
+        <StyledGenericContainer ref={hobbiesContainer}>
           {hobbiesContainerInView && (
             <>
-              <Typography className={classes.hobbiesTitle} component="h1">
+              <StyledGenericTitle component="h1">
                 Hobbies
-                <div className={classes.divider} />
-              </Typography>
-              <Typography
-                className={classes.hobbiesSubText}
-                component="h1"
-                ref={tennis}
-              >
+                <StyledDivider />
+              </StyledGenericTitle>
+              <StyledGenericSubText component="h1" ref={tennis}>
                 Aside from making applications, these are the things I that
                 enjoy to do for fun! Under each of them I have included my
                 favorite achievement.
-              </Typography>
+              </StyledGenericSubText>
             </>
           )}
 
-          <Grid container spacing={1} className={classes.hobbiesGrid}>
-            <Grid item xs={12} sm={4} className={classes.hobbiesGridItem}>
+          <StyledHobbiesGrid container spacing={1}>
+            <StyledHobbiesGridItem item xs={12} sm={4}>
               {inViewTennis && (
                 <div style={{ animation: "fadeInUp", animationDuration: "2s" }}>
                   <motion.svg
@@ -88,16 +123,14 @@ const Hobbies = () => {
                       strokeWidth="7"
                     ></motion.path>
                   </motion.svg>
-                  <Typography className={classes.hobbiesGridTitle}>
-                    Tennis
-                  </Typography>
-                  <Typography ref={cube} className={classes.hobbiesGridSubtext}>
+                  <StyledHobbiesGridTitle>Tennis</StyledHobbiesGridTitle>
+                  <StyledHobbiesGridSubText ref={cube}>
                     Peak ranking of 12 UTR in singles
-                  </Typography>
+                  </StyledHobbiesGridSubText>
                 </div>
               )}
-            </Grid>
-            <Grid item xs={12} sm={4} className={classes.hobbiesGridItem}>
+            </StyledHobbiesGridItem>
+            <StyledHobbiesGridItem item xs={12} sm={4}>
               {inViewCube && (
                 <div style={{ animation: "fadeInUp", animationDuration: "2s" }}>
                   <motion.svg
@@ -114,16 +147,14 @@ const Hobbies = () => {
                       strokeWidth="7"
                     ></motion.path>
                   </motion.svg>{" "}
-                  <Typography className={classes.hobbiesGridTitle}>
-                    Speed Cubing
-                  </Typography>
-                  <Typography ref={rl} className={classes.hobbiesGridSubtext}>
+                  <StyledHobbiesGridTitle>Speed Cubing</StyledHobbiesGridTitle>
+                  <StyledHobbiesGridSubText ref={rl}>
                     My fastest 3x3 solve time is currently 10.51 seconds
-                  </Typography>
+                  </StyledHobbiesGridSubText>
                 </div>
               )}
-            </Grid>
-            <Grid item xs={12} sm={4} className={classes.hobbiesGridItem}>
+            </StyledHobbiesGridItem>
+            <StyledHobbiesGridItem item xs={12} sm={4}>
               {inViewRl && (
                 <div style={{ animation: "fadeInUp", animationDuration: "2s" }}>
                   <motion.svg
@@ -142,18 +173,16 @@ const Hobbies = () => {
                       strokeWidth="18"
                     ></motion.path>
                   </motion.svg>
-                  <Typography className={classes.hobbiesGridTitle}>
-                    Rocket League
-                  </Typography>
-                  <Typography className={classes.hobbiesGridSubtext}>
+                  <StyledHobbiesGridTitle>Rocket League</StyledHobbiesGridTitle>
+                  <StyledHobbiesGridSubText>
                     Top 100 global Solo Duel player
-                  </Typography>
+                  </StyledHobbiesGridSubText>
                 </div>
               )}
-            </Grid>
-          </Grid>
-        </Container>
-      </section>
+            </StyledHobbiesGridItem>
+          </StyledHobbiesGrid>
+        </StyledGenericContainer>
+      </StyledGenericRoot>
     </Scroll.Element>
   );
 };

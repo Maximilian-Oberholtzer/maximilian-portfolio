@@ -1,6 +1,12 @@
 import { React, useState } from "react";
-import { useTheme, Container, Card } from "@mui/material";
-import useStyles from "./Styles";
+import { Container, styled, useTheme } from "@mui/material";
+import {
+  StyledDivider,
+  StyledGenericContainer,
+  StyledGenericRoot,
+  StyledGenericSubText,
+  StyledGenericTitle,
+} from "./Styles";
 import Typography from "@mui/material/Typography";
 import { useInView } from "react-intersection-observer";
 import * as Scroll from "react-scroll";
@@ -8,8 +14,46 @@ import data from "../../content/experience.json";
 import Slider from "react-slick";
 import "animate.css";
 
+//Component styles
+const StyledCarouselContainer = styled(Container)(({ theme }) => ({
+  marginTop: "3rem",
+  alignItems: "center",
+  width: "75% !important",
+  boxSizing: "unset !important",
+  maxWidth: "1000px !important",
+  textAlign: "center",
+  animation: "fadeInUp",
+  animationDuration: "1.4s",
+  [theme.breakpoints.down("sm")]: {
+    marginBottom: "4rem",
+  },
+}));
+const StyledCarouselCard = styled("div")(({ theme }) => ({
+  borderRadius: "2rem !important",
+  padding: "2rem 2rem",
+  [theme.breakpoints.down("sm")]: {
+    padding: "1.25rem 1.25rem",
+  },
+  maxWidth: "75%",
+  border: "0.15rem solid " + theme.palette.backgroundSecondary.main,
+}));
+const StyledCarouselTitle = styled(Typography)(({ theme }) => ({
+  fontSize: "clamp(28px, 4vw, 44px) !important",
+  color: theme.palette.textSecondary.main,
+}));
+const StyledCarouselSubTitle = styled(Typography)(({ theme }) => ({
+  fontSize: "clamp(16px, 2vw, 30px) !important",
+  color: theme.palette.textMain.main,
+}));
+const StyledCarouselSubText = styled(Typography)(({ theme }) => ({
+  marginTop: "1rem !important",
+  fontSize: "clamp(14px, 1vw, 26px) !important",
+  color: theme.palette.textMain.main,
+}));
+
+const customDotsClass = "custom-dots-class";
+
 const Experience = () => {
-  const classes = useStyles();
   const theme = useTheme();
   const [isAutoPlay, setAutoPlay] = useState(true);
 
@@ -26,11 +70,28 @@ const Experience = () => {
     setAutoPlay(false);
   };
 
+  const dotStyles = `
+    .${customDotsClass} li button:before {
+      font-size: 0.75rem;
+      color: ${theme.palette.textMain.main} !important;
+      margin-top: 1rem;
+      opacity: 0.4;
+    }
+
+    .${customDotsClass} li .slick-active button:focus:before  {
+      opacity: 1 !important;
+    }
+
+    .${customDotsClass} li .slick-active button:before  {
+      opacity: 1 !important;
+    }
+  `;
+
   const settings = {
     dots: true,
     autoplay: isAutoPlay,
     autoplaySpeed: 3500,
-    dotsClass: `slick-dots ${classes.dots}`,
+    dotsClass: `slick-dots ${customDotsClass}`,
     infinite: true,
     arrows: false,
     speed: 800,
@@ -38,59 +99,49 @@ const Experience = () => {
     slidesToScroll: 1,
   };
 
-  console.log(data);
   return (
     <Scroll.Element name="Experience">
-      <section className={classes.experienceRoot}>
-        <Container
-          className={classes.experienceContainer}
-          ref={experienceContainer}
-        >
+      <StyledGenericRoot>
+        <StyledGenericContainer ref={experienceContainer}>
           {experienceContainerInView && (
             <>
-              <Typography className={classes.experienceTitle} component="h1">
+              <StyledGenericTitle component="h1">
                 Experience
-                <div className={classes.divider} />
-              </Typography>
-              <Typography
-                className={classes.experienceSubText}
-                component="h1"
-                ref={experienceSlider}
-              >
+                <StyledDivider />
+              </StyledGenericTitle>
+              <StyledGenericSubText component="h1" ref={experienceSlider}>
                 Since graduating from Ursinus College in 2018, I have worked as
                 a full stack software engineer in the professional space.
-              </Typography>
+              </StyledGenericSubText>
             </>
           )}
-        </Container>
+        </StyledGenericContainer>
         {experienceSliderInView && (
           <>
-            <Container className={classes.carouselContainer}>
-              <Slider className={classes.carouselSlider} {...settings}>
+            <StyledCarouselContainer>
+              <style>{dotStyles}</style>
+              <Slider {...settings}>
                 {data.map((item) => (
-                  <div
+                  <StyledCarouselCard
                     key={item.id}
-                    className={classes.carouselContainerCard}
                     onClick={() => {
                       stopAutoPlay();
                     }}
                   >
-                    <Typography className={classes.carouselTitle}>
-                      {item.company}
-                    </Typography>
-                    <Typography className={classes.carouselSubTitle}>
+                    <StyledCarouselTitle>{item.company}</StyledCarouselTitle>
+                    <StyledCarouselSubTitle>
                       {item.jobTitle}
-                    </Typography>
-                    <Typography className={classes.carouselSubText}>
+                    </StyledCarouselSubTitle>
+                    <StyledCarouselSubText>
                       {item.description}
-                    </Typography>
-                  </div>
+                    </StyledCarouselSubText>
+                  </StyledCarouselCard>
                 ))}
               </Slider>
-            </Container>
+            </StyledCarouselContainer>
           </>
         )}
-      </section>
+      </StyledGenericRoot>
     </Scroll.Element>
   );
 };
