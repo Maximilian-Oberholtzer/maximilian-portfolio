@@ -87,108 +87,109 @@ const Hobbies = () => {
   const theme = useTheme();
   const sm = useMediaQuery(theme.breakpoints.down("md"));
   const [hobbiesContainer, hobbiesContainerInView] = useInView({
-    threshold: 0,
+    threshold: 0.7,
     triggerOnce: true,
   });
-  const [tennis, inViewTennis] = useInView({ threshold: 0, triggerOnce: true });
-  const [cube, inViewCube] = useInView({ threshold: 0, triggerOnce: true });
-  const [rl, inViewRl] = useInView({ threshold: 0, triggerOnce: true });
 
   return (
     <Scroll.Element name="Hobbies">
-      <StyledGenericRoot>
-        <StyledGenericContainer ref={hobbiesContainer}>
-          {hobbiesContainerInView && (
-            <>
+      <StyledGenericRoot ref={hobbiesContainer}>
+        {hobbiesContainerInView && (
+          <>
+            <StyledGenericContainer>
               <StyledGenericTitle component="h1">
                 Hobbies
                 <StyledDivider />
               </StyledGenericTitle>
-              <StyledGenericSubText component="h1" ref={tennis}>
+              <StyledGenericSubText component="h1">
                 Aside from making applications, these are the things I that
                 enjoy to do for fun! Under each of them I have included my
                 favorite achievement.
               </StyledGenericSubText>
-            </>
-          )}
 
-          <StyledHobbiesGrid container spacing={1}>
-            <StyledHobbiesGridItem item xs={12} sm={4}>
-              {inViewTennis && (
-                <div style={{ animation: "fadeInUp", animationDuration: "2s" }}>
-                  <motion.svg
-                    viewBox="0 0 512 512"
-                    width={sm ? "6rem" : "8rem"}
-                    initial="hidden"
-                    animate="visible"
+              <StyledHobbiesGrid container spacing={1}>
+                <StyledHobbiesGridItem item xs={12} sm={4}>
+                  <div
+                    style={{ animation: "fadeInUp", animationDuration: "2s" }}
                   >
-                    <motion.path
-                      d={TennisSvgPath}
-                      fill="none"
-                      variants={pathVariants}
-                      stroke={theme.palette.textMain.main}
-                      strokeWidth="7"
-                    ></motion.path>
-                  </motion.svg>
-                  <StyledHobbiesGridTitle>Tennis</StyledHobbiesGridTitle>
-                  <StyledHobbiesGridSubText ref={cube}>
-                    Peak ranking of 12 UTR in singles
-                  </StyledHobbiesGridSubText>
-                </div>
-              )}
-            </StyledHobbiesGridItem>
-            <StyledHobbiesGridItem item xs={12} sm={4}>
-              {inViewCube && (
-                <div style={{ animation: "fadeInUp", animationDuration: "2s" }}>
-                  <motion.svg
-                    viewBox="0 0 512 512"
-                    width={sm ? "6rem" : "8rem"}
-                    initial="hidden"
-                    animate="visible"
+                    <motion.svg
+                      viewBox="0 0 512 512"
+                      width={sm ? "6rem" : "8rem"}
+                      initial="hidden"
+                      animate="visible"
+                    >
+                      <motion.path
+                        d={TennisSvgPath}
+                        fill="none"
+                        variants={pathVariants}
+                        stroke={theme.palette.textMain.main}
+                        strokeWidth="7"
+                      ></motion.path>
+                    </motion.svg>
+                    <StyledHobbiesGridTitle>Tennis</StyledHobbiesGridTitle>
+                    <StyledHobbiesGridSubText>
+                      Peak ranking of 12 UTR in singles
+                    </StyledHobbiesGridSubText>
+                  </div>
+                </StyledHobbiesGridItem>
+                <StyledHobbiesGridItem item xs={12} sm={4}>
+                  <div
+                    style={{ animation: "fadeInUp", animationDuration: "2s" }}
                   >
-                    <motion.path
-                      d={RubiksCubePath}
-                      fill="none"
-                      variants={pathVariants}
-                      stroke={theme.palette.textMain.main}
-                      strokeWidth="7"
-                    ></motion.path>
-                  </motion.svg>{" "}
-                  <StyledHobbiesGridTitle>Speed Cubing</StyledHobbiesGridTitle>
-                  <StyledHobbiesGridSubText ref={rl}>
-                    My fastest 3x3 solve time is currently 10.51 seconds
-                  </StyledHobbiesGridSubText>
-                </div>
-              )}
-            </StyledHobbiesGridItem>
-            <StyledHobbiesGridItem item xs={12} sm={4}>
-              {inViewRl && (
-                <div style={{ animation: "fadeInUp", animationDuration: "2s" }}>
-                  <motion.svg
-                    viewBox="0 0 300.000000 179.000000"
-                    width={sm ? "10rem" : "12rem"}
-                    height={sm ? "6rem" : "8rem"}
-                    initial="hidden"
-                    animate="visible"
+                    <motion.svg
+                      viewBox="0 0 512 512"
+                      width={sm ? "6rem" : "8rem"}
+                      initial="hidden"
+                      animate="visible"
+                    >
+                      <motion.path
+                        d={RubiksCubePath}
+                        fill="none"
+                        variants={pathVariants}
+                        stroke={theme.palette.textMain.main}
+                        strokeWidth="7"
+                      ></motion.path>
+                    </motion.svg>{" "}
+                    <StyledHobbiesGridTitle>
+                      Speed Cubing
+                    </StyledHobbiesGridTitle>
+                    <StyledHobbiesGridSubText>
+                      My fastest 3x3 solve time is currently 10.51 seconds
+                    </StyledHobbiesGridSubText>
+                  </div>
+                </StyledHobbiesGridItem>
+                <StyledHobbiesGridItem item xs={12} sm={4}>
+                  <div
+                    style={{ animation: "fadeInUp", animationDuration: "2s" }}
                   >
-                    <motion.path
-                      d={RocketLeaguePath}
-                      fill="none"
-                      transform="translate(0.000000,179.000000) scale(0.100000,-0.100000)"
-                      variants={pathVariantsRL}
-                      stroke={theme.palette.textMain.main}
-                      strokeWidth="18"
-                    ></motion.path>
-                  </motion.svg>
-                  <StyledHobbiesGridTitle>Rocket League</StyledHobbiesGridTitle>
-                  <StyledHobbiesGridSubText>
-                    Top 100 global Solo Duel player
-                  </StyledHobbiesGridSubText>
-                </div>
-              )}
-            </StyledHobbiesGridItem>
-          </StyledHobbiesGrid>
-        </StyledGenericContainer>
+                    <motion.svg
+                      viewBox="0 0 300.000000 179.000000"
+                      width={sm ? "10rem" : "12rem"}
+                      height={sm ? "6rem" : "8rem"}
+                      initial="hidden"
+                      animate="visible"
+                    >
+                      <motion.path
+                        d={RocketLeaguePath}
+                        fill="none"
+                        transform="translate(0.000000,179.000000) scale(0.100000,-0.100000)"
+                        variants={pathVariantsRL}
+                        stroke={theme.palette.textMain.main}
+                        strokeWidth="18"
+                      ></motion.path>
+                    </motion.svg>
+                    <StyledHobbiesGridTitle>
+                      Rocket League
+                    </StyledHobbiesGridTitle>
+                    <StyledHobbiesGridSubText>
+                      Top 100 global Solo Duel player
+                    </StyledHobbiesGridSubText>
+                  </div>
+                </StyledHobbiesGridItem>
+              </StyledHobbiesGrid>
+            </StyledGenericContainer>
+          </>
+        )}
       </StyledGenericRoot>
     </Scroll.Element>
   );
