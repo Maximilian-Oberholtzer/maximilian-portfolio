@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Container, styled, useMediaQuery, useTheme } from "@mui/material";
+import { Container, styled, useTheme } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import maxAvatar from "../../assets/max_avatar.svg";
@@ -17,7 +17,7 @@ const StyledHeroRoot = styled("section")(({ theme }) => ({
   minHeight: "100vh",
 }));
 
-const StyledHeroContainer = styled(Container)(({ theme, isMobile }) => ({
+const StyledHeroContainer = styled(Container)(({ theme, ismobile }) => ({
   display: "flex !important",
   flex: "1",
   alignItems: "center",
@@ -25,18 +25,18 @@ const StyledHeroContainer = styled(Container)(({ theme, isMobile }) => ({
   boxSizing: "unset !important",
   width: "unset",
   ["@media (max-height: 730px)"]: {
-    paddingTop: isMobile ? "0px" : "102px",
+    paddingTop: ismobile ? "0px" : "102px",
   },
   [theme.breakpoints.up("sm")]: {
     marginTop: "2rem",
   },
 }));
 
-const StyledHeroGrid = styled(Grid)(({ theme }) => ({
+const StyledHeroGrid = styled(Grid)(({ ismobile }) => ({
   alignItems: "center",
   justifyContent: "space-around",
-  margin: "0rem !important",
   width: "auto",
+  marginBottom: ismobile ? "3rem" : "0rem",
 }));
 
 const StyledHeroImage = styled("img")(({ theme }) => ({
@@ -114,7 +114,6 @@ const ScrollerIcon = styled("div")(({ theme }) => ({
 
 const Hero = () => {
   const theme = useTheme();
-  const sm = useMediaQuery(theme.breakpoints.down("sm"));
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -126,8 +125,8 @@ const Hero = () => {
 
   return (
     <StyledHeroRoot>
-      <StyledHeroContainer isMobile={isMobile}>
-        <StyledHeroGrid container spacing={0}>
+      <StyledHeroContainer ismobile={isMobile}>
+        <StyledHeroGrid ismobile={isMobile} container spacing={0}>
           <Grid item style={{ paddingLeft: "0 !important" }}>
             <StyledHeroImage alt="" src={maxAvatar} />
           </Grid>
@@ -142,7 +141,7 @@ const Hero = () => {
           </StyledHeroText>
         </StyledHeroGrid>
       </StyledHeroContainer>
-      {sm && isMobile ? (
+      {isMobile ? (
         <></>
       ) : (
         <div
