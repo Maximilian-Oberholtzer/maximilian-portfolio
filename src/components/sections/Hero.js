@@ -1,5 +1,5 @@
-import React from "react";
-import { Container, styled } from "@mui/material";
+import React, { useEffect, useState } from "react";
+import { Container, styled, useMediaQuery, useTheme } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import maxAvatar from "../../assets/max_avatar.svg";
@@ -17,7 +17,7 @@ const StyledHeroRoot = styled("section")(({ theme }) => ({
   minHeight: "100vh",
 }));
 
-const StyledHeroContainer = styled(Container)(({ theme }) => ({
+const StyledHeroContainer = styled(Container)(({ theme, isMobile }) => ({
   display: "flex !important",
   flex: "1",
   alignItems: "center",
@@ -25,7 +25,7 @@ const StyledHeroContainer = styled(Container)(({ theme }) => ({
   boxSizing: "unset !important",
   width: "unset",
   ["@media (max-height: 730px)"]: {
-    paddingTop: "102px",
+    paddingTop: isMobile ? "0px" : "102px",
   },
   [theme.breakpoints.up("sm")]: {
     marginTop: "2rem",
@@ -113,9 +113,20 @@ const ScrollerIcon = styled("div")(({ theme }) => ({
 //End component style//
 
 const Hero = () => {
+  const theme = useTheme();
+  const sm = useMediaQuery(theme.breakpoints.down("sm"));
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const userAgent = navigator.userAgent.toLowerCase();
+    const isMobileDevice =
+      /mobile|android|ios|iphone|ipad|ipod|windows phone/i.test(userAgent);
+    setIsMobile(isMobileDevice);
+  }, []);
+
   return (
     <StyledHeroRoot>
-      <StyledHeroContainer>
+      <StyledHeroContainer isMobile={isMobile}>
         <StyledHeroGrid container spacing={0}>
           <Grid item style={{ paddingLeft: "0 !important" }}>
             <StyledHeroImage alt="" src={maxAvatar} />
@@ -131,15 +142,19 @@ const Hero = () => {
           </StyledHeroText>
         </StyledHeroGrid>
       </StyledHeroContainer>
-      <div
-        style={{
-          marginTop: "2rem",
-          animation: "fadeInUp",
-          animationDuration: "1s",
-        }}
-      >
-        <ScrollerIcon />
-      </div>
+      {sm && isMobile ? (
+        <></>
+      ) : (
+        <div
+          style={{
+            marginTop: "2rem",
+            animation: "fadeInUp",
+            animationDuration: "1s",
+          }}
+        >
+          <ScrollerIcon />
+        </div>
+      )}
     </StyledHeroRoot>
   );
 };

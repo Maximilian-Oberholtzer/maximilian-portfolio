@@ -113,7 +113,7 @@ const About = () => {
 
   return (
     <Scroll.Element name="About">
-      <StyledGenericRoot>
+      <StyledGenericRoot sx={{ minHeight: "75vh  !important" }}>
         <StyledGenericContainer
           style={{ overflow: "hidden" }}
           ref={aboutContainer}
