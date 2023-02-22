@@ -55,20 +55,11 @@ const customDotsClass = "custom-dots-class";
 
 const Experience = () => {
   const theme = useTheme();
-  //const [isAutoPlay, setAutoPlay] = useState(true);
 
   const [experienceContainer, experienceContainerInView] = useInView({
-    threshold: 0,
+    threshold: 0.7,
     triggerOnce: true,
   });
-  const [experienceSlider, experienceSliderInView] = useInView({
-    threshold: 0,
-    triggerOnce: true,
-  });
-
-  // const stopAutoPlay = () => {
-  //   setAutoPlay(false);
-  // };
 
   const dotStyles = `
     .${customDotsClass} li button:before {
@@ -90,7 +81,6 @@ const Experience = () => {
   const settings = {
     dots: true,
     autoplay: false,
-    //autoplaySpeed: 3500,
     dotsClass: `slick-dots ${customDotsClass}`,
     infinite: true,
     arrows: false,
@@ -101,33 +91,25 @@ const Experience = () => {
 
   return (
     <Scroll.Element name="Experience">
-      <StyledGenericRoot>
-        <StyledGenericContainer ref={experienceContainer}>
-          {experienceContainerInView && (
-            <>
+      <StyledGenericRoot ref={experienceContainer}>
+        {experienceContainerInView && (
+          <>
+            <StyledGenericContainer>
               <StyledGenericTitle component="h1">
                 Experience
                 <StyledDivider />
               </StyledGenericTitle>
-              <StyledGenericSubText component="h1" ref={experienceSlider}>
+              <StyledGenericSubText component="h1">
                 Since graduating from Ursinus College in 2018, I have worked as
                 a full stack software engineer in the professional space.
               </StyledGenericSubText>
-            </>
-          )}
-        </StyledGenericContainer>
-        {experienceSliderInView && (
-          <>
+            </StyledGenericContainer>
+
             <StyledCarouselContainer>
               <style>{dotStyles}</style>
               <Slider {...settings}>
                 {data.map((item) => (
-                  <StyledCarouselCard
-                    key={item.id}
-                    // onClick={() => {
-                    //   stopAutoPlay();
-                    // }}
-                  >
+                  <StyledCarouselCard key={item.id}>
                     <StyledCarouselTitle>{item.company}</StyledCarouselTitle>
                     <StyledCarouselSubTitle>
                       {item.jobTitle}
