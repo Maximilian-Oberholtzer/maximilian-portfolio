@@ -1,5 +1,11 @@
 import React from "react";
-import { useTheme, Typography, Grid, styled } from "@mui/material";
+import {
+  useTheme,
+  Typography,
+  Grid,
+  styled,
+  useMediaQuery,
+} from "@mui/material";
 import {
   StyledDivider,
   StyledGenericContainer,
@@ -79,6 +85,7 @@ const pathVariantsRL = {
 
 const Hobbies = () => {
   const theme = useTheme();
+  const sm = useMediaQuery(theme.breakpoints.down("md"));
   const [hobbiesContainer, hobbiesContainerInView] = useInView({
     threshold: 0,
     triggerOnce: true,
@@ -111,7 +118,7 @@ const Hobbies = () => {
                 <div style={{ animation: "fadeInUp", animationDuration: "2s" }}>
                   <motion.svg
                     viewBox="0 0 512 512"
-                    width="8rem"
+                    width={sm ? "6rem" : "8rem"}
                     initial="hidden"
                     animate="visible"
                   >
@@ -135,7 +142,7 @@ const Hobbies = () => {
                 <div style={{ animation: "fadeInUp", animationDuration: "2s" }}>
                   <motion.svg
                     viewBox="0 0 512 512"
-                    width="8rem"
+                    width={sm ? "6rem" : "8rem"}
                     initial="hidden"
                     animate="visible"
                   >
@@ -159,8 +166,8 @@ const Hobbies = () => {
                 <div style={{ animation: "fadeInUp", animationDuration: "2s" }}>
                   <motion.svg
                     viewBox="0 0 300.000000 179.000000"
-                    width="12rem"
-                    height="8rem"
+                    width={sm ? "10rem" : "12rem"}
+                    height={sm ? "6rem" : "8rem"}
                     initial="hidden"
                     animate="visible"
                   >

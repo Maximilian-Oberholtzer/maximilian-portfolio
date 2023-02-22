@@ -42,12 +42,12 @@ const StyledCarouselTitle = styled(Typography)(({ theme }) => ({
   color: theme.palette.textSecondary.main,
 }));
 const StyledCarouselSubTitle = styled(Typography)(({ theme }) => ({
-  fontSize: "clamp(16px, 2vw, 30px) !important",
+  fontSize: "clamp(18px, 2vw, 30px) !important",
   color: theme.palette.textMain.main,
 }));
 const StyledCarouselSubText = styled(Typography)(({ theme }) => ({
   marginTop: "1rem !important",
-  fontSize: "clamp(14px, 1.8vw, 26px) !important",
+  fontSize: "clamp(16px, 1.8vw, 26px) !important",
   color: theme.palette.textMain.main,
 }));
 
