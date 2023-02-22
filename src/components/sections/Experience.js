@@ -35,7 +35,7 @@ const StyledCarouselCard = styled("div")(({ theme }) => ({
     padding: "1.25rem 1.25rem",
   },
   maxWidth: "75%",
-  border: "0.3rem dotted " + theme.palette.backgroundSecondary.main,
+  border: "0.25rem solid " + theme.palette.backgroundSecondary.main,
 }));
 const StyledCarouselTitle = styled(Typography)(({ theme }) => ({
   fontSize: "clamp(28px, 4vw, 44px) !important",
