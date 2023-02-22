@@ -24,7 +24,7 @@ const StyledHobbiesGrid = styled(Grid)({
   padding: "2rem 0rem 2rem 0rem",
   justifyContent: "center",
   animation: "fadeInUp",
-  animationDuration: "1.25s",
+  animationDuration: "1.5s",
 });
 const StyledHobbiesGridTitle = styled(Typography)(({ theme }) => ({
   fontSize: "clamp(26px, 2vw, 30px) !important",

@@ -16,7 +16,7 @@ const StyledScrollingContainer = styled("div")(({ theme }) => ({
   position: "relative",
   width: "inherit",
   animation: "fadeInUp",
-  animationDuration: "1.25s",
+  animationDuration: "2s",
 
   "&::before": {
     content: "''",
