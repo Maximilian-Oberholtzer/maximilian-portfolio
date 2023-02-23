@@ -23,7 +23,7 @@ const StyledCarouselContainer = styled(Container)(({ theme }) => ({
   maxWidth: "1000px !important",
   textAlign: "center",
   animation: "fadeInUp",
-  animationDuration: "1.25s",
+  animationDuration: "1s",
   [theme.breakpoints.down("sm")]: {
     marginBottom: "4rem",
   },

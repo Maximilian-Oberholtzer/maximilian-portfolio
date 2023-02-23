@@ -43,5 +43,5 @@ export const StyledGenericSubText = styled(Typography)(({ theme }) => ({
   fontSize: "clamp(20px, 2vw, 26px) !important",
   textAlign: "center",
   animation: "fadeInUp",
-  animationDuration: "1.25s",
+  animationDuration: "1s",
 }));
