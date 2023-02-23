@@ -1,6 +1,6 @@
 import { React, useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { ThemeProvider } from "@mui/material";
+import { CssBaseline, ThemeProvider } from "@mui/material";
 import { ThemeContext } from "./ThemeContext";
 import Loader from "./components/Loader";
 import Main from "./components/Main";
@@ -18,24 +18,26 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       setIsloading(false);
-    }, 2200);
+    }, 2400);
   }, []);
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
       <ThemeProvider theme={muiTheme}>
-        <Router>
-          <div>
-            {isLoading ? (
-              <Loader></Loader>
-            ) : (
-              <>
-                <Navbar />
-                <Main />
-              </>
-            )}
-          </div>
-        </Router>
+        <CssBaseline>
+          <Router>
+            <div>
+              {isLoading ? (
+                <Loader></Loader>
+              ) : (
+                <>
+                  <Navbar />
+                  <Main />
+                </>
+              )}
+            </div>
+          </Router>
+        </CssBaseline>
       </ThemeProvider>
     </ThemeContext.Provider>
   );
