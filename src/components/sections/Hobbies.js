@@ -128,7 +128,7 @@ const Hobbies = () => {
                     </motion.svg>
                     <StyledHobbiesGridTitle>Tennis</StyledHobbiesGridTitle>
                     <StyledHobbiesGridSubText>
-                      Peak ranking of 12 UTR in singles
+                      Peak ranking of 12 UTR in singles & 3-star college recruit
                     </StyledHobbiesGridSubText>
                   </div>
                 </StyledHobbiesGridItem>
@@ -154,7 +154,7 @@ const Hobbies = () => {
                       Speed Cubing
                     </StyledHobbiesGridTitle>
                     <StyledHobbiesGridSubText>
-                      My fastest 3x3 solve time is currently 10.51 seconds
+                      Fastest recorded 3x3 solve time is currently 10.51 seconds
                     </StyledHobbiesGridSubText>
                   </div>
                 </StyledHobbiesGridItem>
@@ -182,7 +182,7 @@ const Hobbies = () => {
                       Rocket League
                     </StyledHobbiesGridTitle>
                     <StyledHobbiesGridSubText>
-                      Top 100 global Solo Duel player
+                      Top 100 on global leaderboard in Solo Duel game mode
                     </StyledHobbiesGridSubText>
                   </div>
                 </StyledHobbiesGridItem>
