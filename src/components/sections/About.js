@@ -16,7 +16,7 @@ const StyledScrollingContainer = styled("div")(({ theme }) => ({
   position: "relative",
   width: "inherit",
   animation: "fadeInUp",
-  animationDuration: "2s",
+  animationDuration: "1.5s",
 
   "&::before": {
     content: "''",
@@ -88,7 +88,7 @@ const StyledScrollingText = styled(Typography)(({ theme }) => ({
 
 const About = () => {
   const [aboutContainer, aboutContainerInView] = useInView({
-    threshold: 0.7,
+    threshold: 1,
     triggerOnce: true,
   });
   const technologiesArr = [
