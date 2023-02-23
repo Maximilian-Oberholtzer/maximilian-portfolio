@@ -2,6 +2,22 @@ import { createTheme } from "@mui/material";
 
 export const lightTheme = createTheme({
   components: {
+    MuiCssBaseline: {
+      styleOverrides: {
+        // Style for the scrollbar
+        "*::-webkit-scrollbar": {
+          width: "0.4em",
+          height: "0.4em",
+          backgroundColor: "#FFFFFF",
+        },
+        "*::-webkit-scrollbar-thumb": {
+          backgroundColor: "#5BC0BE",
+        },
+        "*": {
+          boxSizing: "unset",
+        },
+      },
+    },
     MuiButtonBase: {
       defaultProps: {
         disableRipple: true,
@@ -51,6 +67,22 @@ export const lightTheme = createTheme({
 
 export const darkTheme = createTheme({
   components: {
+    MuiCssBaseline: {
+      styleOverrides: {
+        // Style for the scrollbar
+        "*::-webkit-scrollbar": {
+          width: "0.4em",
+          height: "0.4em",
+          backgroundColor: "#0B132B",
+        },
+        "*::-webkit-scrollbar-thumb": {
+          backgroundColor: "#3A506B",
+        },
+        "*": {
+          boxSizing: "unset",
+        },
+      },
+    },
     MuiButtonBase: {
       defaultProps: {
         disableRipple: true,

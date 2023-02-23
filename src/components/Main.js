@@ -5,6 +5,7 @@ import SideAnchorLinks from "./SideAnchorLinks";
 import About from "./sections/About";
 import Hobbies from "./sections/Hobbies";
 import Experience from "./sections/Experience";
+import Projects from "./sections/Projects";
 
 const StyledMainContainer = styled(Container)({
   maxWidth: "1600px",
@@ -28,6 +29,7 @@ const Main = () => {
         <About />
         <Experience />
         <Hobbies />
+        <Projects />
       </StyledMainContainer>
     </div>
   );

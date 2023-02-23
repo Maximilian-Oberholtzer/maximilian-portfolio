@@ -14,7 +14,7 @@ const pathVariants = {
     pathLength: 1,
     transition: {
       duration: 2,
-      ease: "easeInOut",
+      ease: "easeIn",
     },
   },
 };
@@ -27,7 +27,7 @@ const Loader = () => {
   useEffect(() => {
     setTimeout(() => {
       setHasLoaded(true);
-    }, 1400);
+    }, 1800);
   }, []);
 
   return (
