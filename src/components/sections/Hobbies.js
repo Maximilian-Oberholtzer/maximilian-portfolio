@@ -110,7 +110,7 @@ const Hobbies = () => {
               <StyledHobbiesGrid container spacing={1}>
                 <StyledHobbiesGridItem item xs={12} sm={4}>
                   <div
-                    style={{ animation: "fadeInUp", animationDuration: "1.5s" }}
+                    style={{ animation: "fadeInUp", animationDuration: "1s" }}
                   >
                     <motion.svg
                       viewBox="0 0 512 512"
@@ -134,7 +134,7 @@ const Hobbies = () => {
                 </StyledHobbiesGridItem>
                 <StyledHobbiesGridItem item xs={12} sm={4}>
                   <div
-                    style={{ animation: "fadeInUp", animationDuration: "1.5s" }}
+                    style={{ animation: "fadeInUp", animationDuration: "2s" }}
                   >
                     <motion.svg
                       viewBox="0 0 512 512"
@@ -160,7 +160,7 @@ const Hobbies = () => {
                 </StyledHobbiesGridItem>
                 <StyledHobbiesGridItem item xs={12} sm={4}>
                   <div
-                    style={{ animation: "fadeInUp", animationDuration: "1.5s" }}
+                    style={{ animation: "fadeInUp", animationDuration: "3s" }}
                   >
                     <motion.svg
                       viewBox="0 0 300.000000 179.000000"
