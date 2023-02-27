@@ -86,7 +86,7 @@ const StyledDrawer = styled(Drawer)(({ theme }) => ({
     textAlign: "center",
     justifyContent: "center",
     color: theme.palette.textMain.main,
-    zIndex: "2 !important",
+    zIndex: "1500 !important",
   },
 }));
 //End component style//
@@ -174,9 +174,11 @@ const Navbar = () => {
         open={isOpen}
         onClose={toggleDrawer(false)}
       >
-        <Button onClick={toggleDrawer(false)}>
-          <StyledDrawerCloseIcon />
-        </Button>
+        <Fade in={true} timeout={600} style={{ transitionDelay: "0s" }}>
+          <Button onClick={toggleDrawer(false)}>
+            <StyledDrawerCloseIcon />
+          </Button>
+        </Fade>
         <Box role="presentation" onKeyDown={toggleDrawer(false)}>
           <List>
             <Fade in={true} timeout={600} style={{ transitionDelay: "0s" }}>
