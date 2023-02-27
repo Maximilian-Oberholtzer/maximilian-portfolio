@@ -81,7 +81,7 @@ const StyledDrawer = styled(Drawer)(({ theme }) => ({
   "& div.MuiPaper-root": {
     background: "transparent",
     backdropFilter: "blur(10px)",
-    height: "100vh !important",
+    height: "100% !important",
     boxShadow: "none !important",
     textAlign: "center",
     justifyContent: "center",
@@ -143,6 +143,7 @@ const Navbar = () => {
     ) {
       return;
     }
+
     setIsOpen(isOpen);
   };
 
