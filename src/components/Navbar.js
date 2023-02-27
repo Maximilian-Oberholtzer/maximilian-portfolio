@@ -81,13 +81,12 @@ const StyledDrawer = styled(Drawer)(({ theme }) => ({
   "& div.MuiPaper-root": {
     background: "transparent",
     backdropFilter: "blur(10px)",
-    height: "100% !important",
-    overflow: "hidden !important",
+    height: "100vh !important",
     boxShadow: "none !important",
     textAlign: "center",
     justifyContent: "center",
     color: theme.palette.textMain.main,
-    zIndex: "1500 !important",
+    zIndex: "2 !important",
   },
 }));
 //End component style//
@@ -173,6 +172,7 @@ const Navbar = () => {
         anchor={"top"}
         variant="temporary"
         transitionDuration={1}
+        disableScrollLock={true}
         open={isOpen}
         onClose={toggleDrawer(false)}
       >
