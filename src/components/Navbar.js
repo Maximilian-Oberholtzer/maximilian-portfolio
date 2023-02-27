@@ -17,6 +17,7 @@ import {
   useTheme,
   useScrollTrigger,
   Slide,
+  Fade,
   styled,
 } from "@mui/material";
 import * as Scroll from "react-scroll";
@@ -74,12 +75,12 @@ const StyledDrawerCloseIcon = styled(CloseIcon)(({ theme }) => ({
   zIndex: "3 !important",
 }));
 const StyledDrawerText = styled(Typography)(({ theme }) => ({
-  fontSize: "1.25rem",
+  fontSize: "1.5rem",
 }));
 const StyledDrawer = styled(Drawer)(({ theme }) => ({
   "& div.MuiPaper-root": {
     background: "transparent",
-    backdropFilter: "blur(8px)",
+    backdropFilter: "blur(10px)",
     height: "100vh !important",
     boxShadow: "none !important",
     textAlign: "center",
@@ -169,6 +170,7 @@ const Navbar = () => {
       <StyledDrawer
         anchor={"top"}
         variant="temporary"
+        transitionDuration={1}
         open={isOpen}
         onClose={toggleDrawer(false)}
       >
@@ -177,52 +179,65 @@ const Navbar = () => {
         </Button>
         <Box role="presentation" onKeyDown={toggleDrawer(false)}>
           <List>
-            <StyledResumeButton onClick={resumeClick}>
-              <StyledDrawerText>Resume</StyledDrawerText>
-            </StyledResumeButton>
+            <Fade in={true} timeout={600} style={{ transitionDelay: "0s" }}>
+              <StyledResumeButton onClick={resumeClick}>
+                <StyledDrawerText>Resume</StyledDrawerText>
+              </StyledResumeButton>
+            </Fade>
           </List>
           <List>
-            <StyledAppBarButton
-              onClick={() => {
-                scrollToSection("About");
-              }}
-            >
-              <StyledDrawerText>About</StyledDrawerText>
-            </StyledAppBarButton>
+            <Fade in={true} timeout={600} style={{ transitionDelay: "0.10s" }}>
+              <StyledAppBarButton
+                onClick={() => {
+                  scrollToSection("About");
+                }}
+              >
+                <StyledDrawerText>About</StyledDrawerText>
+              </StyledAppBarButton>
+            </Fade>
           </List>
           <List>
-            <StyledAppBarButton
-              onClick={() => {
-                scrollToSection("Experience");
-              }}
-            >
-              <StyledDrawerText>Experience</StyledDrawerText>
-            </StyledAppBarButton>
+            <Fade in={true} timeout={600} style={{ transitionDelay: "0.2s" }}>
+              <StyledAppBarButton
+                onClick={() => {
+                  scrollToSection("Experience");
+                }}
+              >
+                <StyledDrawerText>Experience</StyledDrawerText>
+              </StyledAppBarButton>
+            </Fade>
           </List>
           <List>
-            <StyledAppBarButton
-              onClick={() => {
-                scrollToSection("Hobbies");
-              }}
-            >
-              <StyledDrawerText>Hobbies</StyledDrawerText>
-            </StyledAppBarButton>
+            <Fade in={true} timeout={600} style={{ transitionDelay: "0.3s" }}>
+              <StyledAppBarButton
+                onClick={() => {
+                  scrollToSection("Hobbies");
+                }}
+              >
+                <StyledDrawerText>Hobbies</StyledDrawerText>
+              </StyledAppBarButton>
+            </Fade>
           </List>
           <List>
-            <StyledAppBarButton
-              onClick={() => {
-                scrollToSection("Projects");
-              }}
-            >
-              <StyledDrawerText>Projects</StyledDrawerText>
-            </StyledAppBarButton>
+            <Fade in={true} timeout={600} style={{ transitionDelay: "0.4s" }}>
+              <StyledAppBarButton
+                onClick={() => {
+                  scrollToSection("Projects");
+                }}
+              >
+                <StyledDrawerText>Projects</StyledDrawerText>
+              </StyledAppBarButton>
+            </Fade>
           </List>
           <List>
-            <StyledAppBarButton
-              onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-            >
-              {theme === "light" ? <WbSunnyIcon /> : <DarkModeIcon />}
-            </StyledAppBarButton>
+            <Fade in={true} timeout={600} style={{ transitionDelay: "0.5s" }}>
+              <Button
+                sx={{ color: MuiTheme.palette.textMain.main }}
+                onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+              >
+                {theme === "light" ? <WbSunnyIcon /> : <DarkModeIcon />}
+              </Button>
+            </Fade>
           </List>
         </Box>
       </StyledDrawer>
