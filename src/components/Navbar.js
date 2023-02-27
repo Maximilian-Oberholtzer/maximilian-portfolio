@@ -4,9 +4,10 @@ import ResumePdf from "../assets/Maximilian Oberholtzer Resume 2023.pdf";
 import MenuIcon from "@mui/icons-material/Menu";
 import WbSunnyIcon from "@mui/icons-material/WbSunny";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
-import Typography from "@mui/material/Typography";
+import CloseIcon from "@mui/icons-material/Close";
 import {
   Button,
+  Typography,
   Drawer,
   AppBar,
   Toolbar,
@@ -65,14 +66,26 @@ const StyledDrawerIcon = styled(MenuIcon)(({ theme }) => ({
   fontSize: "2rem !important",
   zIndex: "3 !important",
 }));
+const StyledDrawerCloseIcon = styled(CloseIcon)(({ theme }) => ({
+  position: "fixed",
+  top: "4%",
+  right: "10%",
+  color: theme.palette.textMain.main,
+  fontSize: "2rem !important",
+  zIndex: "3 !important",
+}));
+const StyledDrawerText = styled(Typography)(({ theme }) => ({
+  fontSize: "1.25rem",
+}));
 const StyledDrawer = styled(Drawer)(({ theme }) => ({
   "& div.MuiPaper-root": {
-    backgroundColor: theme.palette.background.main,
-    width: "50vw",
-    maxWidth: "20rem",
+    background: "transparent",
+    backdropFilter: "blur(8px)",
+    height: "100vh !important",
+    boxShadow: "none !important",
     textAlign: "center",
     justifyContent: "center",
-    padding: "1.5rem 0 0 0",
+    // padding: "1.5rem 0 0 0",
     color: theme.palette.textMain.main,
     zIndex: "2 !important",
   },
@@ -156,15 +169,18 @@ const Navbar = () => {
       </div>
 
       <StyledDrawer
-        anchor={"right"}
+        anchor={"top"}
         variant="temporary"
         open={isOpen}
         onClose={toggleDrawer(false)}
       >
+        <Button onClick={toggleDrawer(false)}>
+          <StyledDrawerCloseIcon />
+        </Button>
         <Box role="presentation" onKeyDown={toggleDrawer(false)}>
           <List>
             <StyledResumeButton onClick={resumeClick}>
-              <Typography>Resume</Typography>
+              <StyledDrawerText>Resume</StyledDrawerText>
             </StyledResumeButton>
           </List>
           <List>
@@ -173,7 +189,7 @@ const Navbar = () => {
                 scrollToSection("About");
               }}
             >
-              <Typography>About</Typography>
+              <StyledDrawerText>About</StyledDrawerText>
             </StyledAppBarButton>
           </List>
           <List>
@@ -182,7 +198,7 @@ const Navbar = () => {
                 scrollToSection("Experience");
               }}
             >
-              <Typography>Experience</Typography>
+              <StyledDrawerText>Experience</StyledDrawerText>
             </StyledAppBarButton>
           </List>
           <List>
@@ -191,7 +207,7 @@ const Navbar = () => {
                 scrollToSection("Hobbies");
               }}
             >
-              <Typography>Hobbies</Typography>
+              <StyledDrawerText>Hobbies</StyledDrawerText>
             </StyledAppBarButton>
           </List>
           <List>
@@ -200,7 +216,7 @@ const Navbar = () => {
                 scrollToSection("Projects");
               }}
             >
-              <Typography>Projects</Typography>
+              <StyledDrawerText>Projects</StyledDrawerText>
             </StyledAppBarButton>
           </List>
           <List>

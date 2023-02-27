@@ -24,7 +24,7 @@ const StyledHeroContainer = styled(Container)(({ theme, ismobile }) => ({
   alignSelf: "center",
   boxSizing: "unset !important",
   width: "unset",
-  ["@media (max-height: 730px)"]: {
+  ["@media (max-height: 804px)"]: {
     paddingTop: ismobile ? "0px" : "102px",
   },
   [theme.breakpoints.up("sm")]: {
