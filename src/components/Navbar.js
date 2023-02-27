@@ -30,8 +30,7 @@ const StyledAppBarContainer = styled("div")(({ theme }) => ({
   justifyContent: "center",
   width: "70vw !important",
   [theme.breakpoints.down("sm")]: {
-    maxWidth: "90vw !important",
-    width: "90vw !important",
+    width: "100vw !important",
   },
 }));
 const StyledAppBar = styled(AppBar)(({ theme, isScrolled }) => ({
@@ -69,7 +68,7 @@ const StyledDrawerIcon = styled(MenuIcon)(({ theme }) => ({
 const StyledDrawerCloseIcon = styled(CloseIcon)(({ theme }) => ({
   position: "fixed",
   top: "4%",
-  right: "10%",
+  right: "7%",
   color: theme.palette.textMain.main,
   fontSize: "2rem !important",
   zIndex: "3 !important",
@@ -85,7 +84,6 @@ const StyledDrawer = styled(Drawer)(({ theme }) => ({
     boxShadow: "none !important",
     textAlign: "center",
     justifyContent: "center",
-    // padding: "1.5rem 0 0 0",
     color: theme.palette.textMain.main,
     zIndex: "2 !important",
   },
