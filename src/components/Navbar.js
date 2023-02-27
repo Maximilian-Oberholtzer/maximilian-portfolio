@@ -68,8 +68,8 @@ const StyledDrawerIcon = styled(MenuIcon)(({ theme }) => ({
 }));
 const StyledDrawerCloseIcon = styled(CloseIcon)(({ theme }) => ({
   position: "fixed",
-  top: "4%",
-  right: "7%",
+  top: "4.5%",
+  right: "8%",
   color: theme.palette.textMain.main,
   fontSize: "2rem !important",
   zIndex: "3 !important",
@@ -180,13 +180,16 @@ const Navbar = () => {
         <Box role="presentation" onKeyDown={toggleDrawer(false)}>
           <List>
             <Fade in={true} timeout={600} style={{ transitionDelay: "0s" }}>
-              <StyledResumeButton onClick={resumeClick}>
+              <StyledResumeButton
+                onClick={resumeClick}
+                sx={{ padding: "0.75rem 1rem" }}
+              >
                 <StyledDrawerText>Resume</StyledDrawerText>
               </StyledResumeButton>
             </Fade>
           </List>
           <List>
-            <Fade in={true} timeout={600} style={{ transitionDelay: "0.10s" }}>
+            <Fade in={true} timeout={600} style={{ transitionDelay: "0.12s" }}>
               <StyledAppBarButton
                 onClick={() => {
                   scrollToSection("About");
@@ -197,7 +200,7 @@ const Navbar = () => {
             </Fade>
           </List>
           <List>
-            <Fade in={true} timeout={600} style={{ transitionDelay: "0.2s" }}>
+            <Fade in={true} timeout={600} style={{ transitionDelay: "0.24s" }}>
               <StyledAppBarButton
                 onClick={() => {
                   scrollToSection("Experience");
@@ -208,7 +211,7 @@ const Navbar = () => {
             </Fade>
           </List>
           <List>
-            <Fade in={true} timeout={600} style={{ transitionDelay: "0.3s" }}>
+            <Fade in={true} timeout={600} style={{ transitionDelay: "0.36s" }}>
               <StyledAppBarButton
                 onClick={() => {
                   scrollToSection("Hobbies");
@@ -219,7 +222,7 @@ const Navbar = () => {
             </Fade>
           </List>
           <List>
-            <Fade in={true} timeout={600} style={{ transitionDelay: "0.4s" }}>
+            <Fade in={true} timeout={600} style={{ transitionDelay: "0.48s" }}>
               <StyledAppBarButton
                 onClick={() => {
                   scrollToSection("Projects");
@@ -230,7 +233,7 @@ const Navbar = () => {
             </Fade>
           </List>
           <List>
-            <Fade in={true} timeout={600} style={{ transitionDelay: "0.5s" }}>
+            <Fade in={true} timeout={600} style={{ transitionDelay: "0.6s" }}>
               <Button
                 sx={{ color: MuiTheme.palette.textMain.main }}
                 onClick={() => setTheme(theme === "light" ? "dark" : "light")}
