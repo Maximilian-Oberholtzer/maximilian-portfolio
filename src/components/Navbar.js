@@ -82,6 +82,7 @@ const StyledDrawer = styled(Drawer)(({ theme }) => ({
     background: "transparent",
     backdropFilter: "blur(10px)",
     height: "100% !important",
+    overflow: "hidden !important",
     boxShadow: "none !important",
     textAlign: "center",
     justifyContent: "center",
