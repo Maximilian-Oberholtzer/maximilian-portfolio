@@ -1,5 +1,5 @@
 import { React } from "react";
-import { Typography, styled } from "@mui/material";
+import { Typography, Container, Grid, styled } from "@mui/material";
 import {
   StyledDivider,
   StyledGenericContainer,
@@ -10,8 +10,26 @@ import {
 import "animate.css";
 import { useInView } from "react-intersection-observer";
 import * as Scroll from "react-scroll";
+import MellowHeads from "../../assets/mellowHeadsNFT.png";
 
 //Component styles//
+const StyledProjectsContainer = styled(Container)(({ theme }) => ({
+  marginTop: "3rem",
+  alignItems: "center",
+  display: "flex",
+  flexDirection: "column",
+  width: "70% !important",
+  boxSizing: "unset !important",
+  maxWidth: "1000px !important",
+  textAlign: "center",
+  overflow: "hidden",
+  borderRadius: "1rem",
+  paddingLeft: "0 !important",
+  paddingRight: "0 !important",
+  [theme.breakpoints.down("sm")]: {
+    width: "80% !important",
+  },
+}));
 
 //End component styles
 
@@ -25,15 +43,18 @@ const Projects = () => {
     <Scroll.Element name="Projects">
       <StyledGenericRoot ref={projectsContainer}>
         {projectsContainerInView && (
-          <StyledGenericContainer>
-            <StyledGenericTitle component="h1">
-              Projects
-              <StyledDivider />
-            </StyledGenericTitle>
-            <StyledGenericSubText component="h1">
-              Here are a few projects that I have built over the past few years!
-            </StyledGenericSubText>
-          </StyledGenericContainer>
+          <>
+            <StyledGenericContainer>
+              <StyledGenericTitle component="h1">
+                Projects
+                <StyledDivider />
+              </StyledGenericTitle>
+              <StyledGenericSubText component="h1">
+                Here are a few projects that I have built over the past few
+                years!
+              </StyledGenericSubText>
+            </StyledGenericContainer>
+          </>
         )}
       </StyledGenericRoot>
     </Scroll.Element>

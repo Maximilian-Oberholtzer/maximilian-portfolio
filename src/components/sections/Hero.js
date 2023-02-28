@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Container, styled, useTheme } from "@mui/material";
+import { Container, styled } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import maxAvatar from "../../assets/max_avatar.svg";
@@ -43,7 +43,7 @@ const StyledHeroImage = styled("img")(({ theme }) => ({
   animation: "fadeIn",
   animationDuration: "2s",
   width: "280px",
-  borderRadius: "30px",
+  borderRadius: "2rem",
   backgroundColor: theme.palette.backgroundSecondary.main,
   textAlign: "center",
   margin: "2rem 4rem 2rem 4rem ",
@@ -113,7 +113,6 @@ const ScrollerIcon = styled("div")(({ theme }) => ({
 //End component style//
 
 const Hero = () => {
-  const theme = useTheme();
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
