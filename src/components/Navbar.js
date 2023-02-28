@@ -68,8 +68,8 @@ const StyledDrawerIcon = styled(MenuIcon)(({ theme }) => ({
 }));
 const StyledDrawerCloseIcon = styled(CloseIcon)(({ theme }) => ({
   position: "fixed",
-  top: "4.5%",
-  right: "8%",
+  top: "32px",
+  right: "32px",
   color: theme.palette.textMain.main,
   fontSize: "2rem !important",
   zIndex: "3 !important",
