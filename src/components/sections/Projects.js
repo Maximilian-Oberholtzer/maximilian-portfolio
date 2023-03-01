@@ -109,9 +109,6 @@ const StyledProjectsTextField = styled("div")(({ theme }) => ({
 const StyledProjectsTitle = styled(Typography)(({ theme }) => ({
   fontSize: "1.5rem !important",
   fontWeight: "600",
-  [theme.breakpoints.down("xs")]: {
-    fontSize: "1rem !important",
-  },
 }));
 const StyledProjectsSubText = styled(Typography)(({ theme }) => ({
   fontSize: "1rem !important",
