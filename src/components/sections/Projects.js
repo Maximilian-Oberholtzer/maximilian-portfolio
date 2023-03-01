@@ -110,7 +110,7 @@ const StyledProjectsTitle = styled(Typography)(({ theme }) => ({
   fontSize: "1.5rem !important",
   fontWeight: "600",
   [theme.breakpoints.down("xs")]: {
-    fontSize: "1rem !important",
+    fontSize: "1.3rem !important",
   },
 }));
 const StyledProjectsSubText = styled(Typography)(({ theme }) => ({
