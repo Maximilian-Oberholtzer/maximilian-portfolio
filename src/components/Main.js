@@ -28,8 +28,8 @@ const Main = () => {
         <Hero />
         <About />
         <Experience />
-        <Hobbies />
         <Projects />
+        <Hobbies />
       </StyledMainContainer>
     </div>
   );

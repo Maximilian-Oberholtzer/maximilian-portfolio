@@ -39,7 +39,7 @@ export const lightTheme = createTheme({
   },
   breakpoints: {
     values: {
-      xs: 0,
+      xs: 450,
       sm: 960,
       md: 1048,
       lg: 1200,
@@ -104,7 +104,7 @@ export const darkTheme = createTheme({
   },
   breakpoints: {
     values: {
-      xs: 0,
+      xs: 450,
       sm: 960,
       md: 1048,
       lg: 1200,
