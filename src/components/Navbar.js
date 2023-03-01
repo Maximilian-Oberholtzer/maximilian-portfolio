@@ -218,10 +218,10 @@ const Navbar = () => {
             <Fade in={true} timeout={600} style={{ transitionDelay: "0.36s" }}>
               <StyledAppBarButton
                 onClick={() => {
-                  scrollToSection("Hobbies");
+                  scrollToSection("Projects");
                 }}
               >
-                <StyledDrawerText>Hobbies</StyledDrawerText>
+                <StyledDrawerText>Projects</StyledDrawerText>
               </StyledAppBarButton>
             </Fade>
           </List>
@@ -229,10 +229,10 @@ const Navbar = () => {
             <Fade in={true} timeout={600} style={{ transitionDelay: "0.48s" }}>
               <StyledAppBarButton
                 onClick={() => {
-                  scrollToSection("Projects");
+                  scrollToSection("Hobbies");
                 }}
               >
-                <StyledDrawerText>Projects</StyledDrawerText>
+                <StyledDrawerText>Hobbies</StyledDrawerText>
               </StyledAppBarButton>
             </Fade>
           </List>
@@ -290,10 +290,10 @@ const Navbar = () => {
       >
         <StyledAppBarButton
           onClick={() => {
-            scrollToSection("Hobbies");
+            scrollToSection("Projects");
           }}
         >
-          <Typography>Hobbies</Typography>
+          <Typography>Projects</Typography>
         </StyledAppBarButton>
       </div>
       <div
@@ -301,10 +301,10 @@ const Navbar = () => {
       >
         <StyledAppBarButton
           onClick={() => {
-            scrollToSection("Projects");
+            scrollToSection("Hobbies");
           }}
         >
-          <Typography>Projects</Typography>
+          <Typography>Hobbies</Typography>
         </StyledAppBarButton>
       </div>
       <div
