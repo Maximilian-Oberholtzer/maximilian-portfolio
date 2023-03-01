@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Container, styled } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
-import maxAvatar from "../../assets/max_avatar.svg";
+import maxAvatar from "../../assets/max.png";
 import "animate.css";
 
 //Component styles//
@@ -50,8 +50,8 @@ const StyledHeroImage = styled("img")(({ theme }) => ({
   [theme.breakpoints.down("lg")]: {
     width: "230px",
   },
-  [theme.breakpoints.down("sm")]: {
-    width: "180px",
+  [theme.breakpoints.down("xs")]: {
+    width: "60vw",
   },
 }));
 
