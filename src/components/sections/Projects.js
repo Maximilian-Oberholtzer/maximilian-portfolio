@@ -83,6 +83,9 @@ const StyledProjectsGridItem = styled(Grid)(({ theme }) => ({
       opacity: "1",
     },
   },
+  [theme.breakpoints.down("xs")]: {
+    height: "250px !important",
+  },
 }));
 const StyledProjectsImg = styled("img")(({ theme }) => ({
   height: "100%",
