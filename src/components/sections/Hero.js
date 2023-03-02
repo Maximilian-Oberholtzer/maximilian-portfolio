@@ -4,6 +4,7 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import maxAvatar from "../../assets/max.png";
 import "animate.css";
+import { StyledDivider } from "./Styles";
 
 //Component styles//
 const StyledHeroRoot = styled("section")(({ theme }) => ({
@@ -36,7 +37,7 @@ const StyledHeroGrid = styled(Grid)(({ ismobile }) => ({
   alignItems: "center",
   justifyContent: "space-around",
   width: "auto",
-  marginBottom: ismobile ? "4rem" : "0rem",
+  marginBottom: ismobile ? "3rem" : "0rem",
 }));
 
 const StyledHeroImage = styled("img")(({ theme }) => ({
@@ -44,9 +45,10 @@ const StyledHeroImage = styled("img")(({ theme }) => ({
   animationDuration: "2s",
   width: "280px",
   borderRadius: "2rem",
+  border: `8px solid ${theme.palette.backgroundSecondary.main}`,
   backgroundColor: theme.palette.backgroundSecondary.main,
   textAlign: "center",
-  margin: "2rem 4rem 2rem 4rem ",
+  margin: "2rem 4rem 2rem 4rem",
   [theme.breakpoints.down("lg")]: {
     width: "230px",
   },
@@ -72,12 +74,12 @@ const StyledHeroTitle = styled(Typography)(({ theme }) => ({
   fontWeight: "bold !important",
   color: theme.palette.textMain.main,
   marginBottom: theme.spacing(0),
-  fontSize: "clamp(32px, 4vw, 55px) !important",
+  fontSize: "clamp(34px, 4vw, 55px) !important",
 }));
 
 const StyledHeroSubText = styled(Typography)(({ theme }) => ({
   color: theme.palette.textSecondary.main + " !important",
-  fontSize: "clamp(20px, 2vw, 26px) !important",
+  fontSize: "clamp(22px, 2vw, 26px) !important",
 }));
 
 const ScrollerIcon = styled("div")(({ theme }) => ({
