@@ -27,6 +27,9 @@ const StyledProjectsContainer = styled(Container)(({ theme }) => ({
   [theme.breakpoints.down("sm")]: {
     width: "85% !important",
   },
+  [theme.breakpoints.down("xs")]: {
+    width: "90% !important",
+  },
 }));
 const StyledProjectsGrid = styled(Grid)(({ theme }) => ({
   justifyContent: "space-around",
