@@ -56,7 +56,7 @@ const StyledProjectsGridItem = styled(Grid)(({ theme }) => ({
   height: "280px",
   marginBottom: "2.5rem",
   borderRadius: "1rem",
-  border: `0.3rem solid ${theme.palette.textSecondary.main}`,
+  border: `0.3rem solid ${theme.palette.backgroundSecondary.main}`,
   paddingTop: "0 !important",
   paddingLeft: "0 !important",
   overflow: "hidden",
