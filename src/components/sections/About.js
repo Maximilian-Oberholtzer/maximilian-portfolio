@@ -16,7 +16,7 @@ const StyledScrollingContainer = styled("div")(({ theme }) => ({
   position: "relative",
   width: "inherit",
   animation: "fadeInUp",
-  animationDuration: "1.5s",
+  animationDuration: "1s",
 
   "&::before": {
     content: "''",
@@ -88,7 +88,7 @@ const StyledScrollingText = styled(Typography)(({ theme }) => ({
 
 const About = () => {
   const [aboutContainer, aboutContainerInView] = useInView({
-    threshold: 1,
+    threshold: 0.3,
     triggerOnce: true,
   });
   const technologiesArr = [
@@ -117,34 +117,37 @@ const About = () => {
         <StyledGenericContainer
           style={{ overflow: "hidden" }}
           ref={aboutContainer}
+          sx={
+            aboutContainerInView
+              ? { visibility: "visible" }
+              : { visibility: "hidden" }
+          }
+          className={
+            aboutContainerInView ? "animate__animated animate__fadeInUp" : ""
+          }
         >
-          {aboutContainerInView && (
-            <>
-              <StyledGenericTitle component="h1">
-                About Me
-                <StyledDivider />
-              </StyledGenericTitle>
-              <StyledGenericSubText component="h1">
-                Hey there! My name is Maximilian and I have been building
-                different types of web and mobile applications for 7+ years.
-                After publishing a few games to the iOS App Store, I became more
-                interested in developing responsive web designs with React.
-                Listed below are some of the languages and technologies that I
-                have experience using.
-              </StyledGenericSubText>
-              <StyledScrollingContainer>
-                <StyledScrollingBelt>
-                  {technologiesArr.map((item, index) => (
-                    <StyledScrollingItem key={index}>
-                      <StyledScrollingText component="h1">
-                        {item}
-                      </StyledScrollingText>
-                    </StyledScrollingItem>
-                  ))}
-                </StyledScrollingBelt>
-              </StyledScrollingContainer>
-            </>
-          )}
+          <StyledGenericTitle component="h1">
+            About Me
+            <StyledDivider />
+          </StyledGenericTitle>
+          <StyledGenericSubText component="h1">
+            Hey there! My name is Maximilian and I have been building different
+            types of web and mobile applications for 7+ years. After publishing
+            a few games to the iOS App Store, I became more interested in
+            developing responsive web designs with React. Listed below are some
+            of the languages and technologies that I have experience using.
+          </StyledGenericSubText>
+          <StyledScrollingContainer>
+            <StyledScrollingBelt>
+              {technologiesArr.map((item, index) => (
+                <StyledScrollingItem key={index}>
+                  <StyledScrollingText component="h1">
+                    {item}
+                  </StyledScrollingText>
+                </StyledScrollingItem>
+              ))}
+            </StyledScrollingBelt>
+          </StyledScrollingContainer>
         </StyledGenericContainer>
       </StyledGenericRoot>
     </Scroll.Element>

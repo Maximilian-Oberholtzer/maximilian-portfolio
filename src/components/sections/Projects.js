@@ -153,8 +153,12 @@ const StyledProjectsSkillText = styled(Typography)(({ theme }) => ({
 //End component styles
 
 const Projects = () => {
+  const theme = useTheme();
+  const sm = useMediaQuery(theme.breakpoints.down("sm"));
+
+  //triggers for animations
   const [projectsContainer, projectsContainerInView] = useInView({
-    threshold: 0.4,
+    threshold: 0.2,
     triggerOnce: true,
   });
   const [p1, p1InView] = useInView({
@@ -170,19 +174,21 @@ const Projects = () => {
     triggerOnce: true,
   });
 
-  const theme = useTheme();
-  const sm = useMediaQuery(theme.breakpoints.down("sm"));
-
-  const mellowHeadSkills = ["React", "Material-UI", "Redux", "Polygon"];
+  //Content for project cards
+  const mellowHeadSkills = [
+    "React",
+    "Material-UI",
+    "Redux",
+    "Polygon",
+    "MetaMask",
+  ];
   const mellowHeadsLink = "https://mellowheadsnft.com";
   const mellowHeadsGH =
     "https://github.com/Maximilian-Oberholtzer/mellow-heads-nft";
-
   const rocketLeagueSkills = ["React", "Bootstrap", "Node", "Express"];
   const rocketLeagueLink = "http://www.feedsanalysistool.com/";
   const rocketLeagueGH =
     "https://github.com/Maximilian-Oberholtzer/replay-analysis-tool";
-
   const iosGamesSkills = ["Swift", "SpriteKit", "Xcode", "Game Center"];
 
   const openLink = (link) => {
@@ -207,7 +213,8 @@ const Projects = () => {
             <StyledDivider />
           </StyledGenericTitle>
           <StyledGenericSubText component="h1">
-            Here are a few projects that I have built over the past few years!
+            Here are a few of my favorite projects that I have built over the
+            past few years!
           </StyledGenericSubText>
         </StyledGenericContainer>
         <StyledProjectsContainer>

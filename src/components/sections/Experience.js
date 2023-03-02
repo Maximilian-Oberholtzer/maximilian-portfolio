@@ -22,8 +22,6 @@ const StyledCarouselContainer = styled(Container)(({ theme }) => ({
   boxSizing: "unset !important",
   maxWidth: "1000px !important",
   textAlign: "center",
-  animation: "fadeInUp",
-  animationDuration: "1s",
   [theme.breakpoints.down("sm")]: {
     marginBottom: "4rem",
   },
@@ -57,7 +55,11 @@ const Experience = () => {
   const theme = useTheme();
 
   const [experienceContainer, experienceContainerInView] = useInView({
-    threshold: 0.7,
+    threshold: 0.4,
+    triggerOnce: true,
+  });
+  const [s1, s1InView] = useInView({
+    threshold: 0.8,
     triggerOnce: true,
   });
 
@@ -92,37 +94,52 @@ const Experience = () => {
   return (
     <Scroll.Element name="Experience">
       <StyledGenericRoot ref={experienceContainer}>
-        {experienceContainerInView && (
-          <>
-            <StyledGenericContainer>
-              <StyledGenericTitle component="h1">
-                Experience
-                <StyledDivider />
-              </StyledGenericTitle>
-              <StyledGenericSubText component="h1">
-                Since graduating from Ursinus College in 2018, I have worked as
-                a full stack software engineer in the professional space.
-              </StyledGenericSubText>
-            </StyledGenericContainer>
+        <StyledGenericContainer
+          sx={
+            experienceContainerInView
+              ? {
+                  visibility: "visible",
+                  animation: "fadeInUp",
+                  animationDuration: "1s",
+                }
+              : { visibility: "hidden" }
+          }
+        >
+          <StyledGenericTitle component="h1">
+            Experience
+            <StyledDivider />
+          </StyledGenericTitle>
+          <StyledGenericSubText component="h1">
+            Since graduating from Ursinus College in 2018, I have worked as a
+            full stack software engineer in the professional space.
+          </StyledGenericSubText>
+        </StyledGenericContainer>
 
-            <StyledCarouselContainer>
-              <style>{dotStyles}</style>
-              <Slider {...settings}>
-                {data.map((item) => (
-                  <StyledCarouselCard key={item.id}>
-                    <StyledCarouselTitle>{item.company}</StyledCarouselTitle>
-                    <StyledCarouselSubTitle>
-                      {item.jobTitle}
-                    </StyledCarouselSubTitle>
-                    <StyledCarouselSubText>
-                      {item.description}
-                    </StyledCarouselSubText>
-                  </StyledCarouselCard>
-                ))}
-              </Slider>
-            </StyledCarouselContainer>
-          </>
-        )}
+        <StyledCarouselContainer
+          ref={s1}
+          sx={
+            s1InView
+              ? {
+                  visibility: "visible",
+                  animation: "fadeInUp",
+                  animationDuration: "1s",
+                }
+              : { visibility: "hidden" }
+          }
+        >
+          <style>{dotStyles}</style>
+          <Slider {...settings}>
+            {data.map((item) => (
+              <StyledCarouselCard key={item.id}>
+                <StyledCarouselTitle>{item.company}</StyledCarouselTitle>
+                <StyledCarouselSubTitle>{item.jobTitle}</StyledCarouselSubTitle>
+                <StyledCarouselSubText>
+                  {item.description}
+                </StyledCarouselSubText>
+              </StyledCarouselCard>
+            ))}
+          </Slider>
+        </StyledCarouselContainer>
       </StyledGenericRoot>
     </Scroll.Element>
   );
