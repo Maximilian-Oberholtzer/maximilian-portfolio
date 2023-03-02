@@ -32,7 +32,6 @@ const StyledProjectsContainer = styled(Container)(({ theme }) => ({
   boxSizing: "unset !important",
   maxWidth: "1000px !important",
   textAlign: "center",
-  overflow: "hidden",
   justifyContent: "center",
   [theme.breakpoints.down("sm")]: {
     width: "85% !important",
