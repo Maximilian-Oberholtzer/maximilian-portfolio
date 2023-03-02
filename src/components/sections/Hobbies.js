@@ -147,7 +147,7 @@ const Hobbies = () => {
                   viewBox="0 0 512 512"
                   width={sm ? "6rem" : "8rem"}
                   initial="hidden"
-                  animate="visible"
+                  animate={h1InView ? "visible" : ""}
                 >
                   <motion.path
                     d={TennisSvgPath}
@@ -178,7 +178,7 @@ const Hobbies = () => {
                   viewBox="0 0 512 512"
                   width={sm ? "6rem" : "8rem"}
                   initial="hidden"
-                  animate="visible"
+                  animate={h2InView ? "visible" : ""}
                 >
                   <motion.path
                     d={RubiksCubePath}
@@ -210,7 +210,7 @@ const Hobbies = () => {
                   width={sm ? "10rem" : "12rem"}
                   height={sm ? "6rem" : "8rem"}
                   initial="hidden"
-                  animate="visible"
+                  animate={h3InView ? "visible" : ""}
                 >
                   <motion.path
                     d={RocketLeaguePath}
