@@ -1,5 +1,13 @@
 import { React } from "react";
-import { Typography, Container, Grid, Button, styled } from "@mui/material";
+import {
+  Typography,
+  Container,
+  Grid,
+  Button,
+  styled,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import {
   StyledDivider,
   StyledGenericContainer,
@@ -152,6 +160,9 @@ const Projects = () => {
     triggerOnce: true,
   });
 
+  const theme = useTheme();
+  const sm = useMediaQuery(theme.breakpoints.down("sm"));
+
   const mellowHeadSkills = ["React", "Material-UI", "Redux", "Polygon"];
   const mellowHeadsLink = "https://mellowheadsnft.com";
   const mellowHeadsGH =
@@ -277,7 +288,12 @@ const Projects = () => {
                   <StyledProjectsImg
                     alt=""
                     src={iosGames}
-                    sx={{ transform: "scale(1.08)" }}
+                    // sx={{ xs ?  (transform: "scale(1.12)") :  (transform: "scale(1.08)")}}
+                    sx={
+                      sm
+                        ? { transform: "scale(1.12)" }
+                        : { transform: "scale(1.08)" }
+                    }
                   />
                   <StyledProjectsTextField>
                     <StyledProjectsTitle>iOS Games</StyledProjectsTitle>
