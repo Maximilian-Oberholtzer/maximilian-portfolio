@@ -49,8 +49,8 @@ const StyledProjectsGrid = styled(Grid)(({ theme }) => ({
   padding: "1rem",
 }));
 const StyledProjectsGridItem = styled(Grid)(({ theme }) => ({
-  animation: "fadeInUp",
-  animationDuration: "1s",
+  // animation: "fadeInUp",
+  // animationDuration: "1s",
   position: "relative",
   display: "flex",
   height: "280px",
@@ -61,7 +61,7 @@ const StyledProjectsGridItem = styled(Grid)(({ theme }) => ({
   paddingLeft: "0 !important",
   overflow: "hidden",
   alignItems: "flex-end",
-  transform: "none",
+  //transform: "none",
   transition: "transform 150ms ease-in-out 0s",
   "&:hover": {
     transform: "scale(1.02)",
@@ -156,6 +156,18 @@ const StyledProjectsSkillText = styled(Typography)(({ theme }) => ({
 
 const Projects = () => {
   const [projectsContainer, projectsContainerInView] = useInView({
+    threshold: 0.4,
+    triggerOnce: true,
+  });
+  const [p1, p1InView] = useInView({
+    threshold: 0.9,
+    triggerOnce: true,
+  });
+  const [p2, p2InView] = useInView({
+    threshold: 0.9,
+    triggerOnce: true,
+  });
+  const [p3, p3InView] = useInView({
     threshold: 0.7,
     triggerOnce: true,
   });
@@ -182,139 +194,165 @@ const Projects = () => {
   return (
     <Scroll.Element name="Projects">
       <StyledGenericRoot ref={projectsContainer}>
-        {projectsContainerInView && (
-          <>
-            <StyledGenericContainer>
-              <StyledGenericTitle component="h1">
-                Projects
-                <StyledDivider />
-              </StyledGenericTitle>
-              <StyledGenericSubText component="h1">
-                Here are a few projects that I have built over the past few
-                years!
-              </StyledGenericSubText>
-            </StyledGenericContainer>
-            <StyledProjectsContainer>
-              <StyledProjectsGrid container rowSpacing={6} columnSpacing={12}>
-                <StyledProjectsGridItem item xs={12} sm={5.5}>
-                  <StyledProjectsImg alt="" src={MellowHeads} />
-                  <StyledProjectsTextField>
-                    <StyledProjectsTitle>Mellow Heads NFT</StyledProjectsTitle>
-                    <StyledProjectsSubText>
-                      Collection of 5000 algorithmically generated marshmallow
-                      characters on the Polygon Blockchain
-                    </StyledProjectsSubText>
-                    <StyledProjectsSkillContainer>
-                      {mellowHeadSkills.map((skill, index) => (
-                        <StyledProjectsSkillText key={index}>
-                          {skill}
-                        </StyledProjectsSkillText>
-                      ))}
-                    </StyledProjectsSkillContainer>
-                    <Button
-                      onClick={() => {
-                        openLink(mellowHeadsLink);
-                      }}
-                      sx={{
-                        padding: "0",
-                        minWidth: "0",
-                        marginTop: "0.5rem",
-                        marginRight: "0.5rem",
-                      }}
-                    >
-                      <LaunchIcon />
-                    </Button>
-                    <Button
-                      sx={{
-                        padding: "0",
-                        minWidth: "0",
-                        marginTop: "0.43rem",
-                        transform: "scale(0.90)",
-                      }}
-                      onClick={() => {
-                        openLink(mellowHeadsGH);
-                      }}
-                    >
-                      <GitHubIcon />
-                    </Button>
-                  </StyledProjectsTextField>
-                </StyledProjectsGridItem>
-                <StyledProjectsGridItem item xs={12} sm={5.5}>
-                  <StyledProjectsImg alt="" src={RocketLeague} />
-                  <StyledProjectsTextField>
-                    <StyledProjectsTitle>
-                      Replay Analysis Tool
-                    </StyledProjectsTitle>
-                    <StyledProjectsSubText>
-                      A tool to review and analyze Rocket League solo duel
-                      replays
-                    </StyledProjectsSubText>
-                    <StyledProjectsSkillContainer>
-                      {rocketLeagueSkills.map((skill, index) => (
-                        <StyledProjectsSkillText key={index}>
-                          {skill}
-                        </StyledProjectsSkillText>
-                      ))}
-                    </StyledProjectsSkillContainer>
-                    <Button
-                      onClick={() => {
-                        openLink(rocketLeagueLink);
-                      }}
-                      sx={{
-                        padding: "0",
-                        minWidth: "0",
-                        marginTop: "0.5rem",
-                        marginRight: "0.5rem",
-                      }}
-                    >
-                      <LaunchIcon />
-                    </Button>
-                    <Button
-                      sx={{
-                        padding: "0",
-                        minWidth: "0",
-                        marginTop: "0.43rem",
-                        transform: "scale(0.90)",
-                      }}
-                      onClick={() => {
-                        openLink(rocketLeagueGH);
-                      }}
-                    >
-                      <GitHubIcon />
-                    </Button>
-                  </StyledProjectsTextField>
-                </StyledProjectsGridItem>
-                <StyledProjectsGridItem item xs={12} sm={5.5}>
-                  <StyledProjectsImg
-                    alt=""
-                    src={iosGames}
-                    // sx={{ xs ?  (transform: "scale(1.12)") :  (transform: "scale(1.08)")}}
-                    sx={
-                      sm
-                        ? { transform: "scale(1.12)" }
-                        : { transform: "scale(1.08)" }
-                    }
-                  />
-                  <StyledProjectsTextField>
-                    <StyledProjectsTitle>iOS Games</StyledProjectsTitle>
-                    <StyledProjectsSubText>
-                      Bottle-Flip, Hibachi-Toss & Fruit-Fall collectively
-                      received 4.5+ star reviews and had over 20k downloads
-                      internationally
-                    </StyledProjectsSubText>
-                    <StyledProjectsSkillContainer>
-                      {iosGamesSkills.map((skill, index) => (
-                        <StyledProjectsSkillText key={index}>
-                          {skill}
-                        </StyledProjectsSkillText>
-                      ))}
-                    </StyledProjectsSkillContainer>
-                  </StyledProjectsTextField>
-                </StyledProjectsGridItem>
-              </StyledProjectsGrid>
-            </StyledProjectsContainer>
-          </>
-        )}
+        <StyledGenericContainer
+          sx={
+            projectsContainerInView
+              ? { visibility: "visible" }
+              : { visibility: "hidden" }
+          }
+          className={
+            projectsContainerInView ? "animate__animated animate__fadeInUp" : ""
+          }
+        >
+          <StyledGenericTitle component="h1">
+            Projects
+            <StyledDivider />
+          </StyledGenericTitle>
+          <StyledGenericSubText component="h1">
+            Here are a few projects that I have built over the past few years!
+          </StyledGenericSubText>
+        </StyledGenericContainer>
+        <StyledProjectsContainer>
+          <StyledProjectsGrid container rowSpacing={6} columnSpacing={12}>
+            <StyledProjectsGridItem
+              ref={p1}
+              item
+              xs={12}
+              sm={5.5}
+              sx={
+                p1InView ? { visibility: "visible" } : { visibility: "hidden" }
+              }
+              className={p1InView ? "animate__animated animate__fadeInUp" : ""}
+            >
+              <StyledProjectsImg alt="" src={MellowHeads} />
+              <StyledProjectsTextField>
+                <StyledProjectsTitle>Mellow Heads NFT</StyledProjectsTitle>
+                <StyledProjectsSubText>
+                  Collection of 5000 algorithmically generated marshmallow
+                  characters on the Polygon Blockchain
+                </StyledProjectsSubText>
+                <StyledProjectsSkillContainer>
+                  {mellowHeadSkills.map((skill, index) => (
+                    <StyledProjectsSkillText key={index}>
+                      {skill}
+                    </StyledProjectsSkillText>
+                  ))}
+                </StyledProjectsSkillContainer>
+                <Button
+                  onClick={() => {
+                    openLink(mellowHeadsLink);
+                  }}
+                  sx={{
+                    padding: "0",
+                    minWidth: "0",
+                    marginTop: "0.5rem",
+                    marginRight: "0.5rem",
+                  }}
+                >
+                  <LaunchIcon />
+                </Button>
+                <Button
+                  sx={{
+                    padding: "0",
+                    minWidth: "0",
+                    marginTop: "0.43rem",
+                    transform: "scale(0.90)",
+                  }}
+                  onClick={() => {
+                    openLink(mellowHeadsGH);
+                  }}
+                >
+                  <GitHubIcon />
+                </Button>
+              </StyledProjectsTextField>
+            </StyledProjectsGridItem>
+            <StyledProjectsGridItem
+              ref={p2}
+              item
+              xs={12}
+              sm={5.5}
+              sx={
+                p2InView ? { visibility: "visible" } : { visibility: "hidden" }
+              }
+              className={p2InView ? "animate__animated animate__fadeInUp" : ""}
+            >
+              <StyledProjectsImg alt="" src={RocketLeague} />
+              <StyledProjectsTextField>
+                <StyledProjectsTitle>Replay Analysis Tool</StyledProjectsTitle>
+                <StyledProjectsSubText>
+                  A tool to review and analyze Rocket League solo duel replays
+                </StyledProjectsSubText>
+                <StyledProjectsSkillContainer>
+                  {rocketLeagueSkills.map((skill, index) => (
+                    <StyledProjectsSkillText key={index}>
+                      {skill}
+                    </StyledProjectsSkillText>
+                  ))}
+                </StyledProjectsSkillContainer>
+                <Button
+                  onClick={() => {
+                    openLink(rocketLeagueLink);
+                  }}
+                  sx={{
+                    padding: "0",
+                    minWidth: "0",
+                    marginTop: "0.5rem",
+                    marginRight: "0.5rem",
+                  }}
+                >
+                  <LaunchIcon />
+                </Button>
+                <Button
+                  sx={{
+                    padding: "0",
+                    minWidth: "0",
+                    marginTop: "0.43rem",
+                    transform: "scale(0.90)",
+                  }}
+                  onClick={() => {
+                    openLink(rocketLeagueGH);
+                  }}
+                >
+                  <GitHubIcon />
+                </Button>
+              </StyledProjectsTextField>
+            </StyledProjectsGridItem>
+            <StyledProjectsGridItem
+              ref={p3}
+              item
+              xs={12}
+              sm={5.5}
+              sx={
+                p3InView ? { visibility: "visible" } : { visibility: "hidden" }
+              }
+              className={p3InView ? "animate__animated animate__fadeInUp" : ""}
+            >
+              <StyledProjectsImg
+                alt=""
+                src={iosGames}
+                sx={
+                  sm
+                    ? { transform: "scale(1.12)" }
+                    : { transform: "scale(1.08)" }
+                }
+              />
+              <StyledProjectsTextField>
+                <StyledProjectsTitle>iOS Games</StyledProjectsTitle>
+                <StyledProjectsSubText>
+                  Bottle-Flip, Hibachi-Toss & Fruit-Fall collectively received
+                  4.5+ star reviews and had over 20k downloads internationally
+                </StyledProjectsSubText>
+                <StyledProjectsSkillContainer>
+                  {iosGamesSkills.map((skill, index) => (
+                    <StyledProjectsSkillText key={index}>
+                      {skill}
+                    </StyledProjectsSkillText>
+                  ))}
+                </StyledProjectsSkillContainer>
+              </StyledProjectsTextField>
+            </StyledProjectsGridItem>
+          </StyledProjectsGrid>
+        </StyledProjectsContainer>
       </StyledGenericRoot>
     </Scroll.Element>
   );
