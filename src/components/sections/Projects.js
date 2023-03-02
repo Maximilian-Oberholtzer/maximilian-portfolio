@@ -12,7 +12,9 @@ import { useInView } from "react-intersection-observer";
 import * as Scroll from "react-scroll";
 import LaunchIcon from "@mui/icons-material/Launch";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import MellowHeads from "../../assets/mellowHeadsNFT.png";
+import MellowHeads from "../../assets/mellowHeadsCollection.png";
+import RocketLeague from "../../assets/rocketLeague.png";
+import iosGames from "../../assets/iosGames.jpg";
 
 //Component styles//
 const StyledProjectsContainer = styled(Container)(({ theme }) => ({
@@ -45,6 +47,8 @@ const StyledProjectsGridItem = styled(Grid)(({ theme }) => ({
   display: "flex",
   height: "280px",
   marginBottom: "2.5rem",
+  borderRadius: "1rem",
+  border: `0.3rem solid ${theme.palette.backgroundSecondary.main}`,
   paddingTop: "0 !important",
   paddingLeft: "0 !important",
   overflow: "hidden",
@@ -54,7 +58,7 @@ const StyledProjectsGridItem = styled(Grid)(({ theme }) => ({
   "&:hover": {
     transform: "scale(1.02)",
     transition: "transform 150ms ease-in-out 0s",
-    [theme.breakpoints.up("sm")]: {
+    [theme.breakpoints.up("md")]: {
       "& div": {
         opacity: "1",
         transform: "translateY(-10%)",
@@ -67,18 +71,19 @@ const StyledProjectsGridItem = styled(Grid)(({ theme }) => ({
       content: "''",
       position: "absolute",
       inset: "0px",
-      borderRadius: "1rem",
+
       background:
         "linear-gradient(rgba(0, 0, 0, 0.1) 10%, rgba(0, 0, 0, 0.78) 70%)",
     },
   },
-  [theme.breakpoints.down("sm")]: {
+  [theme.breakpoints.down("md")]: {
+    maxWidth: "500px",
     "&::after": {
       opacity: "0.9 !important",
       content: "''",
       position: "absolute",
       inset: "0px",
-      borderRadius: "1rem",
+
       background:
         "linear-gradient(rgba(0, 0, 0, 0.1) 10%, rgba(0, 0, 0, 0.78) 70%)",
     },
@@ -86,16 +91,16 @@ const StyledProjectsGridItem = styled(Grid)(({ theme }) => ({
       opacity: "1",
     },
   },
-  [theme.breakpoints.down("xs")]: {
-    height: "250px !important",
+  [theme.breakpoints.down("sm")]: {
+    height: "230px !important",
   },
 }));
 const StyledProjectsImg = styled("img")(({ theme }) => ({
+  transform: "scale(1.00)",
   height: "100%",
   width: "100%",
   position: "absolute",
   objectFit: "cover",
-  borderRadius: "1rem",
 }));
 const StyledProjectsTextField = styled("div")(({ theme }) => ({
   zIndex: "1000 !important",
@@ -105,7 +110,8 @@ const StyledProjectsTextField = styled("div")(({ theme }) => ({
   padding: "0rem 1rem",
   color: "white",
   textAlign: "left",
-  [theme.breakpoints.down("sm")]: {
+  [theme.breakpoints.down("lg")]: {
+    transform: "none",
     padding: "1rem 1rem",
   },
 }));
@@ -115,7 +121,7 @@ const StyledProjectsTitle = styled(Typography)(({ theme }) => ({
 }));
 const StyledProjectsSubText = styled(Typography)(({ theme }) => ({
   fontSize: "1rem !important",
-  [theme.breakpoints.down("xs")]: {
+  [theme.breakpoints.down("sm")]: {
     fontSize: "0.8rem !important",
   },
 }));
@@ -123,17 +129,17 @@ const StyledProjectsSkillContainer = styled("div")(({ theme }) => ({
   marginTop: "0.5rem",
   display: "flex",
   flexWrap: "wrap",
+  rowGap: "0.4rem",
 }));
 const StyledProjectsSkillText = styled(Typography)(({ theme }) => ({
   fontSize: "0.8rem !important",
-  //border: "2px solid white",
   background: "white",
   marginRight: "0.5rem",
-  padding: "0rem 0.2rem",
-  borderRadius: "0.4rem",
+  padding: "0.1rem 0.4rem",
+  borderRadius: "0.5rem",
   color: "black",
   fontWeight: "600",
-  [theme.breakpoints.down("xs")]: {
+  [theme.breakpoints.down("sm")]: {
     fontSize: "0.7rem !important",
   },
 }));
@@ -150,6 +156,13 @@ const Projects = () => {
   const mellowHeadsLink = "https://mellowheadsnft.com";
   const mellowHeadsGH =
     "https://github.com/Maximilian-Oberholtzer/mellow-heads-nft";
+
+  const rocketLeagueSkills = ["React", "Bootstrap", "Node", "Express"];
+  const rocketLeagueLink = "http://www.feedsanalysistool.com/";
+  const rocketLeagueGH =
+    "https://github.com/Maximilian-Oberholtzer/replay-analysis-tool";
+
+  const iosGamesSkills = ["Swift", "SpriteKit", "Xcode", "Game Center"];
 
   const openLink = (link) => {
     window.open(link, "_blank");
@@ -216,15 +229,17 @@ const Projects = () => {
                   </StyledProjectsTextField>
                 </StyledProjectsGridItem>
                 <StyledProjectsGridItem item xs={12} sm={5.5}>
-                  <StyledProjectsImg alt="" src={MellowHeads} />
+                  <StyledProjectsImg alt="" src={RocketLeague} />
                   <StyledProjectsTextField>
-                    <StyledProjectsTitle>Mellow Heads NFT</StyledProjectsTitle>
+                    <StyledProjectsTitle>
+                      Replay Analysis Tool
+                    </StyledProjectsTitle>
                     <StyledProjectsSubText>
-                      Collection of 5000 algorithmically generated marshmallow
-                      characters on the Polygon Blockchain
+                      A tool to review and analyze Rocket League solo duel
+                      replays
                     </StyledProjectsSubText>
                     <StyledProjectsSkillContainer>
-                      {mellowHeadSkills.map((skill, index) => (
+                      {rocketLeagueSkills.map((skill, index) => (
                         <StyledProjectsSkillText key={index}>
                           {skill}
                         </StyledProjectsSkillText>
@@ -232,7 +247,7 @@ const Projects = () => {
                     </StyledProjectsSkillContainer>
                     <Button
                       onClick={() => {
-                        openLink(mellowHeadsLink);
+                        openLink(rocketLeagueLink);
                       }}
                       sx={{
                         padding: "0",
@@ -251,7 +266,7 @@ const Projects = () => {
                         transform: "scale(0.90)",
                       }}
                       onClick={() => {
-                        openLink(mellowHeadsGH);
+                        openLink(rocketLeagueGH);
                       }}
                     >
                       <GitHubIcon />
@@ -259,46 +274,25 @@ const Projects = () => {
                   </StyledProjectsTextField>
                 </StyledProjectsGridItem>
                 <StyledProjectsGridItem item xs={12} sm={5.5}>
-                  <StyledProjectsImg alt="" src={MellowHeads} />
+                  <StyledProjectsImg
+                    alt=""
+                    src={iosGames}
+                    sx={{ transform: "scale(1.08)" }}
+                  />
                   <StyledProjectsTextField>
-                    <StyledProjectsTitle>Mellow Heads NFT</StyledProjectsTitle>
+                    <StyledProjectsTitle>iOS Games</StyledProjectsTitle>
                     <StyledProjectsSubText>
-                      Collection of 5000 algorithmically generated marshmallow
-                      characters on the Polygon Blockchain
+                      Bottle-Flip, Hibachi-Toss & Fruit-Fall collectively
+                      received 4.5+ star reviews and had over 20k downloads
+                      internationally
                     </StyledProjectsSubText>
                     <StyledProjectsSkillContainer>
-                      {mellowHeadSkills.map((skill, index) => (
+                      {iosGamesSkills.map((skill, index) => (
                         <StyledProjectsSkillText key={index}>
                           {skill}
                         </StyledProjectsSkillText>
                       ))}
                     </StyledProjectsSkillContainer>
-                    <Button
-                      onClick={() => {
-                        openLink(mellowHeadsLink);
-                      }}
-                      sx={{
-                        padding: "0",
-                        minWidth: "0",
-                        marginTop: "0.5rem",
-                        marginRight: "0.5rem",
-                      }}
-                    >
-                      <LaunchIcon />
-                    </Button>
-                    <Button
-                      sx={{
-                        padding: "0",
-                        minWidth: "0",
-                        marginTop: "0.43rem",
-                        transform: "scale(0.90)",
-                      }}
-                      onClick={() => {
-                        openLink(mellowHeadsGH);
-                      }}
-                    >
-                      <GitHubIcon />
-                    </Button>
                   </StyledProjectsTextField>
                 </StyledProjectsGridItem>
               </StyledProjectsGrid>
