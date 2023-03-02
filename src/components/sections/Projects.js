@@ -49,8 +49,6 @@ const StyledProjectsGrid = styled(Grid)(({ theme }) => ({
   padding: "1rem",
 }));
 const StyledProjectsGridItem = styled(Grid)(({ theme }) => ({
-  // animation: "fadeInUp",
-  // animationDuration: "1s",
   position: "relative",
   display: "flex",
   height: "280px",
@@ -61,7 +59,7 @@ const StyledProjectsGridItem = styled(Grid)(({ theme }) => ({
   paddingLeft: "0 !important",
   overflow: "hidden",
   alignItems: "flex-end",
-  //transform: "none",
+  transform: "none",
   transition: "transform 150ms ease-in-out 0s",
   "&:hover": {
     transform: "scale(1.02)",
@@ -220,9 +218,14 @@ const Projects = () => {
               xs={12}
               sm={5.5}
               sx={
-                p1InView ? { visibility: "visible" } : { visibility: "hidden" }
+                p1InView
+                  ? {
+                      visibility: "visible",
+                      animation: "fadeInUp",
+                      animationDuration: "1s",
+                    }
+                  : { visibility: "hidden" }
               }
-              className={p1InView ? "animate__animated animate__fadeInUp" : ""}
             >
               <StyledProjectsImg alt="" src={MellowHeads} />
               <StyledProjectsTextField>
@@ -272,9 +275,14 @@ const Projects = () => {
               xs={12}
               sm={5.5}
               sx={
-                p2InView ? { visibility: "visible" } : { visibility: "hidden" }
+                p2InView
+                  ? {
+                      visibility: "visible",
+                      animation: "fadeInUp",
+                      animationDuration: "1s",
+                    }
+                  : { visibility: "hidden" }
               }
-              className={p2InView ? "animate__animated animate__fadeInUp" : ""}
             >
               <StyledProjectsImg alt="" src={RocketLeague} />
               <StyledProjectsTextField>
@@ -323,9 +331,14 @@ const Projects = () => {
               xs={12}
               sm={5.5}
               sx={
-                p3InView ? { visibility: "visible" } : { visibility: "hidden" }
+                p3InView
+                  ? {
+                      visibility: "visible",
+                      animation: "fadeInUp",
+                      animationDuration: "1s",
+                    }
+                  : { visibility: "hidden" }
               }
-              className={p3InView ? "animate__animated animate__fadeInUp" : ""}
             >
               <StyledProjectsImg
                 alt=""
