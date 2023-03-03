@@ -88,7 +88,7 @@ const Hobbies = () => {
   const sm = useMediaQuery(theme.breakpoints.down("md"));
 
   const [hobbiesContainer, hobbiesContainerInView] = useInView({
-    threshold: 0.2,
+    threshold: 0.3,
     triggerOnce: true,
   });
   const [h1, h1InView] = useInView({
