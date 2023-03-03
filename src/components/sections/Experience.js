@@ -24,6 +24,7 @@ const StyledCarouselContainer = styled(Container)(({ theme }) => ({
   textAlign: "center",
   [theme.breakpoints.down("sm")]: {
     marginBottom: "4rem",
+    width: "90% !important",
   },
 }));
 const StyledCarouselCard = styled("div")(({ theme }) => ({
