@@ -6,6 +6,7 @@ import About from "./sections/About";
 import Hobbies from "./sections/Hobbies";
 import Experience from "./sections/Experience";
 import Projects from "./sections/Projects";
+import Footer from "./sections/Footer";
 
 const StyledMainContainer = styled(Container)({
   maxWidth: "1600px",
@@ -30,6 +31,7 @@ const Main = () => {
         <Experience />
         <Projects />
         <Hobbies />
+        <Footer />
       </StyledMainContainer>
     </div>
   );
