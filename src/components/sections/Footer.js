@@ -85,8 +85,8 @@ const Footer = () => {
           >
             <svg
               fill={theme.palette.textMain.main}
-              width="26px"
-              height="26px"
+              width="32px"
+              height="32px"
               viewBox="-5.5 0 32 32"
               version="1.1"
               xmlns="http://www.w3.org/2000/svg"
@@ -103,8 +103,8 @@ const Footer = () => {
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 32 32"
-              width="26px"
-              height="26px"
+              width="32px"
+              height="32px"
               fillRule="evenodd"
               fill={theme.palette.textMain.main}
             >
@@ -115,8 +115,8 @@ const Footer = () => {
           <StyledListItemButton onClick={openEmail}>
             <svg
               fill={theme.palette.textMain.main}
-              height="26px"
-              width="26px"
+              height="32px"
+              width="32px"
               version="1.1"
               id="Capa_1"
               xmlns="http://www.w3.org/2000/svg"
@@ -137,8 +137,8 @@ const Footer = () => {
           >
             <svg
               fill={theme.palette.textMain.main}
-              width="26px"
-              height="26px"
+              width="32px"
+              height="32px"
               viewBox="0 0 1024 1024"
               xmlns="http://www.w3.org/2000/svg"
             >
@@ -156,8 +156,8 @@ const Footer = () => {
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 50 50"
-              width="26px"
-              height="26px"
+              width="32px"
+              height="32px"
               fill={theme.palette.textMain.main}
             >
               <title>Rocket League Tracker</title>
@@ -174,8 +174,8 @@ const Footer = () => {
             <svg
               version="1.0"
               xmlns="http://www.w3.org/2000/svg"
-              width="26px"
-              height="26px"
+              width="32px"
+              height="32px"
               viewBox="0 0 1250.000000 1280.000000"
               preserveAspectRatio="xMidYMid meet"
               fill={theme.palette.textMain.main}
