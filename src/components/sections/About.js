@@ -88,7 +88,7 @@ const StyledScrollingText = styled(Typography)(({ theme }) => ({
 
 const About = () => {
   const [aboutContainer, aboutContainerInView] = useInView({
-    threshold: 0.3,
+    threshold: 0.7,
     triggerOnce: true,
   });
   const technologiesArr = [
