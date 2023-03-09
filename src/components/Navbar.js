@@ -160,9 +160,7 @@ const Navbar = () => {
 
   const drawer = (
     <>
-      <div
-        className={!hasAnimated ? "animate__animated animate__fadeInDown" : ""}
-      >
+      <div className={!hasAnimated ? "animate__animated animate__fadeIn" : ""}>
         <Button onClick={toggleDrawer(true)}>
           <StyledDrawerIcon />
         </Button>
@@ -339,7 +337,7 @@ const Navbar = () => {
                   style={{
                     marginBottom: "0.8rem",
                     width: "44px",
-                    animation: "fadeInDown",
+                    animation: collapse ? "fadeIn" : "fadeInDown",
                     animationDuration: "1s",
                   }}
                 >

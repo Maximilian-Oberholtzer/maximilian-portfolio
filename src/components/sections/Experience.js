@@ -24,12 +24,17 @@ const StyledCarouselContainer = styled(Container)(({ theme }) => ({
   textAlign: "center",
   [theme.breakpoints.down("sm")]: {
     marginBottom: "4rem",
+    width: "80% !important",
+  },
+  [theme.breakpoints.down("xs")]: {
+    marginBottom: "4rem",
     width: "90% !important",
   },
 }));
 const StyledCarouselCard = styled("div")(({ theme }) => ({
   borderRadius: "2rem !important",
   padding: "2rem 2rem",
+  background: `${theme.palette.backgroundSecondary.main}25`,
   [theme.breakpoints.down("sm")]: {
     padding: "1.25rem 1.25rem",
   },

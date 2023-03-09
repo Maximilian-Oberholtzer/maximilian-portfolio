@@ -40,17 +40,17 @@ const StyledHeroGrid = styled(Grid)(({ ismobile }) => ({
 const StyledHeroImage = styled("img")(({ theme }) => ({
   animation: "fadeIn",
   animationDuration: "2s",
-  width: "280px",
+  width: "270px",
   borderRadius: "2rem",
-  border: `8px solid ${theme.palette.backgroundSecondary.main}`,
+  border: `0.25rem solid ${theme.palette.backgroundSecondary.main}`,
   backgroundColor: theme.palette.backgroundSecondary.main,
   textAlign: "center",
   margin: "2rem 4rem 2rem 4rem",
   [theme.breakpoints.down("lg")]: {
-    width: "230px",
+    width: "220px",
   },
   [theme.breakpoints.down("xs")]: {
-    width: "60vw",
+    width: "55vw",
   },
 }));
 
