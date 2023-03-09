@@ -34,7 +34,7 @@ const StyledHeroGrid = styled(Grid)(({ ismobile }) => ({
   alignItems: "center",
   justifyContent: "space-around",
   width: "auto",
-  marginBottom: ismobile ? "3rem" : "0rem",
+  marginBottom: ismobile ? "3.5rem" : "0rem",
 }));
 
 const StyledHeroImage = styled("img")(({ theme }) => ({
