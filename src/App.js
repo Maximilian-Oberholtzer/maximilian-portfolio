@@ -18,7 +18,7 @@ function App() {
           <Router>
             <Routes>
               <Route exact path="/" element={<Main />} />
-              <Route exact path="*" element={<NotFound404 />} />
+              <Route path="*" element={<NotFound404 />} />
             </Routes>
           </Router>
         </CssBaseline>
