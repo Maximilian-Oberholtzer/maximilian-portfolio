@@ -1,8 +1,20 @@
 import { React, useState, useEffect } from "react";
-import { useTheme } from "@mui/material";
-import { useMediaQuery } from "@mui/material";
+import { useTheme, useMediaQuery, styled } from "@mui/material";
 import { motion } from "framer-motion";
 import "animate.css";
+
+//Component styles
+const StyledLoaderContainer = styled("div")(({ theme }) => ({
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  height: "100%",
+  width: "100%",
+  position: "fixed",
+  backgroundColor: theme.palette.background.main,
+}));
+
+//End Component styles
 
 const pathVariants = {
   hidden: {
@@ -29,17 +41,7 @@ const Loader = () => {
   }, []);
 
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        height: "100%",
-        width: "100%",
-        position: "fixed",
-        backgroundColor: theme.palette.background.main,
-      }}
-    >
+    <StyledLoaderContainer>
       <div className={hasLoaded ? "animate__animated animate__fadeOut" : ""}>
         <motion.svg
           xmlns="http://www.w3.org/2000/svg"
@@ -58,7 +60,7 @@ const Loader = () => {
           />
         </motion.svg>
       </div>
-    </div>
+    </StyledLoaderContainer>
   );
 };
 

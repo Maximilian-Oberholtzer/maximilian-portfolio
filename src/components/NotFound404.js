@@ -1,22 +1,20 @@
-import React, { useEffect } from "react";
-import { Typography, styled, useTheme } from "@mui/material";
+import React, { useEffect, useState } from "react";
+import { Typography, styled } from "@mui/material";
 import "animate.css";
 
 //Component styles//
 const Styled404Root = styled("section")(({ theme }) => ({
   display: "flex",
-  flexWrap: "wrap",
-  alignContent: "center",
   justifyContent: "center",
-  flexDirection: "column",
   alignItems: "center",
+  height: "100%",
+  width: "100%",
+  position: "fixed",
   backgroundColor: theme.palette.background.main,
-  minHeight: "100vh",
-  marginTop: "-2rem",
 }));
-const Styled404Container = styled("div")(({ theme }) => ({
-  animation: "fadeInDown",
-  animationDuration: "1.5s",
+const Styled404Container = styled("div")(({ fadeOut }) => ({
+  animation: fadeOut ? "fadeOutDown" : "fadeInDown",
+  animationDuration: "1s",
   textAlign: "center",
 }));
 const Styled404Text = styled(Typography)(({ theme }) => ({
@@ -33,19 +31,23 @@ const Styled404SubText = styled(Typography)(({ theme }) => ({
 //End component style//
 
 const NotFound404 = () => {
-  const theme = useTheme();
+  const [fadeOut, setFadeOut] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
+    const reloadPageTimer = setTimeout(() => {
       window.location.href = "/";
-    }, 2500);
+    }, 3000);
 
-    return () => clearTimeout(timer);
+    setTimeout(() => {
+      setFadeOut(true);
+    }, 2000);
+
+    return () => clearTimeout(reloadPageTimer);
   }, []);
 
   return (
     <Styled404Root>
-      <Styled404Container>
+      <Styled404Container fadeOut={fadeOut}>
         <Styled404Text>404</Styled404Text>
         <Styled404SubText>Page Not Found</Styled404SubText>
       </Styled404Container>
