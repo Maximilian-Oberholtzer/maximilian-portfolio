@@ -29,7 +29,8 @@ const StyledAppBarContainer = styled("div")(({ theme }) => ({
   alignSelf: "center",
   placeSelf: "center",
   justifyContent: "center",
-  width: "70vw !important",
+  maxWidth: "1200px",
+  width: "90vw !important",
   [theme.breakpoints.down("sm")]: {
     width: "100vw !important",
   },
