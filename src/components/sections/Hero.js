@@ -72,11 +72,14 @@ const StyledHeroTitle = styled(Typography)(({ theme }) => ({
   color: theme.palette.textMain.main,
   marginBottom: theme.spacing(0),
   fontSize: "clamp(34px, 4vw, 55px) !important",
+  [theme.breakpoints.up("md")]: {
+    whiteSpace: "nowrap",
+  },
 }));
 
 const StyledHeroSubText = styled(Typography)(({ theme }) => ({
   color: theme.palette.textSecondary.main + " !important",
-  fontSize: "clamp(22px, 2vw, 26px) !important",
+  fontSize: "clamp(20px, 2vw, 26px) !important",
 }));
 
 const ScrollerIcon = styled("div")(({ theme }) => ({
