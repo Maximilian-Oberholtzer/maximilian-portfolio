@@ -36,7 +36,7 @@ const NotFound404 = () => {
   useEffect(() => {
     const reloadPageTimer = setTimeout(() => {
       window.location.href = "/";
-    }, 3000);
+    }, 2700);
 
     setTimeout(() => {
       setFadeOut(true);
