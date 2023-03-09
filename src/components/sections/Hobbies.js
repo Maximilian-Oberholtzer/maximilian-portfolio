@@ -92,15 +92,15 @@ const Hobbies = () => {
     triggerOnce: true,
   });
   const [h1, h1InView] = useInView({
-    threshold: 0.9,
+    threshold: 0.8,
     triggerOnce: true,
   });
   const [h2, h2InView] = useInView({
-    threshold: 0.9,
+    threshold: 0.8,
     triggerOnce: true,
   });
   const [h3, h3InView] = useInView({
-    threshold: 0.7,
+    threshold: 0.8,
     triggerOnce: true,
   });
 

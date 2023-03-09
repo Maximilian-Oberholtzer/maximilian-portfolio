@@ -1,6 +1,5 @@
 import { React } from "react";
 import "animate.css";
-import { useInView } from "react-intersection-observer";
 import {
   Typography,
   List,
@@ -20,7 +19,10 @@ import {
 
 //Component styles//
 const StyledFooterRoot = styled("section")(({ theme }) => ({
-  minHeight: "20vh",
+  minHeight: "10vh",
+  [theme.breakpoints.down("lg")]: {
+    minHeight: "20vh",
+  },
   justifyContent: "center",
   display: "flex",
   flexWrap: "wrap",
@@ -56,26 +58,9 @@ const openLink = (link) => {
 const Footer = () => {
   const theme = useTheme();
   const lg = useMediaQuery(theme.breakpoints.down("lg"));
-  //triggers for animations
-  const [footerContainer, footerContainerInView] = useInView({
-    threshold: 0.1,
-    triggerOnce: true,
-  });
 
   return (
-    <StyledFooterRoot
-      ref={footerContainer}
-      sx={
-        footerContainerInView
-          ? {
-              minHeight: lg ? "20vh" : "10vh",
-              visibility: "visible",
-              animation: "fadeInUp",
-              animationDuration: "1s",
-            }
-          : { visibility: "hidden", minHeight: lg ? "20vh" : "10vh" }
-      }
-    >
+    <StyledFooterRoot>
       {lg && (
         <StyledFooterList>
           <StyledListItemButton
