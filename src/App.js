@@ -1,41 +1,25 @@
-import { React, useEffect, useState } from "react";
+import { React, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { ThemeContext } from "./ThemeContext";
-import Loader from "./components/Loader";
 import Main from "./components/Main";
+import NotFound404 from "./components/NotFound404";
 import { lightTheme, darkTheme } from "./Theme";
-import Navbar from "./components/Navbar";
 
 function App() {
   const [theme, setTheme] = useState(() => {
     return window.localStorage.getItem("theme") || "light";
   });
   const muiTheme = theme === "light" ? lightTheme : darkTheme;
-  const [isLoading, setIsloading] = useState(true);
-
-  //Loader animation before rest of the page gets rendered
-  useEffect(() => {
-    setTimeout(() => {
-      setIsloading(false);
-    }, 2400);
-  }, []);
-
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
       <ThemeProvider theme={muiTheme}>
         <CssBaseline>
           <Router>
-            <div>
-              {isLoading ? (
-                <Loader></Loader>
-              ) : (
-                <>
-                  <Navbar />
-                  <Main />
-                </>
-              )}
-            </div>
+            <Routes>
+              <Route exact path="/" element={<Main />} />
+              <Route exact path="*" element={<NotFound404 />} />
+            </Routes>
           </Router>
         </CssBaseline>
       </ThemeProvider>
