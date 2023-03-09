@@ -160,11 +160,15 @@ const Navbar = () => {
 
   const drawer = (
     <>
-      <div className={!hasAnimated ? "animate__animated animate__fadeIn" : ""}>
-        <Button onClick={toggleDrawer(true)}>
-          <StyledDrawerIcon />
-        </Button>
-      </div>
+      <Button
+        onClick={toggleDrawer(true)}
+        sx={{
+          animation: !hasAnimated ? "fadeIn" : "",
+          animationDuration: "2s",
+        }}
+      >
+        <StyledDrawerIcon />
+      </Button>
 
       <StyledDrawer
         anchor={"top"}
@@ -337,8 +341,12 @@ const Navbar = () => {
                   style={{
                     marginBottom: "0.8rem",
                     width: "44px",
-                    animation: collapse ? "fadeIn" : "fadeInDown",
-                    animationDuration: "1s",
+                    animation: !hasAnimated
+                      ? collapse
+                        ? "fadeIn"
+                        : "fadeInDown"
+                      : "",
+                    animationDuration: collapse ? "2s" : "1s",
                   }}
                 >
                   <path
