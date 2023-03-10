@@ -190,7 +190,7 @@ const Hobbies = () => {
                 </motion.svg>{" "}
                 <StyledHobbiesGridTitle>Speed Cubing</StyledHobbiesGridTitle>
                 <StyledHobbiesGridSubText>
-                  Fastest recorded 3x3 solve time is currently 10.51 seconds
+                  Fastest recorded 3x3 solve time is currently 9.94 seconds
                 </StyledHobbiesGridSubText>
               </div>
             </StyledHobbiesGridItem>
