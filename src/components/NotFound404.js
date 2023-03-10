@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Typography, styled } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 import "animate.css";
 
 //Component styles//
@@ -13,7 +14,7 @@ const Styled404Root = styled("section")(({ theme }) => ({
   backgroundColor: theme.palette.background.main,
 }));
 const Styled404Container = styled("div")(({ fadeOut }) => ({
-  animation: fadeOut ? "fadeOutDown" : "fadeInDown",
+  animation: fadeOut ? "fadeOut" : "fadeIn",
   animationDuration: "1s",
   textAlign: "center",
 }));
@@ -32,24 +33,25 @@ const Styled404SubText = styled(Typography)(({ theme }) => ({
 
 const NotFound404 = () => {
   const [fadeOut, setFadeOut] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const reloadPageTimer = setTimeout(() => {
-      window.location.href = "/";
-    }, 2700);
+      navigate("/");
+    }, 2900);
 
     setTimeout(() => {
       setFadeOut(true);
     }, 2000);
 
     return () => clearTimeout(reloadPageTimer);
-  }, []);
+  }, [navigate]);
 
   return (
     <Styled404Root>
       <Styled404Container fadeOut={fadeOut}>
         <Styled404Text>404</Styled404Text>
-        <Styled404SubText>Page Not Found</Styled404SubText>
+        <Styled404SubText>Page Not Found :&#40;</Styled404SubText>
       </Styled404Container>
     </Styled404Root>
   );
