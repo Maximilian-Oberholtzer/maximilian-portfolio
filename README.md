@@ -7,7 +7,20 @@
 </p>
 
 <p align="center">
-  Link: <a href="https://max-oberholtzer.com">max-oberholtzer.com</>
+  Link: <a href="https://max-oberholtzer.com">max-oberholtzer.com</a>
 </p>
-  
-![Alt](https://github.com/Maximilian-Oberholtzer/maximilian-portfolio/blob/main/public/MaximilianPortfolio.png)
+ 
+<p align="center">
+  <img src="https://github.com/Maximilian-Oberholtzer/maximilian-portfolio/blob/main/public/MaximilianPortfolio.png" />  
+</p>
+
+<h2>
+  Technologies Used
+</h2>
+
+ <ul>
+   <li>
+      <a href="https://mui.com">Material-UI</a>
+   </li>
+ </ul>
+
