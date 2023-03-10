@@ -15,12 +15,24 @@
 </p>
 
 <h2>
-  Technologies Used
+  Packages & Libraries Used
 </h2>
 
  <ul>
    <li>
       <a href="https://mui.com">Material-UI</a>
+   </li>
+   <li>
+      <a href="https://animate.style">Animate.css</a>
+   </li>
+   <li>
+      <a href="https://www.framer.com/motion">Framer Motion</a>
+   </li>
+   <li>
+      <a href="https://react-slick.neostack.com/">React Slick</a>
+   </li>
+   <li>
+      <a href="https://www.npmjs.com/package/react-intersection-observer">react-intersection-observer</a>
    </li>
  </ul>
 
