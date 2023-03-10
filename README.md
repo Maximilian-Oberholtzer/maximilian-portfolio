@@ -9,3 +9,5 @@
 <p align="center">
   Link: <a href="https://max-oberholtzer.com">max-oberholtzer.com</>
 </p>
+  
+![Alt](https://github.com/Maximilian-Oberholtzer/maximilian-portfolio/blob/main/public/MaximilianPortfolio.png)
