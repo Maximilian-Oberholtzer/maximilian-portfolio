@@ -183,7 +183,7 @@ const Footer = () => {
       <StyledFooterText>
         Designed & Built by Maximilian Oberholtzer
       </StyledFooterText>
-      <StyledFooterText sx={{ marginLeft: "-1.5rem" }}>
+      <StyledFooterText sx={{ marginLeft: "-0.75rem" }}>
         &copy; {currentYear}
       </StyledFooterText>
     </StyledFooterRoot>
