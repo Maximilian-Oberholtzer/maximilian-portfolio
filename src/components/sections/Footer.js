@@ -58,6 +58,7 @@ const openLink = (link) => {
 const Footer = () => {
   const theme = useTheme();
   const lg = useMediaQuery(theme.breakpoints.down("lg"));
+  const currentYear = new Date().getFullYear();
 
   return (
     <StyledFooterRoot>
@@ -181,6 +182,9 @@ const Footer = () => {
       )}
       <StyledFooterText>
         Designed & Built by Maximilian Oberholtzer
+      </StyledFooterText>
+      <StyledFooterText sx={{ marginLeft: "-1.5rem" }}>
+        &copy; {currentYear}
       </StyledFooterText>
     </StyledFooterRoot>
   );
