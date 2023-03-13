@@ -10,9 +10,11 @@
   Website Link: <a href="https://max-oberholtzer.com">max-oberholtzer.com</a>
 </p>
 
+<!--
 <p align="center">
   Link to my <a href="https://github.com/Maximilian-Oberholtzer/maximilian-portfolio/blob/main/src/assets/Maximilian%20Oberholtzer%20Resume%202023.pdf">Resume</a>
 </p>
+-->
  
 <p align="center">
   <img src="https://github.com/Maximilian-Oberholtzer/maximilian-portfolio/blob/main/public/MaximilianPortfolio.png" />  
