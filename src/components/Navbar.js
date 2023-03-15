@@ -64,7 +64,6 @@ const StyledAppBarDrawerButton = styled(Button)(({ theme }) => ({
   },
 }));
 const StyledResumeButton = styled(Button)(({ theme }) => ({
-  border: `1px solid ${theme.palette.textMain.main}`,
   borderRadius: "8px !important",
   backgroundColor: theme.palette.backgroundSecondary.main + " !important",
   color: theme.palette.textMain.main + " !important",
