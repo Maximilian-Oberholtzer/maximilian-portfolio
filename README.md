@@ -61,7 +61,7 @@
  </ol>
  
  <h2>
-   📃 Credits/Inspiration
+   📃 Credits & Inspiration
  </h2>
  <p>Check out these amazing creators!</p>
  <ul>
