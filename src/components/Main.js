@@ -23,12 +23,21 @@ const Main = () => {
   const theme = useTheme();
   const showSideAnchor = useMediaQuery(theme.breakpoints.up("lg"));
   const [isLoading, setIsloading] = useState(true);
+  const [heroImg, setHeroImg] = useState(null);
 
   //Loader animation before rest of the page gets rendered
   useEffect(() => {
     setTimeout(() => {
       setIsloading(false);
     }, 2400);
+
+    const loadImage = async () => {
+      const img = new Image();
+      img.src = maxAvatar;
+      await img.decode();
+      setHeroImg(maxAvatar);
+    };
+    loadImage();
   }, []);
 
   return (
@@ -41,7 +50,7 @@ const Main = () => {
           <StyledMainPage>
             {showSideAnchor && <SideAnchorLinks />}
             <StyledMainContainer>
-              <Hero img={maxAvatar} />
+              <Hero img={heroImg} />
               <About />
               <Experience />
               <Projects />
