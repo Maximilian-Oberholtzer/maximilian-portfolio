@@ -9,6 +9,7 @@ import {
   useTheme,
   useMediaQuery,
 } from "@mui/material";
+import { GitHub } from "@mui/icons-material";
 import {
   CubeSvgPath,
   emailSvgPath,
@@ -45,6 +46,13 @@ const StyledListItemButton = styled(ListItemButton)(({ theme }) => ({
   padding: "0",
   width: "0",
 }));
+const StyledViewCodeLink = styled("a")(({ theme }) => ({
+  textDecoration: "unset",
+  color: theme.palette.textMain.main,
+  "&:hover": {
+    color: theme.palette.textSecondary.main,
+  },
+}));
 
 //End component styles
 
@@ -59,7 +67,6 @@ const openLink = (link) => {
 const Footer = () => {
   const theme = useTheme();
   const lg = useMediaQuery(theme.breakpoints.down("lg"));
-  const currentYear = new Date().getFullYear();
   const [footer, footerInView] = useInView({
     threshold: 0.3,
     triggerOnce: true,
@@ -192,11 +199,13 @@ const Footer = () => {
             </StyledListItemButton>
           </StyledFooterList>
         )}
-        <StyledFooterText>
-          Designed & Built by Maximilian Oberholtzer
+        <StyledFooterText sx={{ marginTop: "0.5rem" }}>
+          Developed by Maximilian Oberholtzer
         </StyledFooterText>
-        <StyledFooterText sx={{ marginLeft: "-0.75rem" }}>
-          &copy; {currentYear}
+        <StyledFooterText sx={{ marginBottom: "1rem" }}>
+          <StyledViewCodeLink href="https://github.com/Maximilian-Oberholtzer/maximilian-portfolio">
+            View the code <GitHub sx={{ marginBottom: "-0.2rem" }} />
+          </StyledViewCodeLink>
         </StyledFooterText>
       </div>
     </StyledFooterRoot>
