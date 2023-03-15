@@ -1,5 +1,5 @@
 <h2 align="center">
-  Maximilian's Developer Portfolio - v1
+  💻 Maximilian's Developer Portfolio - v1
   <br />
   <a href="https://max-oberholtzer.com">max-oberholtzer.com</a>
 </h2>
