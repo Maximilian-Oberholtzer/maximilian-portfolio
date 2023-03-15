@@ -2,7 +2,7 @@
   Maximilian's Developer Portfolio - v1
   <br />
   <a href="https://max-oberholtzer.com">max-oberholtzer.com</a>
-</h1>
+</h2>
 
 <!--
 <p align="center">
@@ -41,4 +41,22 @@
       <a href="https://www.npmjs.com/package/react-intersection-observer">react-intersection-observer</a>
    </li>
  </ul>
+ 
+ <h2>
+  🛠 Installation & Setup
+</h2>
+ <ol>
+   <li>
+      Clone this repository
+   </li>
+   <li>
+      Installation: <code>npm install</code>
+   </li>
+   <li>
+      Run locally: <code>npm start</code>
+   </li>
+   <li>
+     Open  <a href="http://localhost:3000">http://localhost:3000</a> to view in browser
+   </li>
+ </ol>
 
