@@ -1,14 +1,8 @@
 <h1 align="center">
   Maximilian's Developer Portfolio - v1
+  <br />
+  <a href="https://max-oberholtzer.com">max-oberholtzer.com</a>
 </h1>
-
-<p align="center">
-  Built using create-react-app and hosted with <a href="https://netlify.com">Netlify</>
-</p>
-
-<p align="center">
-  Website Link: <a href="https://max-oberholtzer.com">max-oberholtzer.com</a>
-</p>
 
 <!--
 <p align="center">
@@ -19,6 +13,12 @@
 <p align="center">
   <img src="https://github.com/Maximilian-Oberholtzer/maximilian-portfolio/blob/main/public/MaximilianPortfolio.png" />  
 </p>
+
+<!--
+<p align="center">
+  Built using create-react-app and hosted with <a href="https://netlify.com">Netlify</>
+</p>
+-->
 
 <h2>
   Packages & Libraries Used
