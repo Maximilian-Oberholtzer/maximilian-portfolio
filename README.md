@@ -63,7 +63,7 @@
  <h2>
    💖 Thank you for visiting
  </h2>
- <p>Please leave a ⭐ if on this repo if you like it!</p>
+ <p>Please leave a ⭐ on this repo if you like it!</p>
  
  
 
