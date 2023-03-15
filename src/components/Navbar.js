@@ -57,6 +57,12 @@ const StyledAppBarButton = styled(Button)(({ theme }) => ({
     transform: "translateY(-2px)",
   },
 }));
+const StyledAppBarDrawerButton = styled(Button)(({ theme }) => ({
+  color: theme.palette.textMain.main + " !important",
+  "&:hover": {
+    color: theme.palette.textSecondary.main + " !important",
+  },
+}));
 const StyledResumeButton = styled(Button)(({ theme }) => ({
   border: `1px solid ${theme.palette.textMain.main}`,
   borderRadius: "8px !important",
@@ -202,46 +208,46 @@ const Navbar = () => {
           </List>
           <List>
             <Fade in={true} timeout={600} style={{ transitionDelay: "0.12s" }}>
-              <StyledAppBarButton
+              <StyledAppBarDrawerButton
                 onClick={() => {
                   scrollToSection("About");
                 }}
               >
                 <StyledDrawerText>About</StyledDrawerText>
-              </StyledAppBarButton>
+              </StyledAppBarDrawerButton>
             </Fade>
           </List>
           <List>
             <Fade in={true} timeout={600} style={{ transitionDelay: "0.24s" }}>
-              <StyledAppBarButton
+              <StyledAppBarDrawerButton
                 onClick={() => {
                   scrollToSection("Experience");
                 }}
               >
                 <StyledDrawerText>Experience</StyledDrawerText>
-              </StyledAppBarButton>
+              </StyledAppBarDrawerButton>
             </Fade>
           </List>
           <List>
             <Fade in={true} timeout={600} style={{ transitionDelay: "0.36s" }}>
-              <StyledAppBarButton
+              <StyledAppBarDrawerButton
                 onClick={() => {
                   scrollToSection("Projects");
                 }}
               >
                 <StyledDrawerText>Projects</StyledDrawerText>
-              </StyledAppBarButton>
+              </StyledAppBarDrawerButton>
             </Fade>
           </List>
           <List>
             <Fade in={true} timeout={600} style={{ transitionDelay: "0.48s" }}>
-              <StyledAppBarButton
+              <StyledAppBarDrawerButton
                 onClick={() => {
                   scrollToSection("Hobbies");
                 }}
               >
                 <StyledDrawerText>Hobbies</StyledDrawerText>
-              </StyledAppBarButton>
+              </StyledAppBarDrawerButton>
             </Fade>
           </List>
           <List>
