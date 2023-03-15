@@ -113,7 +113,7 @@ const ScrollerIcon = styled("div")(({ theme }) => ({
 
 //End component style//
 
-const Hero = (props) => {
+const Hero = ({ img }) => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -128,7 +128,7 @@ const Hero = (props) => {
       <StyledHeroContainer ismobile={isMobile}>
         <StyledHeroGrid ismobile={isMobile} container spacing={0}>
           <Grid item style={{ paddingLeft: "0 !important" }}>
-            <StyledHeroImage alt="" src={props.img} />
+            <StyledHeroImage alt="" src={img} />
           </Grid>
           <StyledHeroText item>
             <StyledHeroTitle component="h1" variant="h2">
