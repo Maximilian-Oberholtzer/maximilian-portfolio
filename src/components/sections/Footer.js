@@ -65,6 +65,7 @@ const Footer = () => {
       {lg && (
         <StyledFooterList>
           <StyledListItemButton
+            sx={{ marginRight: "-0.3rem" }}
             onClick={() => {
               openLink("https://www.linkedin.com/in/max-oberholtzer/");
             }}

@@ -1,5 +1,6 @@
 import { React, useState, useEffect } from "react";
 import { Container, useMediaQuery, styled, useTheme } from "@mui/material";
+import maxAvatar from "../assets/max.png";
 import Hero from "./sections/Hero";
 import SideAnchorLinks from "./SideAnchorLinks";
 import About from "./sections/About";
@@ -10,13 +11,17 @@ import Navbar from "./Navbar";
 import Footer from "./sections/Footer";
 import Loader from "./Loader";
 
+const StyledMainPage = styled("div")(({ theme }) => ({
+  backgroundColor: theme.palette.background.main,
+  overflow: "hidden",
+}));
 const StyledMainContainer = styled(Container)({
   maxWidth: "1600px",
 });
 
 const Main = () => {
   const theme = useTheme();
-  const showSideAnchor = useMediaQuery(theme.breakpoints.down("lg"));
+  const showSideAnchor = useMediaQuery(theme.breakpoints.up("lg"));
   const [isLoading, setIsloading] = useState(true);
 
   //Loader animation before rest of the page gets rendered
@@ -33,22 +38,17 @@ const Main = () => {
       ) : (
         <>
           <Navbar />
-          <div
-            style={{
-              backgroundColor: theme.palette.background.main,
-              overflow: "hidden",
-            }}
-          >
-            {showSideAnchor ? <></> : <SideAnchorLinks />}
+          <StyledMainPage>
+            {showSideAnchor && <SideAnchorLinks />}
             <StyledMainContainer>
-              <Hero />
+              <Hero img={maxAvatar} />
               <About />
               <Experience />
               <Projects />
               <Hobbies />
               <Footer />
             </StyledMainContainer>
-          </div>
+          </StyledMainPage>
         </>
       )}
     </>

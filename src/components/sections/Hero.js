@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Container, Grid, Typography, styled } from "@mui/material";
-import maxAvatar from "../../assets/max.png";
 import "animate.css";
 
 //Component styles//
@@ -114,7 +113,7 @@ const ScrollerIcon = styled("div")(({ theme }) => ({
 
 //End component style//
 
-const Hero = () => {
+const Hero = (props) => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -129,7 +128,7 @@ const Hero = () => {
       <StyledHeroContainer ismobile={isMobile}>
         <StyledHeroGrid ismobile={isMobile} container spacing={0}>
           <Grid item style={{ paddingLeft: "0 !important" }}>
-            <StyledHeroImage alt="" src={maxAvatar} />
+            <StyledHeroImage alt="" src={props.img} />
           </Grid>
           <StyledHeroText item>
             <StyledHeroTitle component="h1" variant="h2">
