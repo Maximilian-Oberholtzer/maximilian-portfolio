@@ -63,7 +63,7 @@
  <h2>
    📃 Credits/Inspiration
  </h2>
- <p>Check out these amazing creators</p>
+ <p>Check out these amazing creators!</p>
  <ul>
  <li><a href="https://github.com/bchiang7/v4">Brittany Chiang</li>
  <li><a href="https://github.com/rammcodes/Dopefolio">Ram Maheshwari</li>
