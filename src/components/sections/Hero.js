@@ -49,7 +49,7 @@ const StyledHeroImage = styled("img")(({ theme }) => ({
     width: "220px",
   },
   [theme.breakpoints.down("xs")]: {
-    width: "55vw",
+    width: "57vw",
   },
 }));
 
