@@ -50,14 +50,19 @@ const StyledAppBar = styled(AppBar)(({ theme, isScrolled }) => ({
 }));
 const StyledAppBarButton = styled(Button)(({ theme }) => ({
   color: theme.palette.textMain.main + " !important",
+  transform: "none",
+  transition: "transform 150ms ease-in-out 0s !important",
   "&:hover": {
     color: theme.palette.textSecondary.main + " !important",
+    transform: "translateY(-2px)",
   },
 }));
 const StyledResumeButton = styled(Button)(({ theme }) => ({
+  border: `1px solid ${theme.palette.textMain.main}`,
   borderRadius: "8px !important",
   backgroundColor: theme.palette.backgroundSecondary.main + " !important",
   color: theme.palette.textMain.main + " !important",
+  transition: "background-color 200ms ease-in-out 0s !important",
   "&:hover": {
     backgroundColor: theme.palette.buttonHover.main + " !important",
   },
