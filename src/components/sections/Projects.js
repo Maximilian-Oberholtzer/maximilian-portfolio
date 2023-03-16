@@ -148,6 +148,27 @@ const StyledProjectsSkillText = styled(Typography)(({ theme }) => ({
     fontSize: "0.7rem !important",
   },
 }));
+const StyledProjectsOpenButton = styled(Button)(({ theme }) => ({
+  padding: "0",
+  minWidth: "0",
+  marginTop: "0.5rem",
+  marginRight: "0.5rem",
+  transform: "none",
+  transition: "transform 100ms ease-in-out",
+  "&:hover": {
+    transform: "scale(1.15)",
+  },
+}));
+const StyledProjectsGHButton = styled(Button)(({ theme }) => ({
+  padding: "0",
+  minWidth: "0",
+  marginTop: "0.43rem",
+  transform: "scale(0.90)",
+  transition: "transform 150ms ease-in-out",
+  "&:hover": {
+    transform: "scale(1.15)",
+  },
+}));
 
 //End component styles
 
@@ -247,32 +268,20 @@ const Projects = () => {
                     </StyledProjectsSkillText>
                   ))}
                 </StyledProjectsSkillContainer>
-                <Button
+                <StyledProjectsOpenButton
                   onClick={() => {
                     openLink(mellowHeadsLink);
                   }}
-                  sx={{
-                    padding: "0",
-                    minWidth: "0",
-                    marginTop: "0.5rem",
-                    marginRight: "0.5rem",
-                  }}
                 >
                   <LaunchIcon />
-                </Button>
-                <Button
-                  sx={{
-                    padding: "0",
-                    minWidth: "0",
-                    marginTop: "0.43rem",
-                    transform: "scale(0.90)",
-                  }}
+                </StyledProjectsOpenButton>
+                <StyledProjectsGHButton
                   onClick={() => {
                     openLink(mellowHeadsGH);
                   }}
                 >
                   <GitHubIcon />
-                </Button>
+                </StyledProjectsGHButton>
               </StyledProjectsTextField>
             </StyledProjectsGridItem>
             <StyledProjectsGridItem
@@ -303,32 +312,20 @@ const Projects = () => {
                     </StyledProjectsSkillText>
                   ))}
                 </StyledProjectsSkillContainer>
-                <Button
+                <StyledProjectsOpenButton
                   onClick={() => {
                     openLink(rocketLeagueLink);
                   }}
-                  sx={{
-                    padding: "0",
-                    minWidth: "0",
-                    marginTop: "0.5rem",
-                    marginRight: "0.5rem",
-                  }}
                 >
                   <LaunchIcon />
-                </Button>
-                <Button
-                  sx={{
-                    padding: "0",
-                    minWidth: "0",
-                    marginTop: "0.43rem",
-                    transform: "scale(0.90)",
-                  }}
+                </StyledProjectsOpenButton>
+                <StyledProjectsGHButton
                   onClick={() => {
                     openLink(rocketLeagueGH);
                   }}
                 >
                   <GitHubIcon />
-                </Button>
+                </StyledProjectsGHButton>
               </StyledProjectsTextField>
             </StyledProjectsGridItem>
             <StyledProjectsGridItem

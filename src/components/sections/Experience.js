@@ -34,7 +34,8 @@ const StyledCarouselContainer = styled(Container)(({ theme }) => ({
 const StyledCarouselCard = styled("div")(({ theme }) => ({
   borderRadius: "2rem !important",
   padding: "2rem 2rem",
-  background: `${theme.palette.backgroundSecondary.main}25`,
+  //background: `${theme.palette.backgroundSecondary.main}25`,
+  backgroundImage: `radial-gradient(ellipse at center, ${theme.palette.backgroundSecondary.main}10, ${theme.palette.backgroundSecondary.main}50)`,
   [theme.breakpoints.down("sm")]: {
     padding: "1.25rem 1.25rem",
   },
