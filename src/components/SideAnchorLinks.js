@@ -95,7 +95,10 @@ const SideAnchorLinks = () => {
             <path fillRule="evenodd" d={githubSvgPath} />
           </svg>
         </StyledAnchorButton>
-        <StyledAnchorButton onClick={openEmail}>
+        <StyledAnchorButton
+          onClick={openEmail}
+          sx={{ transform: "scale(0.90)" }}
+        >
           <svg
             fill={theme.palette.textMain.main}
             height="44px"

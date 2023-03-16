@@ -117,7 +117,10 @@ const Footer = () => {
                 <path fillRule="evenodd" d={githubSvgPath} />
               </svg>
             </StyledListItemButton>
-            <StyledListItemButton onClick={openEmail}>
+            <StyledListItemButton
+              onClick={openEmail}
+              sx={{ transform: "scale(0.95)" }}
+            >
               <svg
                 fill={theme.palette.textMain.main}
                 height="32px"
