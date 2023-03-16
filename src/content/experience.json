@@ -2,13 +2,15 @@
   {
     "id": "0",
     "company": "American Water",
-    "jobTitle": "Software Engineer II, 2018 - Current",
+    "jobTitle": "Software Engineer II",
+    "years": "2018 - Current",
     "description": "Lead developer for customer billing and support application with at least 2+ million users"
   },
   {
     "id": "1",
     "company": "Ursinus College",
-    "jobTitle": "B.S. in Computer Science, 2014 - 2018",
+    "jobTitle": "B.S. in Computer Science",
+    "years": "2014 - 2018",
     "description": "Completed coursework involved algorithms, data structures and object oriented programming"
   }
 ]

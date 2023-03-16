@@ -35,24 +35,24 @@ const StyledCarouselCard = styled("div")(({ theme }) => ({
   borderRadius: "2rem !important",
   padding: "2rem 2rem",
   //background: `${theme.palette.backgroundSecondary.main}25`,
-  backgroundImage: `radial-gradient(ellipse at center, ${theme.palette.backgroundSecondary.main}10, ${theme.palette.backgroundSecondary.main}50)`,
+  backgroundImage: `radial-gradient(ellipse at center, ${theme.palette.backgroundSecondary.main}10, ${theme.palette.backgroundSecondary.main}40)`,
   [theme.breakpoints.down("sm")]: {
     padding: "1.25rem 1.25rem",
   },
   maxWidth: "75%",
-  border: "0.25rem solid " + theme.palette.backgroundSecondary.main,
+  border: `0.25rem solid ${theme.palette.backgroundSecondary.main}70`,
 }));
 const StyledCarouselTitle = styled(Typography)(({ theme }) => ({
   fontSize: "clamp(28px, 4vw, 44px) !important",
   color: theme.palette.textSecondary.main,
 }));
 const StyledCarouselSubTitle = styled(Typography)(({ theme }) => ({
-  fontSize: "clamp(18px, 2vw, 30px) !important",
+  fontSize: "clamp(18px, 2vw, 28px) !important",
   color: theme.palette.textMain.main,
 }));
 const StyledCarouselSubText = styled(Typography)(({ theme }) => ({
   marginTop: "1rem !important",
-  fontSize: "clamp(16px, 1.8vw, 26px) !important",
+  fontSize: "clamp(16px, 1.8vw, 24px) !important",
   color: theme.palette.textMain.main,
 }));
 
@@ -140,6 +140,7 @@ const Experience = () => {
               <StyledCarouselCard key={item.id}>
                 <StyledCarouselTitle>{item.company}</StyledCarouselTitle>
                 <StyledCarouselSubTitle>{item.jobTitle}</StyledCarouselSubTitle>
+                <StyledCarouselSubTitle>{item.years}</StyledCarouselSubTitle>
                 <StyledCarouselSubText>
                   {item.description}
                 </StyledCarouselSubText>
