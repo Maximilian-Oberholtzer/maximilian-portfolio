@@ -41,8 +41,8 @@ const StyledHeroImage = styled("img")(({ theme }) => ({
   animationDuration: "2s",
   width: "270px",
   borderRadius: "2rem",
-  border: `0.25rem solid ${theme.palette.backgroundSecondary.main}`,
-  backgroundColor: theme.palette.backgroundSecondary.main,
+  border: `0.25rem solid ${theme.palette.backgroundSecondary.main}70`,
+  backgroundColor: `${theme.palette.backgroundSecondary.main}70`,
   textAlign: "center",
   margin: "2rem 4rem 2rem 4rem",
   [theme.breakpoints.down("lg")]: {
