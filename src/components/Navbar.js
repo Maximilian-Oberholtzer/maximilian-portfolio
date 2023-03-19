@@ -66,7 +66,7 @@ const StyledAppBarDrawerButton = styled(Button)(({ theme }) => ({
 const StyledResumeButton = styled(Button)(({ theme }) => ({
   borderRadius: "8px !important",
   backgroundColor: theme.palette.backgroundSecondary.main + " !important",
-  color: theme.palette.textMain.main + " !important",
+  color: "#FFFFFF",
   transition: "background-color 200ms ease-in-out 0s !important",
   "&:hover": {
     backgroundColor: theme.palette.buttonHover.main + " !important",
