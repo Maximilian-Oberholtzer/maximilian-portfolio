@@ -4,7 +4,6 @@ import { useInView } from "react-intersection-observer";
 import {
   Typography,
   List,
-  ListItemButton,
   styled,
   useTheme,
   useMediaQuery,
@@ -36,14 +35,12 @@ const StyledFooterText = styled(Typography)(({ theme }) => ({
   fontSize: "1rem",
   color: theme.palette.textMain.main,
 }));
-const StyledFooterList = styled(List)(({ theme }) => ({
-  display: "flex",
-  flexDirection: "row",
+const StyledFooterList = styled(List)({
+  display: "block",
+});
+const StyledListItemLink = styled("a")(({ theme }) => ({
   justifyContent: "center",
-}));
-const StyledListItemButton = styled(ListItemButton)(({ theme }) => ({
-  justifyContent: "center",
-  padding: "0",
+  padding: "0.4rem",
   width: "0",
 }));
 const StyledViewCodeLink = styled("a")(({ theme }) => ({
@@ -55,14 +52,6 @@ const StyledViewCodeLink = styled("a")(({ theme }) => ({
 }));
 
 //End component styles
-
-const openEmail = () => {
-  window.location = "mailto:max.oberholtzer@yahoo.com";
-};
-
-const openLink = (link) => {
-  window.open(link, "_blank");
-};
 
 const Footer = () => {
   const theme = useTheme();
@@ -82,11 +71,10 @@ const Footer = () => {
       >
         {lg && (
           <StyledFooterList>
-            <StyledListItemButton
+            <StyledListItemLink
               sx={{ marginRight: "-0.3rem" }}
-              onClick={() => {
-                openLink("https://www.linkedin.com/in/max-oberholtzer/");
-              }}
+              href="https://www.linkedin.com/in/max-oberholtzer/"
+              target="_blank"
             >
               <svg
                 fill={theme.palette.textMain.main}
@@ -99,11 +87,10 @@ const Footer = () => {
                 <title>LinkedIn</title>
                 <path d={linkedInSvgPath} />
               </svg>
-            </StyledListItemButton>
-            <StyledListItemButton
-              onClick={() => {
-                openLink("https://github.com/Maximilian-Oberholtzer");
-              }}
+            </StyledListItemLink>
+            <StyledListItemLink
+              href="https://github.com/Maximilian-Oberholtzer"
+              target="_blank"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -116,9 +103,9 @@ const Footer = () => {
                 <title>Github</title>
                 <path fillRule="evenodd" d={githubSvgPath} />
               </svg>
-            </StyledListItemButton>
-            <StyledListItemButton
-              onClick={openEmail}
+            </StyledListItemLink>
+            <StyledListItemLink
+              href="mailto:max.oberholtzer@yahoo.com"
               sx={{ transform: "scale(0.95)" }}
             >
               <svg
@@ -137,11 +124,10 @@ const Footer = () => {
                   <path d={emailSvgPath} />
                 </g>
               </svg>
-            </StyledListItemButton>
-            <StyledListItemButton
-              onClick={() => {
-                openLink("https://app.universaltennis.com/profiles/51049");
-              }}
+            </StyledListItemLink>
+            <StyledListItemLink
+              href="https://app.universaltennis.com/profiles/51049"
+              target="_blank"
             >
               <svg
                 fill={theme.palette.textMain.main}
@@ -153,13 +139,10 @@ const Footer = () => {
                 <title>Universal Tennis Rating</title>
                 <UTRSvgPath />
               </svg>
-            </StyledListItemButton>
-            <StyledListItemButton
-              onClick={() => {
-                openLink(
-                  "https://rocketleague.tracker.network/rocket-league/profile/steam/76561198262193029/overview"
-                );
-              }}
+            </StyledListItemLink>
+            <StyledListItemLink
+              href="https://rocketleague.tracker.network/rocket-league/profile/steam/76561198262193029/overview"
+              target="_blank"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -171,13 +154,10 @@ const Footer = () => {
                 <title>Rocket League Tracker</title>
                 <path d={rocketLeagueSvgPath} />
               </svg>
-            </StyledListItemButton>
-            <StyledListItemButton
-              onClick={() => {
-                openLink(
-                  "https://www.worldcubeassociation.org/persons/2022OBER04"
-                );
-              }}
+            </StyledListItemLink>
+            <StyledListItemLink
+              href="https://www.worldcubeassociation.org/persons/2022OBER04"
+              target="_blank"
             >
               <svg
                 version="1.0"
@@ -199,12 +179,10 @@ const Footer = () => {
                   <CubeSvgPath />
                 </g>
               </svg>
-            </StyledListItemButton>
+            </StyledListItemLink>
           </StyledFooterList>
         )}
-        <StyledFooterText sx={{ marginTop: "0.5rem" }}>
-          Developed by Maximilian Oberholtzer
-        </StyledFooterText>
+        <StyledFooterText>Developed by Maximilian Oberholtzer</StyledFooterText>
         <StyledFooterText sx={{ marginBottom: "1rem" }}>
           <StyledViewCodeLink href="https://github.com/Maximilian-Oberholtzer/maximilian-portfolio">
             View the code <GitHub sx={{ marginBottom: "-0.2rem" }} />
