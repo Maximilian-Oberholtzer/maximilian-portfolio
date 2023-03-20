@@ -7,19 +7,21 @@ import {
   rocketLeagueSvgPath,
   UTRSvgPath,
 } from "./SvgHelper";
-import { Button, styled } from "@mui/material";
+import { styled } from "@mui/material";
 import { useTheme } from "@mui/material";
 
 //Component Styles//
-const StyledAnchorButton = styled(Button)(({ theme }) => ({
+const StyledAnchorLink = styled("a")(({ theme }) => ({
   "& svg": {
     width: "2.2rem",
-    transition: "width 0.1s ease-in-out",
+    cursor: "pointer",
+    transition: "transform 0.2s ease-in-out",
+    transform: "none",
   },
   "&:hover": {
     "& svg": {
       fill: theme.palette.textSecondary.main + " !important",
-      width: "2.5rem",
+      transform: "scale(1.2)",
     },
   },
 }));
@@ -28,7 +30,7 @@ const StyledLeftAnchor = styled("div")({
   width: "40px",
   position: "fixed",
   bottom: "16vh",
-  left: "40px",
+  left: "50px",
   right: "auto",
   Zndex: "10",
   animation: "fadeInLeft",
@@ -40,20 +42,12 @@ const StyledRightAnchor = styled("div")({
   position: "fixed",
   bottom: "16vh",
   left: "auto",
-  right: "60px",
+  right: "50px",
   Zndex: "10",
   animation: "fadeInRight",
   animationDuration: "1s",
 });
 //End component styles//
-
-const openEmail = () => {
-  window.location = "mailto:max.oberholtzer@yahoo.com";
-};
-
-const openLink = (link) => {
-  window.open(link, "_blank");
-};
 
 const SideAnchorLinks = () => {
   const theme = useTheme();
@@ -61,10 +55,10 @@ const SideAnchorLinks = () => {
   return (
     <>
       <StyledLeftAnchor>
-        <StyledAnchorButton
-          onClick={() => {
-            openLink("https://www.linkedin.com/in/max-oberholtzer/");
-          }}
+        <StyledAnchorLink
+          href="https://www.linkedin.com/in/max-oberholtzer/"
+          target="_blank"
+          aria-label="LinkedIn"
         >
           <svg
             fill={theme.palette.textMain.main}
@@ -77,11 +71,11 @@ const SideAnchorLinks = () => {
             <title>LinkedIn</title>
             <path d={linkedInSvgPath} />
           </svg>
-        </StyledAnchorButton>
-        <StyledAnchorButton
-          onClick={() => {
-            openLink("https://github.com/Maximilian-Oberholtzer");
-          }}
+        </StyledAnchorLink>
+        <StyledAnchorLink
+          href="https://github.com/Maximilian-Oberholtzer"
+          target="_blank"
+          aria-label="Github"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -94,9 +88,9 @@ const SideAnchorLinks = () => {
             <title>Github</title>
             <path fillRule="evenodd" d={githubSvgPath} />
           </svg>
-        </StyledAnchorButton>
-        <StyledAnchorButton
-          onClick={openEmail}
+        </StyledAnchorLink>
+        <StyledAnchorLink
+          href="mailto:max.oberholtzer@yahoo.com"
           sx={{ transform: "scale(0.90)" }}
         >
           <svg
@@ -115,13 +109,13 @@ const SideAnchorLinks = () => {
               <path d={emailSvgPath} />
             </g>
           </svg>
-        </StyledAnchorButton>
+        </StyledAnchorLink>
       </StyledLeftAnchor>
       <StyledRightAnchor>
-        <StyledAnchorButton
-          onClick={() => {
-            openLink("https://app.universaltennis.com/profiles/51049");
-          }}
+        <StyledAnchorLink
+          href="https://app.universaltennis.com/profiles/51049"
+          target="_blank"
+          aria-label="Tennis"
         >
           <svg
             fill={theme.palette.textMain.main}
@@ -133,13 +127,11 @@ const SideAnchorLinks = () => {
             <title>Universal Tennis Rating</title>
             <UTRSvgPath />
           </svg>
-        </StyledAnchorButton>
-        <StyledAnchorButton
-          onClick={() => {
-            openLink(
-              "https://rocketleague.tracker.network/rocket-league/profile/steam/76561198262193029/overview"
-            );
-          }}
+        </StyledAnchorLink>
+        <StyledAnchorLink
+          href="https://rocketleague.tracker.network/rocket-league/profile/steam/76561198262193029/overview"
+          target="_blank"
+          aria-label="Rocket League"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -151,11 +143,11 @@ const SideAnchorLinks = () => {
             <title>Rocket League Tracker</title>
             <path d={rocketLeagueSvgPath} />
           </svg>
-        </StyledAnchorButton>
-        <StyledAnchorButton
-          onClick={() => {
-            openLink("https://www.worldcubeassociation.org/persons/2022OBER04");
-          }}
+        </StyledAnchorLink>
+        <StyledAnchorLink
+          href="https://www.worldcubeassociation.org/persons/2022OBER04"
+          target="_blank"
+          aria-label="Cube"
         >
           <svg
             version="1.0"
@@ -177,7 +169,7 @@ const SideAnchorLinks = () => {
               <CubeSvgPath />
             </g>
           </svg>
-        </StyledAnchorButton>
+        </StyledAnchorLink>
       </StyledRightAnchor>
     </>
   );
