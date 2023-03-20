@@ -79,7 +79,6 @@ const StyledScrollingItem = styled("div")(({ theme }) => ({
 }));
 const StyledScrollingText = styled(Typography)(({ theme }) => ({
   fontSize: "1.5rem !important",
-  //color: theme.palette.textMain.main,
   color: "#FFFFFF",
   [theme.breakpoints.down("sm")]: {
     fontSize: "1.2rem !important",

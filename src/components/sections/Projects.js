@@ -149,27 +149,37 @@ const StyledProjectsSkillText = styled(Typography)(({ theme }) => ({
     fontSize: "0.7rem !important",
   },
 }));
-const StyledProjectsOpenButton = styled(Button)(({ theme }) => ({
-  padding: "0",
-  minWidth: "0",
-  marginTop: "0.5rem",
-  marginRight: "0.5rem",
-  transform: "none",
-  transition: "transform 100ms ease-in-out",
-  "&:hover": {
-    transform: "scale(1.15)",
+const StyledProjectsOpenLink = styled("a")({
+  color: "inherit",
+  "& svg": {
+    padding: "0",
+    minWidth: "0",
+    marginTop: "0.5rem",
+    marginRight: "0.5rem",
+    transform: "none",
+    transition: "transform 200ms",
   },
-}));
-const StyledProjectsGHButton = styled(Button)(({ theme }) => ({
-  padding: "0",
-  minWidth: "0",
-  marginTop: "0.43rem",
-  transform: "scale(0.90)",
-  transition: "transform 150ms ease-in-out",
   "&:hover": {
-    transform: "scale(1.15)",
+    "& svg": {
+      transform: "scale(1.15)",
+    },
   },
-}));
+});
+const StyledProjectsGHLink = styled("a")({
+  color: "inherit",
+  "& svg": {
+    padding: "0",
+    minWidth: "0",
+    marginTop: "0.43rem",
+    transform: "scale(0.90)",
+    transition: "transform 200ms",
+  },
+  "&:hover": {
+    "& svg": {
+      transform: "scale(1.15)",
+    },
+  },
+});
 
 //End component styles
 
@@ -269,20 +279,12 @@ const Projects = () => {
                     </StyledProjectsSkillText>
                   ))}
                 </StyledProjectsSkillContainer>
-                <StyledProjectsOpenButton
-                  onClick={() => {
-                    openLink(mellowHeadsLink);
-                  }}
-                >
+                <StyledProjectsOpenLink href={mellowHeadsLink} target="_blank">
                   <LaunchIcon />
-                </StyledProjectsOpenButton>
-                <StyledProjectsGHButton
-                  onClick={() => {
-                    openLink(mellowHeadsGH);
-                  }}
-                >
+                </StyledProjectsOpenLink>
+                <StyledProjectsGHLink href={mellowHeadsGH} target="_blank">
                   <GitHubIcon />
-                </StyledProjectsGHButton>
+                </StyledProjectsGHLink>
               </StyledProjectsTextField>
             </StyledProjectsGridItem>
             <StyledProjectsGridItem
@@ -313,20 +315,12 @@ const Projects = () => {
                     </StyledProjectsSkillText>
                   ))}
                 </StyledProjectsSkillContainer>
-                <StyledProjectsOpenButton
-                  onClick={() => {
-                    openLink(rocketLeagueLink);
-                  }}
-                >
+                <StyledProjectsOpenLink href={rocketLeagueLink} target="_blank">
                   <LaunchIcon />
-                </StyledProjectsOpenButton>
-                <StyledProjectsGHButton
-                  onClick={() => {
-                    openLink(rocketLeagueGH);
-                  }}
-                >
+                </StyledProjectsOpenLink>
+                <StyledProjectsGHLink href={rocketLeagueGH} target="_blank">
                   <GitHubIcon />
-                </StyledProjectsGHButton>
+                </StyledProjectsGHLink>
               </StyledProjectsTextField>
             </StyledProjectsGridItem>
             <StyledProjectsGridItem
