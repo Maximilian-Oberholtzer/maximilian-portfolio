@@ -1,0 +1,29 @@
+[
+  {
+    "id": "0",
+    "title": "Mellow Heads NFT",
+    "image": "../images/mellowHeadsCollection.png",
+    "description": "Collection of 5000 algorithmically generated marshmallow characters on the Polygon Blockchain",
+    "skills": ["React", "Material-UI", "Redux", "Polygon", "MetaMask"],
+    "websiteLink": "https://mellowheadsnft.com",
+    "githubLink": "https://github.com/Maximilian-Oberholtzer/mellow-heads-nft"
+  },
+  {
+    "id": "1",
+    "title": "Replay Analysis Tool",
+    "image": "../images/rocketLeague.png",
+    "description": " A tool to review and analyze Rocket League solo duel replays",
+    "skills": ["React", "Bootstrap", "Node", "Express"],
+    "websiteLink": "http://www.feedsanalysistool.com/",
+    "githubLink": "https://github.com/Maximilian-Oberholtzer/replay-analysis-tool"
+  },
+  {
+    "id": "2",
+    "title": "iOS Games",
+    "image": "../images/iosGames.jpg",
+    "description": " Bottle-Flip, Hibachi-Toss & Fruit-Fall collectively received 4.5+ star reviews and had over 20k downloads internationally",
+    "skills": ["Swift", "SpriteKit", "Xcode", "Game Center"],
+    "websiteLink": "",
+    "githubLink": ""
+  }
+]
