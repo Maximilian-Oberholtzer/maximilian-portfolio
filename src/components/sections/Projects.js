@@ -1,13 +1,5 @@
 import { React } from "react";
-import {
-  Typography,
-  Container,
-  Grid,
-  Button,
-  styled,
-  useMediaQuery,
-  useTheme,
-} from "@mui/material";
+import { Typography, Container, Grid, styled } from "@mui/material";
 import {
   StyledDivider,
   StyledGenericContainer,
@@ -16,13 +8,11 @@ import {
   StyledGenericTitle,
 } from "./Styles";
 import "animate.css";
-import { useInView } from "react-intersection-observer";
+import { useInView, InView } from "react-intersection-observer";
 import * as Scroll from "react-scroll";
+import projects from "../../content/projects.json";
 import LaunchIcon from "@mui/icons-material/Launch";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import MellowHeads from "../../assets/mellowHeadsCollection.png";
-import RocketLeague from "../../assets/rocketLeague.png";
-import iosGames from "../../assets/iosGames.jpg";
 
 //Component styles//
 const StyledProjectsContainer = styled(Container)(({ theme }) => ({
@@ -184,43 +174,11 @@ const StyledProjectsGHLink = styled("a")({
 //End component styles
 
 const Projects = () => {
-  const theme = useTheme();
-  const sm = useMediaQuery(theme.breakpoints.down("sm"));
-
   //triggers for animations
   const [projectsContainer, projectsContainerInView] = useInView({
     threshold: 0.2,
     triggerOnce: true,
   });
-  const [p1, p1InView] = useInView({
-    threshold: 0.9,
-    triggerOnce: true,
-  });
-  const [p2, p2InView] = useInView({
-    threshold: 0.9,
-    triggerOnce: true,
-  });
-  const [p3, p3InView] = useInView({
-    threshold: 0.9,
-    triggerOnce: true,
-  });
-
-  //Content for project cards
-  const mellowHeadSkills = [
-    "React",
-    "Material-UI",
-    "Redux",
-    "Polygon",
-    "MetaMask",
-  ];
-  const mellowHeadsLink = "https://mellowheadsnft.com";
-  const mellowHeadsGH =
-    "https://github.com/Maximilian-Oberholtzer/mellow-heads-nft";
-  const rocketLeagueSkills = ["React", "Bootstrap", "Node", "Express"];
-  const rocketLeagueLink = "http://www.feedsanalysistool.com/";
-  const rocketLeagueGH =
-    "https://github.com/Maximilian-Oberholtzer/replay-analysis-tool";
-  const iosGamesSkills = ["Swift", "SpriteKit", "Xcode", "Game Center"];
 
   return (
     <Scroll.Element name="Projects">
@@ -246,118 +204,63 @@ const Projects = () => {
         </StyledGenericContainer>
         <StyledProjectsContainer>
           <StyledProjectsGrid container rowSpacing={6} columnSpacing={12}>
-            <StyledProjectsGridItem
-              ref={p1}
-              item
-              xs={12}
-              sm={5.5}
-              sx={
-                p1InView
-                  ? {
-                      visibility: "visible",
-                      animation: "fadeInUp",
-                      animationDuration: "1s",
+            {projects.map((project) => (
+              <InView key={project.id} threshold={0.9} triggerOnce={true}>
+                {({ ref, inView }) => (
+                  <StyledProjectsGridItem
+                    item
+                    xs={12}
+                    sm={5.5}
+                    ref={ref}
+                    inView={inView}
+                    sx={
+                      inView
+                        ? {
+                            visibility: "visible",
+                            animation: "fadeInUp",
+                            animationDuration: "1s",
+                          }
+                        : { visibility: "hidden" }
                     }
-                  : { visibility: "hidden" }
-              }
-            >
-              <StyledProjectsImg alt="" src={MellowHeads} />
-              <StyledProjectsTextField>
-                <StyledProjectsTitle>Mellow Heads NFT</StyledProjectsTitle>
-                <StyledProjectsSubText>
-                  Collection of 5000 algorithmically generated marshmallow
-                  characters on the Polygon Blockchain
-                </StyledProjectsSubText>
-                <StyledProjectsSkillContainer>
-                  {mellowHeadSkills.map((skill, index) => (
-                    <StyledProjectsSkillText key={index}>
-                      {skill}
-                    </StyledProjectsSkillText>
-                  ))}
-                </StyledProjectsSkillContainer>
-                <StyledProjectsOpenLink href={mellowHeadsLink} target="_blank">
-                  <LaunchIcon />
-                </StyledProjectsOpenLink>
-                <StyledProjectsGHLink href={mellowHeadsGH} target="_blank">
-                  <GitHubIcon />
-                </StyledProjectsGHLink>
-              </StyledProjectsTextField>
-            </StyledProjectsGridItem>
-            <StyledProjectsGridItem
-              ref={p2}
-              item
-              xs={12}
-              sm={5.5}
-              sx={
-                p2InView
-                  ? {
-                      visibility: "visible",
-                      animation: "fadeInUp",
-                      animationDuration: "1s",
-                    }
-                  : { visibility: "hidden" }
-              }
-            >
-              <StyledProjectsImg alt="" src={RocketLeague} />
-              <StyledProjectsTextField>
-                <StyledProjectsTitle>Replay Analysis Tool</StyledProjectsTitle>
-                <StyledProjectsSubText>
-                  A tool to review and analyze Rocket League solo duel replays
-                </StyledProjectsSubText>
-                <StyledProjectsSkillContainer>
-                  {rocketLeagueSkills.map((skill, index) => (
-                    <StyledProjectsSkillText key={index}>
-                      {skill}
-                    </StyledProjectsSkillText>
-                  ))}
-                </StyledProjectsSkillContainer>
-                <StyledProjectsOpenLink href={rocketLeagueLink} target="_blank">
-                  <LaunchIcon />
-                </StyledProjectsOpenLink>
-                <StyledProjectsGHLink href={rocketLeagueGH} target="_blank">
-                  <GitHubIcon />
-                </StyledProjectsGHLink>
-              </StyledProjectsTextField>
-            </StyledProjectsGridItem>
-            <StyledProjectsGridItem
-              ref={p3}
-              item
-              xs={12}
-              sm={5.5}
-              sx={
-                p3InView
-                  ? {
-                      visibility: "visible",
-                      animation: "fadeInUp",
-                      animationDuration: "1s",
-                    }
-                  : { visibility: "hidden" }
-              }
-            >
-              <StyledProjectsImg
-                alt=""
-                src={iosGames}
-                sx={
-                  sm
-                    ? { transform: "scale(1.12)" }
-                    : { transform: "scale(1.08)" }
-                }
-              />
-              <StyledProjectsTextField>
-                <StyledProjectsTitle>iOS Games</StyledProjectsTitle>
-                <StyledProjectsSubText>
-                  Bottle-Flip, Hibachi-Toss & Fruit-Fall collectively received
-                  4.5+ star reviews and had over 20k downloads internationally
-                </StyledProjectsSubText>
-                <StyledProjectsSkillContainer>
-                  {iosGamesSkills.map((skill, index) => (
-                    <StyledProjectsSkillText key={index}>
-                      {skill}
-                    </StyledProjectsSkillText>
-                  ))}
-                </StyledProjectsSkillContainer>
-              </StyledProjectsTextField>
-            </StyledProjectsGridItem>
+                  >
+                    <StyledProjectsImg
+                      alt=""
+                      src={project.image}
+                      referrerPolicy="no-referrer"
+                    />
+                    <StyledProjectsTextField>
+                      <StyledProjectsTitle>{project.title}</StyledProjectsTitle>
+                      <StyledProjectsSubText>
+                        {project.description}
+                      </StyledProjectsSubText>
+                      <StyledProjectsSkillContainer>
+                        {project.skills.map((skill, index) => (
+                          <StyledProjectsSkillText key={index}>
+                            {skill}
+                          </StyledProjectsSkillText>
+                        ))}
+                      </StyledProjectsSkillContainer>
+                      {project.websiteLink && (
+                        <StyledProjectsOpenLink
+                          href={project.websiteLink}
+                          target="_blank"
+                        >
+                          <LaunchIcon />
+                        </StyledProjectsOpenLink>
+                      )}
+                      {project.githubLink && (
+                        <StyledProjectsGHLink
+                          href={project.githubLink}
+                          target="_blank"
+                        >
+                          <GitHubIcon />
+                        </StyledProjectsGHLink>
+                      )}
+                    </StyledProjectsTextField>
+                  </StyledProjectsGridItem>
+                )}
+              </InView>
+            ))}
           </StyledProjectsGrid>
         </StyledProjectsContainer>
       </StyledGenericRoot>
