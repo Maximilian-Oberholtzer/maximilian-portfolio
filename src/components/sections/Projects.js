@@ -201,7 +201,7 @@ const Projects = () => {
     triggerOnce: true,
   });
   const [p3, p3InView] = useInView({
-    threshold: 0.7,
+    threshold: 0.9,
     triggerOnce: true,
   });
 
@@ -221,10 +221,6 @@ const Projects = () => {
   const rocketLeagueGH =
     "https://github.com/Maximilian-Oberholtzer/replay-analysis-tool";
   const iosGamesSkills = ["Swift", "SpriteKit", "Xcode", "Game Center"];
-
-  const openLink = (link) => {
-    window.open(link, "_blank");
-  };
 
   return (
     <Scroll.Element name="Projects">
