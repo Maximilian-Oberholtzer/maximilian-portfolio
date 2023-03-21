@@ -76,12 +76,20 @@ const StyledScrollingItem = styled("div")(({ theme }) => ({
     marginRight: "2.2rem",
     padding: "0.9rem 0.6rem 0.75rem 0.9rem",
   },
+  [theme.breakpoints.down("xs")]: {
+    marginRight: "1.6rem",
+    padding: "0.6rem 0.4rem 0.6rem 0.4rem",
+    minWidth: "5rem",
+  },
 }));
 const StyledScrollingText = styled(Typography)(({ theme }) => ({
   fontSize: "1.5rem !important",
   color: "#FFFFFF",
   [theme.breakpoints.down("sm")]: {
     fontSize: "1.2rem !important",
+  },
+  [theme.breakpoints.down("xs")]: {
+    fontSize: "0.8rem !important",
   },
 }));
 //End component styles
