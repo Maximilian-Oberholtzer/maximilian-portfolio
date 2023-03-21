@@ -1,15 +1,17 @@
 import { React, useState, useEffect } from "react";
 import { Container, useMediaQuery, styled, useTheme } from "@mui/material";
 import maxAvatar from "../assets/max.webp";
-import Hero from "./sections/Hero";
-import SideAnchorLinks from "./SideAnchorLinks";
-import About from "./sections/About";
-import Hobbies from "./sections/Hobbies";
-import Experience from "./sections/Experience";
-import Projects from "./sections/Projects";
-import Navbar from "./Navbar";
-import Footer from "./sections/Footer";
-import Loader from "./Loader";
+import {
+  Loader,
+  Navbar,
+  SideAnchorLinks,
+  Hero,
+  About,
+  Experience,
+  Projects,
+  Hobbies,
+  Footer,
+} from "../components";
 
 const StyledMainPage = styled("div")(({ theme }) => ({
   backgroundColor: theme.palette.background.main,
