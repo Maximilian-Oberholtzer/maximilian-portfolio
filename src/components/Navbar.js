@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { ThemeContext } from "../ThemeContext";
 import ResumePdf from "../assets/Maximilian Oberholtzer Resume 2023.pdf";
+import navbarData from "../content/navbar.json";
 import MenuIcon from "@mui/icons-material/Menu";
 import WbSunnyIcon from "@mui/icons-material/WbSunny";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
@@ -189,66 +190,43 @@ const Navbar = () => {
         open={isOpen}
         onClose={toggleDrawer(false)}
       >
-        <Fade in={true} timeout={600} style={{ transitionDelay: "0s" }}>
+        <Fade in={true} timeout={600}>
           <Button onClick={toggleDrawer(false)}>
             <StyledDrawerCloseIcon />
           </Button>
         </Fade>
         <Box role="presentation" onKeyDown={toggleDrawer(false)}>
           <List>
-            <Fade in={true} timeout={600} style={{ transitionDelay: "0s" }}>
+            <Fade in={true} timeout={600}>
               <StyledResumeButton
                 onClick={resumeClick}
-                sx={{ padding: "0.75rem 1rem" }}
+                sx={{
+                  padding: "0.75rem 1rem",
+                  transition:
+                    "opacity 600ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, background-color 200ms ease-in-out 0s !important",
+                }}
               >
                 <StyledDrawerText>Resume</StyledDrawerText>
               </StyledResumeButton>
             </Fade>
           </List>
-          <List>
-            <Fade in={true} timeout={600} style={{ transitionDelay: "0.12s" }}>
-              <StyledAppBarDrawerButton
-                onClick={() => {
-                  scrollToSection("About");
-                }}
+          {navbarData.map((data) => (
+            <List key={data.id}>
+              <Fade
+                in={true}
+                timeout={600}
+                sx={{ transitionDelay: data.transitionDelay + " !important" }}
               >
-                <StyledDrawerText>About</StyledDrawerText>
-              </StyledAppBarDrawerButton>
-            </Fade>
-          </List>
-          <List>
-            <Fade in={true} timeout={600} style={{ transitionDelay: "0.24s" }}>
-              <StyledAppBarDrawerButton
-                onClick={() => {
-                  scrollToSection("Experience");
-                }}
-              >
-                <StyledDrawerText>Experience</StyledDrawerText>
-              </StyledAppBarDrawerButton>
-            </Fade>
-          </List>
-          <List>
-            <Fade in={true} timeout={600} style={{ transitionDelay: "0.36s" }}>
-              <StyledAppBarDrawerButton
-                onClick={() => {
-                  scrollToSection("Projects");
-                }}
-              >
-                <StyledDrawerText>Projects</StyledDrawerText>
-              </StyledAppBarDrawerButton>
-            </Fade>
-          </List>
-          <List>
-            <Fade in={true} timeout={600} style={{ transitionDelay: "0.48s" }}>
-              <StyledAppBarDrawerButton
-                onClick={() => {
-                  scrollToSection("Hobbies");
-                }}
-              >
-                <StyledDrawerText>Hobbies</StyledDrawerText>
-              </StyledAppBarDrawerButton>
-            </Fade>
-          </List>
+                <StyledAppBarDrawerButton
+                  onClick={() => {
+                    scrollToSection(data.name);
+                  }}
+                >
+                  <StyledDrawerText>{data.name}</StyledDrawerText>
+                </StyledAppBarDrawerButton>
+              </Fade>
+            </List>
+          ))}
           <List>
             <Fade in={true} timeout={600} style={{ transitionDelay: "0.6s" }}>
               <Button
@@ -276,51 +254,22 @@ const Navbar = () => {
           {theme === "light" ? <WbSunnyIcon /> : <DarkModeIcon />}
         </StyledAppBarButton>
       </div>
-
-      <div
-        className={!hasAnimated ? "animate__animated animate__fadeInDown" : ""}
-      >
-        <StyledAppBarButton
-          onClick={() => {
-            scrollToSection("About");
-          }}
+      {navbarData.map((data) => (
+        <div
+          key={data.id}
+          className={
+            !hasAnimated ? "animate__animated animate__fadeInDown" : ""
+          }
         >
-          <Typography>About</Typography>
-        </StyledAppBarButton>
-      </div>
-      <div
-        className={!hasAnimated ? "animate__animated animate__fadeInDown" : ""}
-      >
-        <StyledAppBarButton
-          onClick={() => {
-            scrollToSection("Experience");
-          }}
-        >
-          <Typography>Experience</Typography>
-        </StyledAppBarButton>
-      </div>
-      <div
-        className={!hasAnimated ? "animate__animated animate__fadeInDown" : ""}
-      >
-        <StyledAppBarButton
-          onClick={() => {
-            scrollToSection("Projects");
-          }}
-        >
-          <Typography>Projects</Typography>
-        </StyledAppBarButton>
-      </div>
-      <div
-        className={!hasAnimated ? "animate__animated animate__fadeInDown" : ""}
-      >
-        <StyledAppBarButton
-          onClick={() => {
-            scrollToSection("Hobbies");
-          }}
-        >
-          <Typography>Hobbies</Typography>
-        </StyledAppBarButton>
-      </div>
+          <StyledAppBarButton
+            onClick={() => {
+              scrollToSection(data.name);
+            }}
+          >
+            <Typography>{data.name}</Typography>
+          </StyledAppBarButton>
+        </div>
+      ))}
       <div
         style={{ paddingLeft: "4px" }}
         className={!hasAnimated ? "animate__animated animate__fadeInDown" : ""}
