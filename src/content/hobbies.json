@@ -1,0 +1,41 @@
+[
+  {
+    "id": "0",
+    "name": "Tennis",
+    "description": "Peak ranking of 12 UTR in singles & 3-star college recruit",
+    "smallWidth": "6rem",
+    "largeWidth": "8rem",
+    "smallHeight": "6rem",
+    "largeHeight": "8rem",
+    "strokeWidth": "7",
+    "viewBox": "0 0 512 512",
+    "transform": "none",
+    "animationDuration": 18
+  },
+  {
+    "id": "1",
+    "name": "Speed Cubing",
+    "description": "Fastest recorded 3x3 solve time is currently 9.94 seconds",
+    "smallWidth": "6rem",
+    "largeWidth": "8rem",
+    "smallHeight": "6rem",
+    "largeHeight": "8rem",
+    "strokeWidth": "7",
+    "viewBox": "0 0 512 512",
+    "transform": "none",
+    "animationDuration": 18
+  },
+  {
+    "id": "2",
+    "name": "Rocket League",
+    "description": "Top 100 on global leaderboard in Solo Duel game mode",
+    "smallWidth": "10rem",
+    "largeWidth": "12rem",
+    "smallHeight": "6rem",
+    "largeHeight": "8rem",
+    "strokeWidth": "18",
+    "viewBox": "0 0 300.000000 179.000000",
+    "transform": "translate(0.000000,179.000000) scale(0.100000,-0.100000)",
+    "animationDuration": 14
+  }
+]
