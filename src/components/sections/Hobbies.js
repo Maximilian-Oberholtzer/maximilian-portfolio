@@ -13,8 +13,9 @@ import {
   StyledGenericSubText,
   StyledGenericTitle,
 } from "./Styles";
+import hobbies from "../../content/hobbies.json";
 import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import { useInView, InView } from "react-intersection-observer";
 import * as Scroll from "react-scroll";
 import { TennisSvgPath, RubiksCubePath, RocketLeaguePath } from "../SvgHelper";
 import "animate.css";
@@ -53,7 +54,7 @@ const StyledHobbiesGridItem = styled(Grid)(({ theme }) => ({
 
 //End component styles
 
-const pathVariants = {
+const pathVariants = (animationDuration) => ({
   hidden: {
     opactiy: 0,
     pathLength: 0,
@@ -62,45 +63,19 @@ const pathVariants = {
     opacity: 1,
     pathLength: 1,
     transition: {
-      duration: 18,
+      duration: animationDuration,
       ease: "easeIn",
     },
   },
-};
-
-const pathVariantsRL = {
-  hidden: {
-    opactiy: 0,
-    pathLength: 0,
-  },
-  visible: {
-    opacity: 1,
-    pathLength: 1,
-    transition: {
-      duration: 14,
-      ease: "easeIn",
-    },
-  },
-};
+});
 
 const Hobbies = () => {
   const theme = useTheme();
   const sm = useMediaQuery(theme.breakpoints.down("md"));
+  const paths = [TennisSvgPath, RubiksCubePath, RocketLeaguePath];
 
   const [hobbiesContainer, hobbiesContainerInView] = useInView({
     threshold: 0.3,
-    triggerOnce: true,
-  });
-  const [h1, h1InView] = useInView({
-    threshold: 0.8,
-    triggerOnce: true,
-  });
-  const [h2, h2InView] = useInView({
-    threshold: 0.8,
-    triggerOnce: true,
-  });
-  const [h3, h3InView] = useInView({
-    threshold: 0.8,
     triggerOnce: true,
   });
 
@@ -132,101 +107,47 @@ const Hobbies = () => {
           </div>
 
           <StyledHobbiesGrid container spacing={1}>
-            <StyledHobbiesGridItem item xs={12} sm={4} ref={h1}>
-              <div
-                style={
-                  h1InView
-                    ? { visibility: "visible" }
-                    : { visibility: "hidden" }
-                }
-                className={
-                  h1InView ? "animate__animated animate__fadeInUp" : ""
-                }
-              >
-                <motion.svg
-                  viewBox="0 0 512 512"
-                  width={sm ? "6rem" : "8rem"}
-                  initial="hidden"
-                  animate={h1InView ? "visible" : ""}
-                >
-                  <motion.path
-                    d={TennisSvgPath}
-                    fill="none"
-                    variants={pathVariants}
-                    stroke={theme.palette.textMain.main}
-                    strokeWidth="7"
-                  ></motion.path>
-                </motion.svg>
-                <StyledHobbiesGridTitle>Tennis</StyledHobbiesGridTitle>
-                <StyledHobbiesGridSubText>
-                  Peak ranking of 12 UTR in singles & 3-star college recruit
-                </StyledHobbiesGridSubText>
-              </div>
-            </StyledHobbiesGridItem>
-            <StyledHobbiesGridItem item xs={12} sm={4} ref={h2}>
-              <div
-                style={
-                  h2InView
-                    ? { visibility: "visible" }
-                    : { visibility: "hidden" }
-                }
-                className={
-                  h2InView ? "animate__animated animate__fadeInUp" : ""
-                }
-              >
-                <motion.svg
-                  viewBox="0 0 512 512"
-                  width={sm ? "6rem" : "8rem"}
-                  initial="hidden"
-                  animate={h2InView ? "visible" : ""}
-                >
-                  <motion.path
-                    d={RubiksCubePath}
-                    fill="none"
-                    variants={pathVariants}
-                    stroke={theme.palette.textMain.main}
-                    strokeWidth="7"
-                  ></motion.path>
-                </motion.svg>{" "}
-                <StyledHobbiesGridTitle>Speed Cubing</StyledHobbiesGridTitle>
-                <StyledHobbiesGridSubText>
-                  Fastest recorded 3x3 solve time is currently 9.94 seconds
-                </StyledHobbiesGridSubText>
-              </div>
-            </StyledHobbiesGridItem>
-            <StyledHobbiesGridItem item xs={12} sm={4} ref={h3}>
-              <div
-                style={
-                  h3InView
-                    ? { visibility: "visible" }
-                    : { visibility: "hidden" }
-                }
-                className={
-                  h3InView ? "animate__animated animate__fadeInUp" : ""
-                }
-              >
-                <motion.svg
-                  viewBox="0 0 300.000000 179.000000"
-                  width={sm ? "10rem" : "12rem"}
-                  height={sm ? "6rem" : "8rem"}
-                  initial="hidden"
-                  animate={h3InView ? "visible" : ""}
-                >
-                  <motion.path
-                    d={RocketLeaguePath}
-                    fill="none"
-                    transform="translate(0.000000,179.000000) scale(0.100000,-0.100000)"
-                    variants={pathVariantsRL}
-                    stroke={theme.palette.textMain.main}
-                    strokeWidth="18"
-                  ></motion.path>
-                </motion.svg>
-                <StyledHobbiesGridTitle>Rocket League</StyledHobbiesGridTitle>
-                <StyledHobbiesGridSubText>
-                  Top 100 on global leaderboard in Solo Duel game mode
-                </StyledHobbiesGridSubText>
-              </div>
-            </StyledHobbiesGridItem>
+            {hobbies.map((hobby) => (
+              <InView key={hobby.id} threshold={0.8} triggerOnce={true}>
+                {({ ref, inView }) => (
+                  <StyledHobbiesGridItem item xs={12} sm={4} ref={ref}>
+                    <div
+                      style={
+                        inView
+                          ? { visibility: "visible" }
+                          : { visibility: "hidden" }
+                      }
+                      className={
+                        inView ? "animate__animated animate__fadeInUp" : ""
+                      }
+                    >
+                      <motion.svg
+                        viewBox={hobby.viewBox}
+                        width={sm ? hobby.smallWidth : hobby.largeWidth}
+                        height={sm ? hobby.smallHeight : hobby.largeHeight}
+                        initial="hidden"
+                        animate={inView ? "visible" : ""}
+                      >
+                        <motion.path
+                          d={paths[hobby.id]}
+                          fill="none"
+                          transform={hobby.transform}
+                          variants={pathVariants(hobby.animationDuration)}
+                          stroke={theme.palette.textMain.main}
+                          strokeWidth={hobby.strokeWidth}
+                        ></motion.path>
+                      </motion.svg>
+                      <StyledHobbiesGridTitle>
+                        {hobby.name}
+                      </StyledHobbiesGridTitle>
+                      <StyledHobbiesGridSubText>
+                        {hobby.description}
+                      </StyledHobbiesGridSubText>
+                    </div>
+                  </StyledHobbiesGridItem>
+                )}
+              </InView>
+            ))}
           </StyledHobbiesGrid>
         </StyledGenericContainer>
       </StyledGenericRoot>
