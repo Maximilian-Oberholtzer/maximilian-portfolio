@@ -32,7 +32,6 @@ const pathVariants = {
 const Loader = () => {
   const [hasLoaded, setHasLoaded] = useState(false);
   const theme = useTheme();
-  const small = useMediaQuery(theme.breakpoints.down("sm"));
 
   useEffect(() => {
     setTimeout(() => {
@@ -46,7 +45,7 @@ const Loader = () => {
         <motion.svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 140 130"
-          width={small ? "6rem" : "8rem"}
+          width="8rem"
           initial="hidden"
           animate="visible"
         >
