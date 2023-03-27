@@ -1,5 +1,5 @@
 import { React, useState, useEffect } from "react";
-import { useTheme, useMediaQuery, styled } from "@mui/material";
+import { useTheme, styled } from "@mui/material";
 import { motion } from "framer-motion";
 import "animate.css";
 
