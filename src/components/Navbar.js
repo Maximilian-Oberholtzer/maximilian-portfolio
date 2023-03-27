@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
 import { ThemeContext } from "../ThemeContext";
-import ResumePdf from "../assets/Maximilian Oberholtzer Resume 2023.pdf";
 import navbarData from "../content/navbar.json";
 import MenuIcon from "@mui/icons-material/Menu";
 import WbSunnyIcon from "@mui/icons-material/WbSunny";
@@ -18,10 +17,9 @@ import {
   useTheme,
   useScrollTrigger,
   Slide,
-  Fade,
   styled,
 } from "@mui/material";
-import * as Scroll from "react-scroll";
+import { Link } from "react-scroll";
 
 //Component Styles//
 const StyledAppBarContainer = styled("div")(({ theme }) => ({
@@ -49,28 +47,54 @@ const StyledAppBar = styled(AppBar)(({ theme, isScrolled }) => ({
     padding: isScrolled ? "0.5rem 2rem 0.5rem 2rem" : "1rem 2rem 1rem 2rem",
   },
 }));
+const StyledAppBarLink = styled(Link)(({ theme }) => ({
+  "& p": {
+    color: theme.palette.textMain.main + " !important",
+    transform: "none",
+    transition: "transform 150ms ease-in-out 0s !important",
+    cursor: "pointer",
+    padding: "0.5rem",
+    "&:hover": {
+      color: theme.palette.textSecondary.main + " !important",
+      transform: "translateY(-2px)",
+    },
+  },
+}));
 const StyledAppBarButton = styled(Button)(({ theme }) => ({
+  padding: "0",
   color: theme.palette.textMain.main + " !important",
   transform: "none",
   transition: "transform 150ms ease-in-out 0s !important",
+  cursor: "pointer",
   "&:hover": {
     color: theme.palette.textSecondary.main + " !important",
     transform: "translateY(-2px)",
   },
 }));
-const StyledAppBarDrawerButton = styled(Button)(({ theme }) => ({
-  color: theme.palette.textMain.main + " !important",
-  "&:hover": {
-    color: theme.palette.textSecondary.main + " !important",
+const StyledAppBarDrawerLink = styled(Link)(({ theme }) => ({
+  "& p": {
+    animation: "fadeIn",
+    animationDuration: "2s",
+    color: theme.palette.textMain.main + " !important",
+    cursor: "pointer",
+    fontSize: "1.5rem",
+    "&:hover": {
+      color: theme.palette.textSecondary.main + " !important",
+    },
   },
 }));
-const StyledResumeButton = styled(Button)(({ theme }) => ({
-  borderRadius: "8px !important",
-  backgroundColor: theme.palette.backgroundSecondary.main + " !important",
-  color: "#FFFFFF",
-  transition: "background-color 200ms ease-in-out 0s !important",
-  "&:hover": {
-    backgroundColor: theme.palette.buttonHover.main + " !important",
+const StyledResumeLink = styled("a")(({ theme }) => ({
+  cursor: "pointer",
+  textDecoration: "none",
+  "& p": {
+    borderRadius: "8px !important",
+    padding: "0.25rem 0.5rem",
+    backgroundColor: theme.palette.backgroundSecondary.main + " !important",
+    color: "#FFFFFF",
+    transition: "background-color 200ms ease-in-out 0s !important",
+    "&:hover": {
+      backgroundColor: theme.palette.buttonHover.main + " !important",
+    },
   },
 }));
 const StyledDrawerIcon = styled(MenuIcon)(({ theme }) => ({
@@ -79,15 +103,14 @@ const StyledDrawerIcon = styled(MenuIcon)(({ theme }) => ({
   zIndex: "3 !important",
 }));
 const StyledDrawerCloseIcon = styled(CloseIcon)(({ theme }) => ({
+  animation: "fadeIn",
+  animationDuration: "1s",
   position: "fixed",
   top: "32px",
   right: "32px",
   color: theme.palette.textMain.main,
   fontSize: "2rem !important",
   zIndex: "3 !important",
-}));
-const StyledDrawerText = styled(Typography)(({ theme }) => ({
-  fontSize: "1.5rem",
 }));
 const StyledDrawer = styled(Drawer)(({ theme }) => ({
   "& div.MuiPaper-root": {
@@ -101,11 +124,10 @@ const StyledDrawer = styled(Drawer)(({ theme }) => ({
     zIndex: "2 !important",
   },
 }));
+const StyledDrawerList = styled(List)(({ theme }) => ({
+  display: "flex",
+}));
 //End component style//
-
-const resumeClick = () => {
-  window.open(ResumePdf, "_blank");
-};
 
 const Navbar = () => {
   const { theme, setTheme } = useContext(ThemeContext);
@@ -149,6 +171,7 @@ const Navbar = () => {
   });
 
   const toggleDrawer = (isOpen) => (event) => {
+    event.preventDefault();
     if (
       event.type === "keydown" &&
       (event.key === "Tab" || event.key === "Shift")
@@ -157,17 +180,6 @@ const Navbar = () => {
     }
 
     setIsOpen(isOpen);
-  };
-
-  //scroll to section based on navbar links
-  const scrollToSection = (element) => {
-    setIsOpen(false);
-
-    Scroll.scroller.scrollTo(element, {
-      duration: 1000,
-      delay: 0,
-      smooth: true,
-    });
   };
 
   const drawer = (
@@ -190,52 +202,68 @@ const Navbar = () => {
         open={isOpen}
         onClose={toggleDrawer(false)}
       >
-        <Fade in={true} timeout={600}>
-          <Button onClick={toggleDrawer(false)}>
-            <StyledDrawerCloseIcon />
-          </Button>
-        </Fade>
-        <Box role="presentation" onKeyDown={toggleDrawer(false)}>
-          <List>
-            <Fade in={true} timeout={600}>
-              <StyledResumeButton
-                onClick={resumeClick}
+        <Button onClick={toggleDrawer(false)}>
+          <StyledDrawerCloseIcon />
+        </Button>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+          role="presentation"
+          onKeyDown={toggleDrawer(false)}
+        >
+          <StyledDrawerList>
+            <StyledResumeLink
+              href={
+                process.env.PUBLIC_URL +
+                "/Maximilian Oberholtzer Resume 2023.pdf"
+              }
+              target="_blank"
+            >
+              <Typography
                 sx={{
-                  padding: "0.75rem 1rem",
+                  padding: "0.5rem 1rem !important",
+                  fontSize: "1.5rem",
                   transition:
                     "opacity 600ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, background-color 200ms ease-in-out 0s !important",
+                  animation: "fadeIn",
+                  animationDuration: "2s",
                 }}
               >
-                <StyledDrawerText>Resume</StyledDrawerText>
-              </StyledResumeButton>
-            </Fade>
-          </List>
+                Resume
+              </Typography>
+            </StyledResumeLink>
+          </StyledDrawerList>
           {navbarData.map((data) => (
-            <List key={data.id}>
-              <Fade
-                in={true}
-                timeout={600}
-                sx={{ transitionDelay: data.transitionDelay + " !important" }}
+            <StyledDrawerList key={data.id}>
+              <StyledAppBarDrawerLink
+                onClick={toggleDrawer(false)}
+                to={data.name}
+                smooth={true}
+                duration={1000}
               >
-                <StyledAppBarDrawerButton
-                  onClick={() => {
-                    scrollToSection(data.name);
-                  }}
+                <Typography
+                  sx={{ animationDelay: data.transitionDelay + " !important" }}
                 >
-                  <StyledDrawerText>{data.name}</StyledDrawerText>
-                </StyledAppBarDrawerButton>
-              </Fade>
-            </List>
+                  {data.name}
+                </Typography>
+              </StyledAppBarDrawerLink>
+            </StyledDrawerList>
           ))}
           <List>
-            <Fade in={true} timeout={600} style={{ transitionDelay: "0.6s" }}>
-              <Button
-                sx={{ color: MuiTheme.palette.textMain.main }}
-                onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-              >
-                {theme === "light" ? <WbSunnyIcon /> : <DarkModeIcon />}
-              </Button>
-            </Fade>
+            <Button
+              sx={{
+                color: MuiTheme.palette.textMain.main,
+                animation: "fadeIn",
+                animationDuration: "2s",
+                animationDelay: "0.60s",
+              }}
+              onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+            >
+              {theme === "light" ? <WbSunnyIcon /> : <DarkModeIcon />}
+            </Button>
           </List>
         </Box>
       </StyledDrawer>
@@ -261,22 +289,23 @@ const Navbar = () => {
             !hasAnimated ? "animate__animated animate__fadeInDown" : ""
           }
         >
-          <StyledAppBarButton
-            onClick={() => {
-              scrollToSection(data.name);
-            }}
-          >
+          <StyledAppBarLink to={data.name} smooth={true} duration={1000}>
             <Typography>{data.name}</Typography>
-          </StyledAppBarButton>
+          </StyledAppBarLink>
         </div>
       ))}
       <div
         style={{ paddingLeft: "4px" }}
         className={!hasAnimated ? "animate__animated animate__fadeInDown" : ""}
       >
-        <StyledResumeButton onClick={resumeClick}>
-          <Typography> Resume</Typography>
-        </StyledResumeButton>
+        <StyledResumeLink
+          href={
+            process.env.PUBLIC_URL + "/Maximilian Oberholtzer Resume 2023.pdf"
+          }
+          target="_blank"
+        >
+          <Typography>Resume</Typography>
+        </StyledResumeLink>
       </div>
     </>
   );
