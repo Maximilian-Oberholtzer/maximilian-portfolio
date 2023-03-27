@@ -79,7 +79,8 @@ const StyledAppBarDrawerLink = styled(Link)(({ theme }) => ({
     animationDuration: "2s",
     color: theme.palette.textMain.main + " !important",
     cursor: "pointer",
-    fontSize: "1.5rem",
+    fontSize: "1.2rem",
+    padding: "0",
     "&:hover": {
       color: theme.palette.textSecondary.main + " !important",
     },
@@ -91,6 +92,7 @@ const StyledResumeLink = styled("a")(({ theme }) => ({
   "& p": {
     borderRadius: "8px !important",
     padding: "0.25rem 0.5rem",
+    fontSize: "1.2rem",
     backgroundColor: theme.palette.backgroundSecondary.main + " !important",
     color: "#FFFFFF",
     transition: "background-color 200ms ease-in-out 0s !important",
