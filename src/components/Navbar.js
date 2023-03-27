@@ -54,6 +54,7 @@ const StyledAppBarLink = styled(Link)(({ theme }) => ({
     transform: "none",
     transition: "transform 150ms ease-in-out 0s !important",
     cursor: "pointer",
+    fontSize: "1.2rem",
     padding: "0.5rem",
     "&:hover": {
       color: theme.palette.textSecondary.main + " !important",
