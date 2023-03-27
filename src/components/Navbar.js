@@ -48,6 +48,7 @@ const StyledAppBar = styled(AppBar)(({ theme, isScrolled }) => ({
   },
 }));
 const StyledAppBarLink = styled(Link)(({ theme }) => ({
+  textDecoration: "none",
   "& p": {
     color: theme.palette.textMain.main + " !important",
     transform: "none",
@@ -289,7 +290,12 @@ const Navbar = () => {
             !hasAnimated ? "animate__animated animate__fadeInDown" : ""
           }
         >
-          <StyledAppBarLink to={data.name} smooth={true} duration={1000}>
+          <StyledAppBarLink
+            href={`#${data.name}`}
+            to={data.name}
+            smooth={true}
+            duration={1000}
+          >
             <Typography>{data.name}</Typography>
           </StyledAppBarLink>
         </div>
