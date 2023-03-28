@@ -10,18 +10,27 @@
   },
   {
     "id": "1",
+    "title": "Letter Swap",
+    "image": "../images/LetterSwap.png",
+    "description": "A fun word puzzle mini-game to challenge your brain",
+    "skills": ["React", "Typescript", "CSS", "Netlify"],
+    "websiteLink": "https://letterswap.io",
+    "githubLink": "https://github.com/Maximilian-Oberholtzer"
+  },
+  {
+    "id": "2",
     "title": "Replay Analysis Tool",
     "image": "../images/rocketLeague.png",
-    "description": " A tool to review and analyze Rocket League solo duel replays",
+    "description": "A tool to review and analyze Rocket League solo duel replays",
     "skills": ["React", "Bootstrap", "Node", "Express"],
     "websiteLink": "http://www.feedsanalysistool.com/",
     "githubLink": "https://github.com/Maximilian-Oberholtzer/replay-analysis-tool"
   },
   {
-    "id": "2",
+    "id": "3",
     "title": "iOS Games",
     "image": "../images/iosGames.jpg",
-    "description": " Bottle-Flip, Hibachi-Toss & Fruit-Fall collectively received 4.5+ star reviews and had over 20k downloads internationally",
+    "description": "Bottle-Flip, Hibachi-Toss & Fruit-Fall collectively received 4.5+ star reviews and had over 20k downloads internationally",
     "skills": ["Swift", "SpriteKit", "Xcode", "Game Center"],
     "websiteLink": "",
     "githubLink": ""
