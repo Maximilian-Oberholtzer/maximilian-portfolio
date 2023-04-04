@@ -12,10 +12,10 @@
     "id": "1",
     "title": "Letter Swap",
     "image": "../images/LetterSwap.png",
-    "description": "A fun word puzzle mini-game to challenge your brain",
+    "description": "Challenge your brain to create as many 5-letter words as you can",
     "skills": ["React", "Typescript", "CSS", "Netlify"],
     "websiteLink": "https://letterswap.io",
-    "githubLink": "https://github.com/Maximilian-Oberholtzer"
+    "githubLink": "https://github.com/Maximilian-Oberholtzer/letter-swap"
   },
   {
     "id": "2",
