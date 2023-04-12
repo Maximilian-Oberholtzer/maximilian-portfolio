@@ -63,7 +63,7 @@ const StyledAppBarLink = styled(Link)(({ theme }) => ({
   },
 }));
 const StyledAppBarButton = styled(Button)(({ theme }) => ({
-  padding: "0",
+  padding: "10px 8px",
   color: theme.palette.textMain.main + " !important",
   transform: "none",
   transition: "transform 150ms ease-in-out 0s !important",
