@@ -10,7 +10,7 @@
   },
   {
     "id": "1",
-    "title": "Letter Swap",
+    "title": "LetterSwap",
     "image": "../images/LetterSwap.png",
     "description": "Challenge your brain to create as many 5-letter words as you can",
     "skills": ["React", "Typescript", "CSS", "Netlify"],
