@@ -92,7 +92,7 @@ const StyledResumeLink = styled("a")(({ theme }) => ({
   "& p": {
     borderRadius: "8px !important",
     padding: "0.25rem 0.5rem",
-    fontSize: "1.75rem",
+    fontSize: "1.2rem",
     backgroundColor: theme.palette.backgroundSecondary.main + " !important",
     color: "#FFFFFF",
     transition: "background-color 200ms ease-in-out 0s !important",
@@ -229,7 +229,7 @@ const Navbar = () => {
               <Typography
                 sx={{
                   padding: "0.5rem 1rem !important",
-                  fontSize: "1.5rem",
+                  fontSize: "1.75rem !important",
                   transition:
                     "opacity 600ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, background-color 200ms ease-in-out 0s !important",
                   animation: "fadeIn",
