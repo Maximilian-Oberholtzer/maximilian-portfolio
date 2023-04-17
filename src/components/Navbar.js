@@ -79,7 +79,7 @@ const StyledAppBarDrawerLink = styled(Link)(({ theme }) => ({
     animationDuration: "2s",
     color: theme.palette.textMain.main + " !important",
     cursor: "pointer",
-    fontSize: "1.2rem",
+    fontSize: "1.75rem",
     padding: "0",
     "&:hover": {
       color: theme.palette.textSecondary.main + " !important",
@@ -92,7 +92,7 @@ const StyledResumeLink = styled("a")(({ theme }) => ({
   "& p": {
     borderRadius: "8px !important",
     padding: "0.25rem 0.5rem",
-    fontSize: "1.2rem",
+    fontSize: "1.75rem",
     backgroundColor: theme.palette.backgroundSecondary.main + " !important",
     color: "#FFFFFF",
     transition: "background-color 200ms ease-in-out 0s !important",
@@ -248,11 +248,7 @@ const Navbar = () => {
                 smooth={true}
                 duration={1000}
               >
-                <Typography
-                  sx={{ animationDelay: data.transitionDelay + " !important" }}
-                >
-                  {data.name}
-                </Typography>
+                <Typography>{data.name}</Typography>
               </StyledAppBarDrawerLink>
             </StyledDrawerList>
           ))}
@@ -262,7 +258,6 @@ const Navbar = () => {
                 color: MuiTheme.palette.textMain.main,
                 animation: "fadeIn",
                 animationDuration: "2s",
-                animationDelay: "0.60s",
               }}
               onClick={() => setTheme(theme === "light" ? "dark" : "light")}
             >

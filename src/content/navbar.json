@@ -1,22 +1,18 @@
 [
   {
     "id": "0",
-    "name": "About",
-    "transitionDelay": "0.12s"
+    "name": "About"
   },
   {
     "id": "1",
-    "name": "Experience",
-    "transitionDelay": "0.24s"
+    "name": "Experience"
   },
   {
     "id": "2",
-    "name": "Projects",
-    "transitionDelay": "0.36s"
+    "name": "Projects"
   },
   {
     "id": "3",
-    "name": "Hobbies",
-    "transitionDelay": "0.48s"
+    "name": "Hobbies"
   }
 ]
