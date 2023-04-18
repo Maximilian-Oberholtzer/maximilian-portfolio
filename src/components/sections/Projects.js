@@ -224,7 +224,7 @@ const Projects = () => {
                     }
                   >
                     <StyledProjectsImg
-                      alt=""
+                      alt={`Image of ${project.title}`}
                       src={project.image}
                       referrerPolicy="no-referrer"
                     />
