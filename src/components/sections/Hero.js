@@ -128,7 +128,7 @@ const Hero = ({ img }) => {
       <StyledHeroContainer ismobile={isMobile}>
         <StyledHeroGrid ismobile={isMobile} container spacing={0}>
           <Grid item style={{ paddingLeft: "0 !important" }}>
-            <StyledHeroImage alt="" src={img} />
+            <StyledHeroImage alt="Image of Maximilian Oberholtzer" src={img} />
           </Grid>
           <StyledHeroText item>
             <StyledHeroTitle component="h1" variant="h2">
