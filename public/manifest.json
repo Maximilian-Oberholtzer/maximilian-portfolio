@@ -9,12 +9,12 @@
     },
     {
       "src": "MlogoFilledBlue2.svg",
-      "type": "image/png",
+      "type": "image/svg",
       "sizes": "192x192"
     },
     {
       "src": "MlogoFilledBlue2.svg",
-      "type": "image/png",
+      "type": "image/svg",
       "sizes": "512x512"
     }
   ],
