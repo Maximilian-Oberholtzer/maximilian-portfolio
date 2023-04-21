@@ -11,7 +11,7 @@
   {
     "id": "1",
     "title": "LetterSwap",
-    "image": "../images/LetterSwap.png",
+    "image": "../images/LetterSwapGame.png",
     "description": "Challenge your brain to create as many 5-letter words as you can",
     "skills": ["React", "Typescript", "CSS", "Netlify"],
     "websiteLink": "https://letterswap.io",

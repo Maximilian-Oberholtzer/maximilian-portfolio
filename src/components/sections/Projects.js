@@ -92,7 +92,7 @@ const StyledProjectsGridItem = styled(Grid)(({ theme }) => ({
   },
 }));
 const StyledProjectsImg = styled("img")(({ theme }) => ({
-  transform: "scale(1.00)",
+  transform: "scale(1.01)",
   height: "100%",
   width: "100%",
   position: "absolute",
