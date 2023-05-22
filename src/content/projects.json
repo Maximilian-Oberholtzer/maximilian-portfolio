@@ -13,7 +13,7 @@
     "title": "LetterSwap",
     "image": "../images/LetterSwapGame.png",
     "description": "Challenge your brain to create as many words as possible",
-    "skills": ["React", "Typescript", "CSS", "Netlify"],
+    "skills": ["React", "Typescript", "CSS", "Netlify", "Supabase"],
     "websiteLink": "https://letterswap.io",
     "githubLink": "https://github.com/Maximilian-Oberholtzer/letter-swap"
   },
