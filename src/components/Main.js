@@ -1,6 +1,6 @@
 import { React, useState, useEffect } from "react";
 import { Container, useMediaQuery, styled, useTheme } from "@mui/material";
-import maxAvatar from "../assets/max.webp";
+import maxAvatar from "../assets/headshot.jpeg";
 import {
   Loader,
   Navbar,
