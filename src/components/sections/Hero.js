@@ -14,30 +14,6 @@ const StyledHeroRoot = styled("section")(({ theme }) => ({
   minHeight: "100vh",
   position: "relative",
   overflow: "hidden",
-  "&::before": {
-    content: "''",
-    position: "absolute",
-    top: "0%",
-    right: "3%",
-    width: "500px",
-    height: "500px",
-    borderRadius: "50%",
-    background: `radial-gradient(circle, ${theme.palette.textSecondary.main}12 0%, ${theme.palette.background.main}00 80%)`,
-    pointerEvents: "none",
-    zIndex: 0,
-  },
-  "&::after": {
-    content: "''",
-    position: "absolute",
-    bottom: "5%",
-    left: "3%",
-    width: "400px",
-    height: "400px",
-    borderRadius: "50%",
-    background: `radial-gradient(circle, ${theme.palette.backgroundSecondary.main}20 0%, ${theme.palette.background.main}00 80%)`,
-    pointerEvents: "none",
-    zIndex: 0,
-  },
 }));
 
 const StyledHeroContainer = styled(Container)(({ theme, ismobile }) => ({
