@@ -1,6 +1,6 @@
 import { React, useState, useEffect } from "react";
 import { Container, useMediaQuery, styled, useTheme } from "@mui/material";
-import maxAvatar from "../assets/max.webp";
+import maxAvatar from "../assets/headshot.jpeg";
 import {
   Loader,
   Navbar,
@@ -31,7 +31,7 @@ const Main = () => {
   useEffect(() => {
     setTimeout(() => {
       setIsloading(false);
-    }, 2400);
+    }, 3250);
 
     const loadImage = async () => {
       const img = new Image();
