@@ -42,8 +42,8 @@ const StyledProjectsGridItem = styled(Grid)(({ theme }) => ({
   display: "flex",
   height: "280px",
   marginBottom: "2.5rem",
-  borderRadius: "1rem",
-  border: `0.25rem solid ${theme.palette.backgroundSecondary.main}70`,
+  borderRadius: "0.75rem",
+  border: `0.15rem solid ${theme.palette.backgroundSecondary.main}70`,
   backgroundColor: `${theme.palette.backgroundSecondary.main}70`,
   paddingTop: "0 !important",
   paddingLeft: "0 !important",
@@ -132,7 +132,7 @@ const StyledProjectsSkillText = styled(Typography)(({ theme }) => ({
   background: "white",
   marginRight: "0.5rem",
   padding: "0.1rem 0.4rem",
-  borderRadius: "0.5rem",
+  borderRadius: "0.35rem",
   color: "black",
   fontWeight: "600",
   [theme.breakpoints.down("sm")]: {
@@ -218,7 +218,7 @@ const Projects = () => {
                         ? {
                             visibility: "visible",
                             animation: "fadeInUp",
-                            animationDuration: "1s",
+                            animationDuration: "0.5s",
                           }
                         : { visibility: "hidden" }
                     }

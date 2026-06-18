@@ -31,7 +31,7 @@ const Main = () => {
   useEffect(() => {
     setTimeout(() => {
       setIsloading(false);
-    }, 2400);
+    }, 3250);
 
     const loadImage = async () => {
       const img = new Image();

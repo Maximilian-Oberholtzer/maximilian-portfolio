@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Container, Grid, Typography, styled } from "@mui/material";
+import { Link } from "react-scroll";
 import "animate.css";
 
-//Component styles//
 const StyledHeroRoot = styled("section")(({ theme }) => ({
   display: "flex",
   flexWrap: "wrap",
@@ -12,6 +12,32 @@ const StyledHeroRoot = styled("section")(({ theme }) => ({
   alignItems: "center",
   backgroundColor: theme.palette.background.main,
   minHeight: "100vh",
+  position: "relative",
+  overflow: "hidden",
+  "&::before": {
+    content: "''",
+    position: "absolute",
+    top: "-10%",
+    right: "-5%",
+    width: "500px",
+    height: "500px",
+    borderRadius: "50%",
+    background: `radial-gradient(circle, ${theme.palette.textSecondary.main}15 0%, transparent 65%)`,
+    pointerEvents: "none",
+    zIndex: 0,
+  },
+  "&::after": {
+    content: "''",
+    position: "absolute",
+    bottom: "0%",
+    left: "-8%",
+    width: "400px",
+    height: "400px",
+    borderRadius: "50%",
+    background: `radial-gradient(circle, ${theme.palette.backgroundSecondary.main}25 0%, transparent 65%)`,
+    pointerEvents: "none",
+    zIndex: 0,
+  },
 }));
 
 const StyledHeroContainer = styled(Container)(({ theme, ismobile }) => ({
@@ -21,6 +47,8 @@ const StyledHeroContainer = styled(Container)(({ theme, ismobile }) => ({
   alignSelf: "center",
   boxSizing: "unset !important",
   width: "unset",
+  position: "relative",
+  zIndex: 1,
   ["@media (max-height: 804px)"]: {
     paddingTop: ismobile ? "0px" : "102px",
   },
@@ -40,9 +68,10 @@ const StyledHeroImage = styled("img")(({ theme }) => ({
   animation: "fadeIn",
   animationDuration: "2s",
   width: "270px",
-  borderRadius: "2rem",
-  border: `0.25rem solid ${theme.palette.backgroundSecondary.main}70`,
+  borderRadius: "1.25rem",
+  border: `0.25rem solid ${theme.palette.textSecondary.main}40`,
   backgroundColor: `${theme.palette.backgroundSecondary.main}70`,
+  boxShadow: `0 8px 40px ${theme.palette.textSecondary.main}20`,
   textAlign: "center",
   margin: "2rem 4rem 2rem 4rem",
   [theme.breakpoints.down("lg")]: {
@@ -63,7 +92,16 @@ const StyledHeroText = styled(Grid)(({ theme }) => ({
     width: "80%",
     margin: "0",
   },
-  margin: "2rem 4rem 2rem 4rem ",
+  margin: "2rem 4rem 2rem 4rem",
+}));
+
+const StyledHeroEyebrow = styled(Typography)(({ theme }) => ({
+  fontSize: "clamp(13px, 1.2vw, 16px) !important",
+  color: theme.palette.textSecondary.main + " !important",
+  letterSpacing: "0.15em",
+  textTransform: "uppercase",
+  fontWeight: "600 !important",
+  marginBottom: "0.4rem !important",
 }));
 
 const StyledHeroTitle = styled(Typography)(({ theme }) => ({
@@ -78,7 +116,82 @@ const StyledHeroTitle = styled(Typography)(({ theme }) => ({
 
 const StyledHeroSubText = styled(Typography)(({ theme }) => ({
   color: theme.palette.textSecondary.main + " !important",
-  fontSize: "clamp(20px, 2vw, 26px) !important",
+  fontSize: "clamp(16px, 1.6vw, 22px) !important",
+  marginTop: "0.5rem !important",
+  lineHeight: "1.6 !important",
+}));
+
+const StyledCTARow = styled("div")(({ theme }) => ({
+  display: "flex",
+  gap: "0.75rem",
+  marginTop: "2rem",
+  justifyContent: "center",
+  flexWrap: "wrap",
+}));
+
+const StyledCTAPrimary = styled(Link)(({ theme }) => ({
+  display: "inline-flex",
+  alignItems: "center",
+  justifyContent: "center",
+  padding: "0.6rem 1.4rem",
+  borderRadius: "0.4rem",
+  backgroundColor: theme.palette.backgroundSecondary.main,
+  color: "#FFFFFF !important",
+  fontFamily: "'Jost', sans-serif",
+  fontSize: "1rem",
+  fontWeight: "600",
+  cursor: "pointer",
+  textDecoration: "none",
+  transition:
+    "background-color 200ms ease-in-out, transform 150ms ease-in-out, box-shadow 200ms ease-in-out",
+  boxShadow: `0 2px 16px ${theme.palette.backgroundSecondary.main}50`,
+  "&:hover": {
+    backgroundColor: theme.palette.buttonHover.main,
+    transform: "translateY(-2px)",
+    boxShadow: `0 6px 24px ${theme.palette.backgroundSecondary.main}60`,
+  },
+}));
+
+const StyledCTAOutline = styled("a")(({ theme }) => ({
+  display: "inline-flex",
+  alignItems: "center",
+  justifyContent: "center",
+  padding: "0.6rem 1.4rem",
+  borderRadius: "0.4rem",
+  border: `2px solid ${theme.palette.backgroundSecondary.main}`,
+  color: theme.palette.textMain.main + " !important",
+  fontFamily: "'Jost', sans-serif",
+  fontSize: "1rem",
+  fontWeight: "600",
+  cursor: "pointer",
+  textDecoration: "none",
+  transition:
+    "border-color 200ms ease-in-out, transform 150ms ease-in-out, color 200ms ease-in-out",
+  "&:hover": {
+    borderColor: theme.palette.textSecondary.main,
+    color: theme.palette.textSecondary.main + " !important",
+    transform: "translateY(-2px)",
+  },
+}));
+
+const StyledCTAGhost = styled("a")(({ theme }) => ({
+  display: "inline-flex",
+  alignItems: "center",
+  justifyContent: "center",
+  padding: "0.6rem 1.4rem",
+  borderRadius: "0.4rem",
+  border: `2px solid ${theme.palette.textMain.main}30`,
+  color: theme.palette.textMain.main + " !important",
+  fontFamily: "'Jost', sans-serif",
+  fontSize: "1rem",
+  fontWeight: "600",
+  cursor: "pointer",
+  textDecoration: "none",
+  transition: "border-color 200ms ease-in-out, transform 150ms ease-in-out",
+  "&:hover": {
+    borderColor: theme.palette.textMain.main,
+    transform: "translateY(-2px)",
+  },
 }));
 
 const ScrollerIcon = styled("div")(({ theme }) => ({
@@ -111,8 +224,6 @@ const ScrollerIcon = styled("div")(({ theme }) => ({
   },
 }));
 
-//End component style//
-
 const Hero = ({ img }) => {
   const [isMobile, setIsMobile] = useState(false);
 
@@ -131,12 +242,14 @@ const Hero = ({ img }) => {
             <StyledHeroImage alt="Image of Maximilian Oberholtzer" src={img} />
           </Grid>
           <StyledHeroText item>
+            <StyledHeroEyebrow component="p">
+              Frontend Software Engineer
+            </StyledHeroEyebrow>
             <StyledHeroTitle component="h1" variant="h2">
               Maximilian Oberholtzer
             </StyledHeroTitle>
-            <StyledHeroSubText component="h1" variant="h5">
-              Full stack software engineer who enjoys creative coding and UI/UX
-              designs
+            <StyledHeroSubText component="p">
+              Building creative web & mobile experiences for 7+ years
             </StyledHeroSubText>
           </StyledHeroText>
         </StyledHeroGrid>
@@ -149,6 +262,8 @@ const Hero = ({ img }) => {
             marginTop: "2rem",
             animation: "fadeInUp",
             animationDuration: "1s",
+            position: "relative",
+            zIndex: 1,
           }}
         >
           <ScrollerIcon />

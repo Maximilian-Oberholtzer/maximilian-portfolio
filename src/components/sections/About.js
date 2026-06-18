@@ -11,13 +11,11 @@ import "animate.css";
 import { useInView } from "react-intersection-observer";
 import * as Scroll from "react-scroll";
 
-//Component styles//
 const StyledScrollingContainer = styled("div")(({ theme }) => ({
   position: "relative",
   width: "inherit",
   animation: "fadeInUp",
   animationDuration: "1s",
-
   "&::before": {
     content: "''",
     position: "absolute",
@@ -49,6 +47,7 @@ const StyledScrollingContainer = styled("div")(({ theme }) => ({
     zIndex: "1000",
   },
 }));
+
 const StyledScrollingBelt = styled("div")(({ theme }) => ({
   display: "flex",
   marginTop: "3rem",
@@ -56,19 +55,16 @@ const StyledScrollingBelt = styled("div")(({ theme }) => ({
   width: "98%",
   marginLeft: "0.1rem",
 }));
+
 const StyledScrollingItem = styled("div")(({ theme }) => ({
   "@keyframes moveLeft": {
-    "0%": {
-      transform: "translateX(0)",
-    },
-    "100%": {
-      transform: "translateX(-1600%)",
-    },
+    "0%": { transform: "translateX(0)" },
+    "100%": { transform: "translateX(-1600%)" },
   },
   animation: "moveLeft 22s linear infinite",
   background: theme.palette.backgroundSecondary.main,
   marginRight: "3rem",
-  borderRadius: "1rem",
+  borderRadius: "0.75rem",
   padding: "1rem",
   minWidth: "8rem",
   textAlign: "center",
@@ -82,6 +78,7 @@ const StyledScrollingItem = styled("div")(({ theme }) => ({
     minWidth: "5rem",
   },
 }));
+
 const StyledScrollingText = styled(Typography)(({ theme }) => ({
   fontSize: "1.5rem !important",
   color: "#FFFFFF",
@@ -92,31 +89,77 @@ const StyledScrollingText = styled(Typography)(({ theme }) => ({
     fontSize: "0.9rem !important",
   },
 }));
-//End component styles
+
+const StyledStatGrid = styled("div")(({ theme }) => ({
+  display: "flex",
+  flexWrap: "wrap",
+  gap: "1rem",
+  justifyContent: "center",
+  marginTop: "3rem",
+  width: "100%",
+}));
+
+const StyledStatCard = styled("div")(({ theme }) => ({
+  borderRadius: "0.75rem",
+  padding: "1.5rem 1.75rem",
+  border: `1px solid ${theme.palette.backgroundSecondary.main}60`,
+  background: `radial-gradient(ellipse at top left, ${theme.palette.backgroundSecondary.main}20, transparent 70%)`,
+  textAlign: "center",
+  flex: "1",
+  minWidth: "140px",
+  maxWidth: "200px",
+  transition: "transform 150ms ease-in-out, box-shadow 150ms ease-in-out",
+  "&:hover": {
+    transform: "translateY(-4px)",
+    boxShadow: `0 8px 24px ${theme.palette.backgroundSecondary.main}30`,
+  },
+}));
+
+const StyledStatNumber = styled(Typography)(({ theme }) => ({
+  fontSize: "clamp(24px, 2.5vw, 34px) !important",
+  fontWeight: "bold !important",
+  color: theme.palette.textSecondary.main,
+  lineHeight: "1.1 !important",
+}));
+
+const StyledStatLabel = styled(Typography)(({ theme }) => ({
+  fontSize: "clamp(12px, 1vw, 14px) !important",
+  color: theme.palette.textMain.main,
+  marginTop: "0.25rem !important",
+  opacity: 0.8,
+}));
 
 const About = () => {
   const [aboutContainer, aboutContainerInView] = useInView({
     threshold: 0.5,
     triggerOnce: true,
   });
+
   const technologiesArr = [
     "Java",
     "Swift",
     "Node",
-    "AWS",
+    "Vuetify",
     "Material-UI",
     "MetaMask",
     "Ethereum",
     "Javascript",
+    "Codex",
     "PostgresSQL",
     "Solidity",
     "React",
-    "Kubernetes",
-    "Angular",
+    "Vue",
     "Git",
     "Express",
     "Java",
     "Swift",
+  ];
+
+  const stats = [
+    { number: "7+", label: "Years of Experience" },
+    { number: "2M+", label: "Users Served" },
+    { number: "20k+", label: "App Downloads" },
+    { number: "Full Stack", label: "Web & Mobile" },
   ];
 
   return (
@@ -131,7 +174,9 @@ const About = () => {
               : { visibility: "hidden" }
           }
           className={
-            aboutContainerInView ? "animate__animated animate__fadeInUp" : ""
+            aboutContainerInView
+              ? "animate__animated animate__fadeInUp animate__faster"
+              : ""
           }
         >
           <StyledGenericTitle component="h1">
@@ -156,6 +201,14 @@ const About = () => {
               ))}
             </StyledScrollingBelt>
           </StyledScrollingContainer>
+          <StyledStatGrid>
+            {stats.map((stat, index) => (
+              <StyledStatCard key={index}>
+                <StyledStatNumber>{stat.number}</StyledStatNumber>
+                <StyledStatLabel>{stat.label}</StyledStatLabel>
+              </StyledStatCard>
+            ))}
+          </StyledStatGrid>
         </StyledGenericContainer>
       </StyledGenericRoot>
     </Scroll.Element>

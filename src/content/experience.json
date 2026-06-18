@@ -1,16 +1,23 @@
 [
   {
     "id": "0",
-    "company": "American Water",
-    "jobTitle": "Software Engineer II",
-    "years": "2018 - Current",
-    "description": "Lead developer for customer billing and support application with at least 2+ million users"
+    "company": "Allocore",
+    "jobTitle": "Frontend Engineer",
+    "years": "2023 - Current",
+    "description": "Developing modern web interfaces for the SBA's disaster lending platform, helping deliver more accessible disaster relief services to businesses and individuals nationwide."
   },
   {
     "id": "1",
+    "company": "American Water",
+    "jobTitle": "Software Engineer II",
+    "years": "2018 - 2023",
+    "description": "Led developement for customer billing and support application with at least 2+ million users."
+  },
+  {
+    "id": "2",
     "company": "Ursinus College",
     "jobTitle": "B.S. in Computer Science",
     "years": "2014 - 2018",
-    "description": "Completed coursework involved algorithms, data structures and object oriented programming"
+    "description": "Completed coursework involved algorithms, data structures and object oriented programming."
   }
 ]

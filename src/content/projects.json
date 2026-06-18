@@ -12,7 +12,7 @@
     "id": "1",
     "title": "LetterSwap",
     "image": "../images/LetterSwap.jpeg",
-    "description": "Create as many words as possible.",
+    "description": "Create as many words as possible",
     "skills": ["React", "Typescript", "CSS", "Netlify", "Supabase"],
     "websiteLink": "https://playletterswap.com",
     "githubLink": ""
@@ -23,7 +23,7 @@
     "image": "../images/rocketLeague.png",
     "description": "A tool to review and analyze Rocket League solo duel replays",
     "skills": ["React", "Bootstrap", "Node", "Express"],
-    "websiteLink": "http://www.feedsanalysistool.com/",
+    "websiteLink": "",
     "githubLink": "https://github.com/Maximilian-Oberholtzer/replay-analysis-tool"
   },
   {

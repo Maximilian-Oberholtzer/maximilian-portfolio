@@ -2,14 +2,12 @@ import { styled, Container, Typography } from "@mui/material";
 
 const isFirefox = /Firefox/i.test(navigator.userAgent);
 
-//Styles used accross components
-
 export const StyledDivider = styled("div")(({ theme }) => ({
-  height: "0.4rem",
-  width: "2rem",
+  height: "3px",
+  width: "2.5rem",
   borderRadius: "2rem",
-  margin: "1rem",
-  background: theme.palette.textSecondary.main,
+  margin: "0.75rem auto 1rem",
+  background: `linear-gradient(90deg, ${theme.palette.backgroundSecondary.main}, ${theme.palette.textSecondary.main})`,
 }));
 
 export const StyledGenericRoot = styled("section")(({ theme }) => ({
@@ -35,13 +33,15 @@ export const StyledGenericTitle = styled(Typography)(({ theme }) => ({
   fontSize: "clamp(32px, 4vw, 56px) !important",
   textAlign: isFirefox ? "-moz-center" : "-webkit-center",
   animation: "fadeInUp",
-  animationDuration: "1s",
+  animationDuration: "0.5s",
 }));
 
 export const StyledGenericSubText = styled(Typography)(({ theme }) => ({
   color: theme.palette.textMain.main,
-  fontSize: "clamp(20px, 2vw, 26px) !important",
+  fontSize: "clamp(18px, 1.8vw, 24px) !important",
   textAlign: "center",
   animation: "fadeInUp",
-  animationDuration: "1s",
+  animationDuration: "0.5s",
+  lineHeight: "1.7 !important",
+  opacity: 0.9,
 }));
