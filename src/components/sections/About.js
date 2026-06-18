@@ -95,8 +95,11 @@ const StyledStatGrid = styled("div")(({ theme }) => ({
   flexWrap: "wrap",
   gap: "1rem",
   justifyContent: "center",
-  marginTop: "3rem",
+  marginTop: "2rem",
   width: "100%",
+  [theme.breakpoints.down("sm")]: {
+    marginTop: "4rem",
+  },
 }));
 
 const StyledStatCard = styled("div")(({ theme }) => ({
@@ -153,13 +156,13 @@ const About = () => {
     "Express",
     "Java",
     "Swift",
+    "Claude",
   ];
 
   const stats = [
     { number: "7+", label: "Years of Experience" },
-    { number: "2M+", label: "Users Served" },
+    { number: "2M+", label: "End Users Served" },
     { number: "20k+", label: "App Downloads" },
-    { number: "Full Stack", label: "Web & Mobile" },
   ];
 
   return (
