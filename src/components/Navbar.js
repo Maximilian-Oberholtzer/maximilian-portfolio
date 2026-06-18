@@ -115,6 +115,7 @@ const StyledDrawer = styled(Drawer)(({ theme }) => ({
     boxShadow: `-8px 0 40px rgba(0,0,0,0.15) !important`,
     display: "flex",
     flexDirection: "column",
+    overflowX: "hidden",
   },
 }));
 

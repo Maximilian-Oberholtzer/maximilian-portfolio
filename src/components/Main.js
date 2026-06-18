@@ -44,24 +44,34 @@ const Main = () => {
 
   return (
     <>
-      {isLoading ? (
-        <Loader />
-      ) : (
-        <>
-          <Navbar />
-          <StyledMainPage>
-            {showSideAnchor && <SideAnchorLinks />}
-            <StyledMainContainer>
-              <Hero img={heroImg} />
-              <About />
-              <Experience />
-              <Projects />
-              <Hobbies />
-              <Footer />
-            </StyledMainContainer>
-          </StyledMainPage>
-        </>
-      )}
+      {isLoading && <Loader />}
+      <div
+        style={{
+          position: "fixed",
+          inset: 0,
+          backgroundColor: theme.palette.background.main,
+          zIndex: -1,
+        }}
+      />
+      <div
+        style={{
+          opacity: isLoading ? 0 : 1,
+          transition: isLoading ? "none" : "opacity 0.4s ease-in",
+        }}
+      >
+        <Navbar />
+        <StyledMainPage>
+          {showSideAnchor && <SideAnchorLinks />}
+          <StyledMainContainer>
+            <Hero img={heroImg} />
+            <About />
+            <Experience />
+            <Projects />
+            <Hobbies />
+            <Footer />
+          </StyledMainContainer>
+        </StyledMainPage>
+      </div>
     </>
   );
 };
