@@ -32,7 +32,7 @@ const StyledLeftAnchor = styled("div")({
   bottom: "16vh",
   left: "50px",
   right: "auto",
-  Zndex: "10",
+  zIndex: 10,
   animation: "fadeInLeft",
   animationDuration: "1s",
 });
@@ -43,7 +43,7 @@ const StyledRightAnchor = styled("div")({
   bottom: "16vh",
   left: "auto",
   right: "50px",
-  Zndex: "10",
+  zIndex: 10,
   animation: "fadeInRight",
   animationDuration: "1s",
 });
