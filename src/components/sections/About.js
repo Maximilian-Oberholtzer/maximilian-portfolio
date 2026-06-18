@@ -183,7 +183,7 @@ const About = () => {
           }
           className={
             aboutContainerInView
-              ? "animate__animated animate__fadeInUp animate__faster"
+              ? "animate__animated animate__fadeInUp"
               : ""
           }
         >

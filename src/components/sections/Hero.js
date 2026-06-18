@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Container, Grid, Typography, styled } from "@mui/material";
-import { Link } from "react-scroll";
 import "animate.css";
 
 const StyledHeroRoot = styled("section")(({ theme }) => ({
@@ -25,7 +24,7 @@ const StyledHeroContainer = styled(Container)(({ theme, ismobile }) => ({
   width: "unset",
   position: "relative",
   zIndex: 1,
-  ["@media (max-height: 804px)"]: {
+  "@media (max-height: 804px)": {
     paddingTop: ismobile ? "0px" : "102px",
   },
   [theme.breakpoints.up("sm")]: {
@@ -45,7 +44,7 @@ const StyledHeroImage = styled("img")(({ theme }) => ({
   animationDuration: "2s",
   width: "270px",
   borderRadius: "1.25rem",
-  border: `0.25rem solid ${theme.palette.textSecondary.main}40`,
+  border: `0.15rem solid ${theme.palette.textSecondary.main}40`,
   backgroundColor: `${theme.palette.backgroundSecondary.main}70`,
   boxShadow: `0 8px 40px ${theme.palette.textSecondary.main}20`,
   textAlign: "center",
@@ -71,15 +70,6 @@ const StyledHeroText = styled(Grid)(({ theme }) => ({
   margin: "2rem 4rem 2rem 4rem",
 }));
 
-const StyledHeroEyebrow = styled(Typography)(({ theme }) => ({
-  fontSize: "clamp(13px, 1.2vw, 16px) !important",
-  color: theme.palette.textSecondary.main + " !important",
-  letterSpacing: "0.15em",
-  textTransform: "uppercase",
-  fontWeight: "600 !important",
-  marginBottom: "0.4rem !important",
-}));
-
 const StyledHeroTitle = styled(Typography)(({ theme }) => ({
   fontWeight: "bold !important",
   color: theme.palette.textMain.main,
@@ -95,79 +85,6 @@ const StyledHeroSubText = styled(Typography)(({ theme }) => ({
   fontSize: "clamp(16px, 1.6vw, 22px) !important",
   marginTop: "0.5rem !important",
   lineHeight: "1.6 !important",
-}));
-
-const StyledCTARow = styled("div")(({ theme }) => ({
-  display: "flex",
-  gap: "0.75rem",
-  marginTop: "2rem",
-  justifyContent: "center",
-  flexWrap: "wrap",
-}));
-
-const StyledCTAPrimary = styled(Link)(({ theme }) => ({
-  display: "inline-flex",
-  alignItems: "center",
-  justifyContent: "center",
-  padding: "0.6rem 1.4rem",
-  borderRadius: "0.4rem",
-  backgroundColor: theme.palette.backgroundSecondary.main,
-  color: "#FFFFFF !important",
-  fontFamily: "'Jost', sans-serif",
-  fontSize: "1rem",
-  fontWeight: "600",
-  cursor: "pointer",
-  textDecoration: "none",
-  transition:
-    "background-color 200ms ease-in-out, transform 150ms ease-in-out, box-shadow 200ms ease-in-out",
-  boxShadow: `0 2px 16px ${theme.palette.backgroundSecondary.main}50`,
-  "&:hover": {
-    backgroundColor: theme.palette.buttonHover.main,
-    transform: "translateY(-2px)",
-    boxShadow: `0 6px 24px ${theme.palette.backgroundSecondary.main}60`,
-  },
-}));
-
-const StyledCTAOutline = styled("a")(({ theme }) => ({
-  display: "inline-flex",
-  alignItems: "center",
-  justifyContent: "center",
-  padding: "0.6rem 1.4rem",
-  borderRadius: "0.4rem",
-  border: `2px solid ${theme.palette.backgroundSecondary.main}`,
-  color: theme.palette.textMain.main + " !important",
-  fontFamily: "'Jost', sans-serif",
-  fontSize: "1rem",
-  fontWeight: "600",
-  cursor: "pointer",
-  textDecoration: "none",
-  transition:
-    "border-color 200ms ease-in-out, transform 150ms ease-in-out, color 200ms ease-in-out",
-  "&:hover": {
-    borderColor: theme.palette.textSecondary.main,
-    color: theme.palette.textSecondary.main + " !important",
-    transform: "translateY(-2px)",
-  },
-}));
-
-const StyledCTAGhost = styled("a")(({ theme }) => ({
-  display: "inline-flex",
-  alignItems: "center",
-  justifyContent: "center",
-  padding: "0.6rem 1.4rem",
-  borderRadius: "0.4rem",
-  border: `2px solid ${theme.palette.textMain.main}30`,
-  color: theme.palette.textMain.main + " !important",
-  fontFamily: "'Jost', sans-serif",
-  fontSize: "1rem",
-  fontWeight: "600",
-  cursor: "pointer",
-  textDecoration: "none",
-  transition: "border-color 200ms ease-in-out, transform 150ms ease-in-out",
-  "&:hover": {
-    borderColor: theme.palette.textMain.main,
-    transform: "translateY(-2px)",
-  },
 }));
 
 const ScrollerIcon = styled("div")(({ theme }) => ({
@@ -218,9 +135,6 @@ const Hero = ({ img }) => {
             <StyledHeroImage alt="Image of Maximilian Oberholtzer" src={img} />
           </Grid>
           <StyledHeroText item>
-            <StyledHeroEyebrow component="p">
-              Frontend Software Engineer
-            </StyledHeroEyebrow>
             <StyledHeroTitle component="h1" variant="h2">
               Maximilian Oberholtzer
             </StyledHeroTitle>

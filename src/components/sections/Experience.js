@@ -1,7 +1,6 @@
 import { React } from "react";
 import { Container, styled, useTheme } from "@mui/material";
 import WebIcon from "@mui/icons-material/Web";
-import StorageIcon from "@mui/icons-material/Storage";
 import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
 import DesignServicesIcon from "@mui/icons-material/DesignServices";
 import {
@@ -224,7 +223,7 @@ const Experience = () => {
               ? {
                   visibility: "visible",
                   animation: "fadeInUp",
-                  animationDuration: "0.5s",
+                  animationDuration: "1s",
                 }
               : { visibility: "hidden" }
           }
@@ -243,7 +242,7 @@ const Experience = () => {
           ref={competencies}
           className={
             competenciesInView
-              ? "animate__animated animate__fadeInUp animate__faster"
+              ? "animate__animated animate__fadeInUp"
               : ""
           }
           sx={
@@ -268,7 +267,7 @@ const Experience = () => {
               ? {
                   visibility: "visible",
                   animation: "fadeInUp",
-                  animationDuration: "0.5s",
+                  animationDuration: "1s",
                 }
               : { visibility: "hidden" }
           }
