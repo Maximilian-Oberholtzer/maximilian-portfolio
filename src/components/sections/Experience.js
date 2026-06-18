@@ -31,12 +31,11 @@ const StyledCarouselContainer = styled(Container)(({ theme }) => ({
   textAlign: "center",
   overflowX: "hidden",
   paddingBottom: "2rem",
+  marginBottom: "4rem",
   [theme.breakpoints.down("sm")]: {
-    marginBottom: "4rem",
     width: "85% !important",
   },
   [theme.breakpoints.down("xs")]: {
-    marginBottom: "4rem",
     width: "90% !important",
   },
 }));

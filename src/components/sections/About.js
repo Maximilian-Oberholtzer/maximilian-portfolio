@@ -99,6 +99,11 @@ const StyledStatGrid = styled("div")(({ theme }) => ({
   width: "100%",
   [theme.breakpoints.down("sm")]: {
     marginTop: "4rem",
+    marginBottom: "4rem",
+  },
+  [theme.breakpoints.down("xs")]: {
+    marginTop: "4rem",
+    marginBottom: "4rem",
   },
 }));
 
