@@ -33,7 +33,7 @@ export const StyledGenericTitle = styled(Typography)(({ theme }) => ({
   fontSize: "clamp(32px, 4vw, 56px) !important",
   textAlign: isFirefox ? "-moz-center" : "-webkit-center",
   animation: "fadeInUp",
-  animationDuration: "0.5s",
+  animationDuration: "1s",
 }));
 
 export const StyledGenericSubText = styled(Typography)(({ theme }) => ({
@@ -41,7 +41,7 @@ export const StyledGenericSubText = styled(Typography)(({ theme }) => ({
   fontSize: "clamp(18px, 1.8vw, 24px) !important",
   textAlign: "center",
   animation: "fadeInUp",
-  animationDuration: "0.5s",
+  animationDuration: "1s",
   lineHeight: "1.7 !important",
   opacity: 0.9,
 }));

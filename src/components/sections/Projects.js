@@ -218,7 +218,7 @@ const Projects = () => {
                         ? {
                             visibility: "visible",
                             animation: "fadeInUp",
-                            animationDuration: "0.5s",
+                            animationDuration: "1s",
                           }
                         : { visibility: "hidden" }
                     }

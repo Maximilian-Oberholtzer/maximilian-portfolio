@@ -119,7 +119,7 @@ const Footer = () => {
           }
           className={
             footerInView
-              ? "animate__animated animate__fadeInUp animate__faster"
+              ? "animate__animated animate__fadeInUp"
               : ""
           }
         >

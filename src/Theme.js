@@ -4,14 +4,13 @@ export const lightTheme = createTheme({
   components: {
     MuiCssBaseline: {
       styleOverrides: {
-        // Style for the scrollbar
         "*::-webkit-scrollbar": {
           width: "0.4em",
           height: "0.4em",
-          backgroundColor: "#FFFFFF",
+          backgroundColor: "#F8FAFC",
         },
         "*::-webkit-scrollbar-thumb": {
-          backgroundColor: "#5BC0BE",
+          backgroundColor: "#60A5FA",
         },
         "*": {
           boxSizing: "unset",
@@ -48,19 +47,19 @@ export const lightTheme = createTheme({
   },
   palette: {
     background: {
-      main: "#FFFFFF",
+      main: "#F8FAFC",
     },
     backgroundSecondary: {
-      main: "#5BC0BE",
+      main: "#60A5FA",
     },
     buttonHover: {
-      main: "#3E9F9D",
+      main: "#3B82F6",
     },
     textMain: {
-      main: "#0B132B",
+      main: "#0F172A",
     },
     textSecondary: {
-      main: "#53739A",
+      main: "#60A5FA",
     },
   },
 });
@@ -69,14 +68,13 @@ export const darkTheme = createTheme({
   components: {
     MuiCssBaseline: {
       styleOverrides: {
-        // Style for the scrollbar
         "*::-webkit-scrollbar": {
           width: "0.4em",
           height: "0.4em",
-          backgroundColor: "#0B132B",
+          backgroundColor: "#0D1117",
         },
         "*::-webkit-scrollbar-thumb": {
-          backgroundColor: "#3A506B",
+          backgroundColor: "#1E3A5F",
         },
         "*": {
           boxSizing: "unset",
@@ -113,19 +111,19 @@ export const darkTheme = createTheme({
   },
   palette: {
     background: {
-      main: "#0B132B",
+      main: "#0D1117",
     },
     backgroundSecondary: {
-      main: "#3A506B",
+      main: "#1E3A5F",
     },
     buttonHover: {
-      main: "#53739A",
+      main: "#2D5A8E",
     },
     textMain: {
-      main: "#FEFFFF",
+      main: "#E6EDF3",
     },
     textSecondary: {
-      main: "#6FFFE9",
+      main: "#60A5FA",
     },
   },
 });

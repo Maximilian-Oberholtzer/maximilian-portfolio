@@ -29,8 +29,10 @@ const Main = () => {
 
   //Loader animation before rest of the page gets rendered
   useEffect(() => {
+    document.body.style.overflow = "hidden";
     setTimeout(() => {
       setIsloading(false);
+      document.body.style.overflow = "";
     }, 3250);
 
     const loadImage = async () => {
