@@ -182,9 +182,7 @@ const About = () => {
               : { visibility: "hidden" }
           }
           className={
-            aboutContainerInView
-              ? "animate__animated animate__fadeInUp"
-              : ""
+            aboutContainerInView ? "animate__animated animate__fadeInUp" : ""
           }
         >
           <StyledGenericTitle component="h1">
@@ -192,11 +190,11 @@ const About = () => {
             <StyledDivider />
           </StyledGenericTitle>
           <StyledGenericSubText component="h1">
-            Hey there! My name is Maximilian and I have been building different
-            types of web and mobile applications for 7+ years. After publishing
-            a few games to the iOS App Store, I became more interested in
-            developing responsive web designs with React. Listed below are some
-            of the languages and technologies that I have experience using.
+            My name is Maximilian and I have been building different types of
+            web and mobile applications for 7+ years. After publishing a few
+            games to the iOS App Store, I became more interested in developing
+            responsive web designs with Vue and React. Listed below are some of
+            the languages and technologies that I have experience using.
           </StyledGenericSubText>
           <StyledScrollingContainer>
             <StyledScrollingBelt>
