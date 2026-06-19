@@ -44,6 +44,12 @@ const StyledContactSubText = styled(Typography)(({ theme }) => ({
   fontSize: "clamp(15px, 1.4vw, 18px) !important",
   marginBottom: "1.5rem !important",
   maxWidth: "500px",
+  [theme.breakpoints.down("sm")]: {
+    width: "85% !important",
+  },
+  [theme.breakpoints.down("xs")]: {
+    width: "90% !important",
+  },
 }));
 
 const StyledEmailButton = styled("a")(({ theme }) => ({
@@ -117,17 +123,14 @@ const Footer = () => {
           style={
             footerInView ? { visibility: "visible" } : { visibility: "hidden" }
           }
-          className={
-            footerInView
-              ? "animate__animated animate__fadeInUp"
-              : ""
-          }
+          className={footerInView ? "animate__animated animate__fadeInUp" : ""}
         >
-          <StyledContactHeading>Get In Touch</StyledContactHeading>
+          <StyledContactHeading>Say Hello</StyledContactHeading>
           <div style={{ display: "flex", justifyContent: "center" }}>
             <StyledContactSubText>
               If you have a question or just want to connect, my inbox is always
-              open.
+              open. I'm not currently seeking new opportunities, but I'd love to
+              hear from you.
             </StyledContactSubText>
           </div>
           <StyledEmailButton
